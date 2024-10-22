@@ -143,11 +143,65 @@ button:hover {
   .card__contenu {
     grid-template-columns: repeat(3, 1fr);
   }
+
   .card__img {
     width: 348px;
   }
+
   .card__data {
     width: 316px;
     padding-inline: 2.5rem;
+  }
+}
+
+/* Mobile-first design */
+.teacher-profile {
+  text-align: center;
+}
+
+.profile-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.teacher-photo {
+  width: 80%;
+  max-width: 200px;
+  margin-bottom: 20px;
+}
+
+.teacher-info {
+  text-align: left;
+}
+
+.teacher-info ul {
+  padding: 0;
+  list-style-type: none;
+}
+
+/* Desktop Styles */
+@media screen and (min-width: 768px) {
+  .profile-container {
+      flex-direction: row;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 60px;
+  }
+
+  .teacher-photo {
+      margin-right: 60px;
+      max-width: 300px;
+  }
+
+  .teacher-info {
+      max-width: 600px;
+      padding: 20px;
+      line-height: 1.6;
+  }
+
+  .teacher-info ul {
+      margin-top: 40px;
   }
 }

@@ -4,7 +4,7 @@
     margin: 0;
 }
 
-body {
+html {
     margin: 0;
     padding: 0;
     background-image: url("./images/fond.jpg");
@@ -13,8 +13,4 @@ body {
     font-family: var(--body-font);
     background-color: var(--body-color);
     color: var(--text-color);
-}
-
-html {
-    height: 100%;
 }

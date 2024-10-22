@@ -27,6 +27,11 @@
   
   .info-additionnel {
     margin-top: 1em;
+
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    justify-content: center;
   }
   
   .info-additionnel p {
