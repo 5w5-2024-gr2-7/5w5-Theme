@@ -1,0 +1,121 @@
+/* Section du cours de jeu exemple */
+
+.back-btn {
+    display: none;
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.course-title {
+    text-align: center;
+    margin-top: 20px;
+    color: white;
+}
+
+.ovals {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 10px;
+}
+
+.oval {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 50px;
+}
+
+.description {
+    margin: 20px;
+    text-align: center;
+}
+
+/* Software section */
+.software-section {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.software-box {
+    background-color: black;
+    padding: 20px;
+    margin-bottom: 10px;
+    display: inline-block;
+    width: 100%;
+    max-width: 300px;
+    border-radius: 10px;
+    position: relative;
+}
+
+.software-logo {
+    width: 100px;
+    height: auto;
+    margin-top: 10px;
+}
+
+/* Mobile View (Max Width 768px) */
+@media only screen and (max-width: 768px) {
+    .back-btn {
+        display: block;
+    }
+
+    .ovals {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .description {
+        text-align: justify;
+    }
+
+    .software-section {
+        margin-top: 50px;
+    }
+
+    .software-box {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+/* Desktop View */
+@media only screen and (min-width: 769px) {
+    .contenu-jeu {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 50px;
+        margin: 50px;
+    }
+
+    .course-title,
+    .ovals {
+        grid-column: span 2;
+        text-align: center;
+    }
+
+    .description {
+        grid-column: 2;
+    }
+
+    .software-section {
+        grid-column: 1;
+    }
+
+    /* Agrandir le rectangle */
+    .software-box {
+        width: 100%;
+        max-width: 500px;
+        padding: 30px;
+        margin: 0 auto;
+    }
+
+    .software-logo {
+        display: block;
+        margin: 20px auto;
+    }
+}
