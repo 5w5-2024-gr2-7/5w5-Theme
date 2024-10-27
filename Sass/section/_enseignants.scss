@@ -41,19 +41,16 @@ button:hover {
   background-color: #5c3fbe;
 }
 
+.professor-card > h2 {
+  color: black;
+}
+
 /* Mobile Styles */
 @media (max-width: 768px) {
   .professor-card {
     width: calc(100% - 40px);
   }
 }
-
-.professor-card>h2 {
-  color: black;
-}
-
-
-// À revoir
 
 /*=============== CARD ===============*/
 .contenu {
@@ -82,7 +79,7 @@ button:hover {
   width: 280px;
   background-color: var(--contenu-color);
   padding: 1.5rem 2rem;
-  box-shadow: 0 8px 24px hsla(0, 0%, 0%, .15);
+  box-shadow: 0 8px 24px hsla(0, 0%, 0%, 0.15);
   border-radius: 1rem;
   position: absolute;
   bottom: -9rem;
@@ -96,14 +93,14 @@ button:hover {
 .card__description {
   display: block;
   font-size: var(--small-font-size);
-  margin-bottom: .25rem;
+  margin-bottom: 0.25rem;
 }
 
 .card__title {
   font-size: var(--h2-font-size);
   font-weight: 500;
   color: var(--title-color);
-  margin-bottom: .75rem;
+  margin-bottom: 0.75rem;
 }
 
 .card__bouton {
@@ -118,7 +115,7 @@ button:hover {
 }
 
 /*=============== BREAKPOINTS ===============*/
-/* For small devices */
+/* Small devices */
 @media screen and (max-width: 340px) {
   .contenu {
     margin-inline: 1rem;
@@ -130,7 +127,7 @@ button:hover {
   }
 }
 
-/* For medium devices */
+/* Medium devices */
 @media screen and (min-width: 768px) {
   .card__contenu {
     grid-template-columns: repeat(2, 1fr);
@@ -138,7 +135,7 @@ button:hover {
   }
 }
 
-/* For large devices */
+/* Large devices */
 @media screen and (min-width: 1120px) {
   .card__contenu {
     grid-template-columns: repeat(3, 1fr);
@@ -154,9 +151,12 @@ button:hover {
   }
 }
 
+/* SINGLE TEACHER PAGE STYLING */
+
 /* Mobile-first design */
 .teacher-profile {
   text-align: center;
+  margin-top: 20px;
 }
 
 .profile-container {
@@ -164,16 +164,19 @@ button:hover {
   flex-direction: column;
   align-items: center;
   padding: 20px;
+  margin-top: 20px;
 }
 
 .teacher-photo {
   width: 80%;
   max-width: 200px;
   margin-bottom: 20px;
+  border-radius: 10px;
 }
 
 .teacher-info {
   text-align: left;
+  margin-top: 10px;
 }
 
 .teacher-info ul {
@@ -184,24 +187,24 @@ button:hover {
 /* Desktop Styles */
 @media screen and (min-width: 768px) {
   .profile-container {
-      flex-direction: row;
-      justify-content: center;
-      align-items: flex-start;
-      gap: 60px;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 60px;
   }
 
   .teacher-photo {
-      margin-right: 60px;
-      max-width: 300px;
+    margin-right: 60px;
+    max-width: 300px;
   }
 
   .teacher-info {
-      max-width: 600px;
-      padding: 20px;
-      line-height: 1.6;
+    max-width: 600px;
+    padding: 20px;
+    line-height: 1.6;
   }
 
   .teacher-info ul {
-      margin-top: 40px;
+    margin-top: 40px;
   }
 }

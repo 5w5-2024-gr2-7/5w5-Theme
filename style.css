@@ -543,16 +543,16 @@ button:hover {
   background-color: #5c3fbe;
 }
 
+.professor-card > h2 {
+  color: black;
+}
+
 /* Mobile Styles */
 @media (max-width: 768px) {
   .professor-card {
     width: calc(100% - 40px);
   }
 }
-.professor-card > h2 {
-  color: black;
-}
-
 /*=============== CARD ===============*/
 .contenu {
   display: grid;
@@ -616,7 +616,7 @@ button:hover {
 }
 
 /*=============== BREAKPOINTS ===============*/
-/* For small devices */
+/* Small devices */
 @media screen and (max-width: 340px) {
   .contenu {
     margin-inline: 1rem;
@@ -626,14 +626,14 @@ button:hover {
     padding: 1rem;
   }
 }
-/* For medium devices */
+/* Medium devices */
 @media screen and (min-width: 768px) {
   .card__contenu {
     grid-template-columns: repeat(2, 1fr);
     column-gap: 1.5rem;
   }
 }
-/* For large devices */
+/* Large devices */
 @media screen and (min-width: 1120px) {
   .card__contenu {
     grid-template-columns: repeat(3, 1fr);
@@ -646,9 +646,11 @@ button:hover {
     padding-inline: 2.5rem;
   }
 }
+/* SINGLE TEACHER PAGE STYLING */
 /* Mobile-first design */
 .teacher-profile {
   text-align: center;
+  margin-top: 20px;
 }
 
 .profile-container {
@@ -656,16 +658,19 @@ button:hover {
   flex-direction: column;
   align-items: center;
   padding: 20px;
+  margin-top: 20px;
 }
 
 .teacher-photo {
   width: 80%;
   max-width: 200px;
   margin-bottom: 20px;
+  border-radius: 10px;
 }
 
 .teacher-info {
   text-align: left;
+  margin-top: 10px;
 }
 
 .teacher-info ul {
