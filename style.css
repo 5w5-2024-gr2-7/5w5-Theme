@@ -709,8 +709,8 @@ button:hover {
 /* Mobile Styles */
 @media (max-width: 600px) {
   .teacher-photo {
-    width: 100%; /* Make the image take 100% of the screen width */
-    max-width: 100%; /* Ensure it doesn't exceed the screen width */
+    width: 100%;
+    max-width: 100%;
   }
   .teacher-info h2 {
     font-size: 20px;
