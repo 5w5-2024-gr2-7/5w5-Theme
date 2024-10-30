@@ -1,5 +1,4 @@
 /* SECTION DES PROFS */
-
 h1 {
   text-align: center;
   margin: 20px 0;
@@ -48,7 +47,7 @@ button:hover {
 /* Mobile Styles */
 @media (max-width: 768px) {
   .professor-card {
-    width: calc(100% - 40px);
+      width: calc(100% - 40px);
   }
 }
 
@@ -118,93 +117,183 @@ button:hover {
 /* Small devices */
 @media screen and (max-width: 340px) {
   .contenu {
-    margin-inline: 1rem;
+      margin-inline: 1rem;
   }
-
   .card__data {
-    width: 250px;
-    padding: 1rem;
+      width: 250px;
+      padding: 1rem;
   }
 }
 
 /* Medium devices */
 @media screen and (min-width: 768px) {
   .card__contenu {
-    grid-template-columns: repeat(2, 1fr);
-    column-gap: 1.5rem;
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 1.5rem;
   }
 }
 
 /* Large devices */
 @media screen and (min-width: 1120px) {
   .card__contenu {
-    grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(3, 1fr);
   }
-
   .card__img {
-    width: 348px;
+      width: 348px;
   }
-
   .card__data {
-    width: 316px;
-    padding-inline: 2.5rem;
+      width: 316px;
+      padding-inline: 2.5rem;
   }
 }
 
-/* SINGLE TEACHER PAGE STYLING */
 
-/* Mobile-first design */
-.teacher-profile {
-  text-align: center;
-  margin-top: 20px;
-}
 
 .profile-container {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   padding: 20px;
-  margin-top: 20px;
+  text-align: center;
 }
 
 .teacher-photo {
-  width: 80%;
-  max-width: 200px;
+  position: relative;
+  width: 300px;
+  height: auto;
   margin-bottom: 20px;
   border-radius: 10px;
+  overflow: hidden;
+}
+
+.teacher-photo picture,
+.teacher-photo img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
 }
 
 .teacher-info {
-  text-align: left;
+  text-align: center;
   margin-top: 10px;
+  max-width: 600px;
+  padding: 0 20px;
 }
 
-.teacher-info ul {
-  padding: 0;
-  list-style-type: none;
+.teacher-info h2 {
+  font-size: 24px;
+  margin: 10px 0;
 }
 
-/* Desktop Styles */
-@media screen and (min-width: 768px) {
+/* Button Styles */
+.teacher-buttons {
+  display: flex;
+  justify-content: left;
+  gap: 15px;
+  margin: 20px 0;
+}
+
+.teacher-buttons button {
+  background-color: #6d50e6;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 15px;
+  cursor: pointer;
+}
+
+.teacher-buttons button:hover {
+  background-color: #5c3fbe;
+}
+
+.teacher-info p {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* Mobile Styles */
+@media (max-width: 600px) {
   .profile-container {
-    flex-direction: row;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 60px;
+      padding: 10px;
   }
 
   .teacher-photo {
-    margin-right: 60px;
-    max-width: 300px;
+      width: 100%; /* Make the image take 100% of the screen width */
+      max-width: 100%; /* Ensure it doesn't exceed the screen width */
+  }
+
+  .teacher-info h2 {
+      font-size: 20px;
+  }
+
+  .teacher-info p {
+      font-size: 14px;
+  }
+  .teacher-buttons {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+/* Tablet Styles */
+@media (min-width: 601px) and (max-width: 1024px) {
+  .profile-container {
+      flex-direction: row;
+      align-items: flex-start;
+      justify-content: center;
+  }
+
+  .teacher-photo {
+      margin-right: 20px;
+      width: 300px;
+      height: auto;
   }
 
   .teacher-info {
-    max-width: 600px;
-    padding: 20px;
-    line-height: 1.6;
+      flex: 1;
+      margin-top: 0;
+      text-align: left;
   }
 
-  .teacher-info ul {
-    margin-top: 40px;
+  .teacher-info h2 {
+      font-size: 32px;
+      margin-bottom: 10px;
+  }
+
+  .teacher-info p {
+      font-size: 18px;
+  }
+}
+
+/* Desktop Styles */
+@media (min-width: 1025px) {
+  .profile-container {
+      flex-direction: row;
+      align-items: flex-start;
+      justify-content: center;
+      padding: 40px;
+  }
+
+  .teacher-photo {
+      margin-right: 40px;
+      width: 300px;
+      height: auto;
+  }
+
+  .teacher-info {
+      flex: 1;
+      margin-top: 0;
+      text-align: left;
+  }
+
+  .teacher-info h2 {
+      font-size: 40px;
+      margin-bottom: 10px;
+  }
+
+  .teacher-info p {
+      font-size: 20px;
   }
 }

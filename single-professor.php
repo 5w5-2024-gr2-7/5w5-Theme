@@ -1,47 +1,31 @@
-<?php
-/* Template Name: Individual Professor */
-get_header();
-?>
-<main class="individual-professor-page">
-    <div class="professor-wrapper" style="display: flex; align-items: flex-start; gap: 20px;">
-        <!-- Teacher Image on the Left -->
-        <?php if (has_post_thumbnail()) : ?>
-            <div class="professor-image" style="flex: 0 0 30%;">
-                <img src="<?php the_post_thumbnail_url('large'); ?>" alt="<?php the_title(); ?>" style="max-width: 100%; height: auto;">
-            </div>
+<?php get_header(); ?>
+<div class="profile-container">
+    <div class="teacher-photo">
+        <?php
+        // Get the images for mobile and desktop from ACF
+        $teacher_photo_mobile = get_field('teacher_photo_mobile');
+        $teacher_photo_desktop = get_field('teacher_photo_desktop');
+        if ($teacher_photo_mobile || $teacher_photo_desktop): ?>
+            <picture>
+                <?php if ($teacher_photo_mobile): ?>
+                    <source media="(max-width: 600px)" srcset="<?php echo esc_url($teacher_photo_mobile['url']); ?>">
+                <?php endif; ?>
+                <?php if ($teacher_photo_desktop): ?>
+                    <source media="(min-width: 601px)" srcset="<?php echo esc_url($teacher_photo_desktop['url']); ?>">
+                <?php endif; ?>
+                <img src="<?php echo esc_url($teacher_photo_desktop ? $teacher_photo_desktop['url'] : $teacher_photo_mobile['url']); ?>" alt="<?php echo esc_attr(get_field('teacher_name')); ?>">
+            </picture>
+        <?php else: ?>
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/default-photo.jpg" alt="Default Teacher Image">
         <?php endif; ?>
-
-        <!-- Teacher Information on the Right -->
-        <div class="professor-info" style="flex: 1; display: flex; flex-direction: column;">
-
-            <!-- Teacher Name -->
-            <h1 style="margin-bottom: 10px;"><?php the_title(); ?></h1>
-
-            <!-- Classes Section (To be filled later with SQL integration) -->
-            <div class="professor-classes">
-                <h2 style="margin-bottom: 5px;">Classes enseignées :</h2>
-
-                <?php 
-                // Placeholder: SQL library to fetch classes will be implemented here.
-                // Uncomment and modify later when integrating SQL.
-
-                /*
-                echo '<ul>';
-                foreach ($classes as $class) {
-                    echo '<li>' . htmlspecialchars($class['class_name']) . '</li>';
-                }
-                echo '</ul>';
-                */
-                ?>
-
-                <p style="font-style: italic;">(Classes will be added soon.)</p> <!-- Temporary message -->
-            </div>
-
-            <!-- Teacher Description -->
-            <div class="professor-description" style="margin-top: 20px;">
-                <?php the_content(); ?>
-            </div>
-        </div>
     </div>
-</main>
+    <div class="teacher-info">
+        <h2><?php echo esc_html(get_field('teacher_name')); ?></h2>
+        <div class="teacher-buttons">
+            <button>Jeux-video</button>
+            <button>Web</button>
+        </div>
+        <p><?php echo nl2br(esc_html(get_field('teacher_description'))); ?></p>
+    </div>
+</div>
 <?php get_footer(); ?>

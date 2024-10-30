@@ -16,15 +16,20 @@
   <div class="bg bg3"></div>
 
   <nav>
-    <a href="<?php echo home_url(); ?>">Maisonneuve</a>
+    <!-- Homepage Link -->
+    <a href="<?php echo esc_url(home_url('/')); ?>">Maisonneuve</a>
+
     <div class="nav-droite">
-      <a href="<?php echo home_url('/stages'); ?>">Stages</a>
-      <a href="<?php echo home_url('/cours'); ?>">Cours</a>
-      <a href="<?php echo home_url('/enseignants'); ?>">Professeurs</a>
-      <a href="<?php echo home_url('/projet'); ?>">Projets</a>
+      <!-- Links with page IDs for Plain Permalinks -->
+      <a href="<?php echo esc_url(add_query_arg('page_id', 5, home_url())); ?>">Stages</a>
+      <a href="<?php echo esc_url(add_query_arg('page_id', 6, home_url())); ?>">Cours</a>
+      <a href="<?php echo esc_url(add_query_arg('page_id', 9, home_url())); ?>">Professeurs</a>  <!-- Enseignants -->
+      <a href="<?php echo esc_url(add_query_arg('page_id', 8, home_url())); ?>">Projets</a>
     </div>
   </nav>
 
   <header>
-    <div class="titre-principal">Où la création commence *</div>
+
   </header>
+</body>
+</html>
