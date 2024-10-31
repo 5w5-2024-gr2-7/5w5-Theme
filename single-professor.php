@@ -2,7 +2,6 @@
 <div class="profile-container">
     <div class="teacher-photo">
         <?php
-        // Get the images for mobile and desktop from ACF
         $teacher_photo_mobile = get_field('teacher_photo_mobile');
         $teacher_photo_desktop = get_field('teacher_photo_desktop');
         if ($teacher_photo_mobile || $teacher_photo_desktop): ?>

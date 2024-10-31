@@ -15,7 +15,7 @@
   <div class="bg bg2"></div>
   <div class="bg bg3"></div>
 
-  <nav>
+  <nav class="header">
     <!-- Homepage Link -->
     <a href="<?php echo esc_url(home_url('/')); ?>">Maisonneuve</a>
 
@@ -27,9 +27,5 @@
       <a href="<?php echo esc_url(add_query_arg('page_id', 8, home_url())); ?>">Projets</a>
     </div>
   </nav>
-
-  <header>
-
-  </header>
 </body>
 </html>
