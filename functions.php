@@ -27,21 +27,26 @@ function register_professor_post_type() {
         'labels' => $labels,
         'public' => true,
         'has_archive' => true,
-        'rewrite' => array('slug' => 'professor'), // Sets URL slug to /professor/
-        'supports' => array('title', 'editor', 'thumbnail'), // Enables title, content, and featured image
-        'show_in_rest' => true, // Enables Gutenberg editor and API support
-        'menu_icon' => 'dashicons-welcome-learn-more', // Adds an icon in the admin menu
+        'rewrite' => array('slug' => 'professors'), // Sets URL slug to /professor/
+        'supports' => array('title', 'editor', 'thumbnail'),
+        'show_in_rest' => true,
+        'menu_icon' => 'dashicons-welcome-learn-more',
     );
 
     register_post_type('professor', $args);
 }
 add_action('init', 'register_professor_post_type');
 
-// Enqueue the theme's stylesheet.
+
 function theme_enqueue_styles() {
     wp_enqueue_style('main-style', get_stylesheet_uri());
 }
 add_action('wp_enqueue_scripts', 'theme_enqueue_styles');
 
-// Enable featured image support
-add_theme_support('post-thumbnails');
+function mesoptions() {
+    add_theme_support('post-thumbnails');
+    add_theme_support('menus');
+}
+
+add_action('after_setup_theme', 'mesoptions');
+?>
