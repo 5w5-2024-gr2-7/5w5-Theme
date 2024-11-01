@@ -12,19 +12,19 @@
                 <?php if ($teacher_photo_desktop): ?>
                     <source media="(min-width: 601px)" srcset="<?php echo esc_url($teacher_photo_desktop['url']); ?>">
                 <?php endif; ?>
-                <img src="<?php echo esc_url($teacher_photo_desktop ? $teacher_photo_desktop['url'] : $teacher_photo_mobile['url']); ?>" alt="<?php echo esc_attr(get_field('teacher_name')); ?>">
+                <img src="<?php echo esc_url($teacher_photo_desktop ? $teacher_photo_desktop['url'] : $teacher_photo_mobile['url']); ?>" alt="<?php the_title(); ?>">
             </picture>
         <?php else: ?>
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/default-photo.jpg" alt="Default Teacher Image">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/default-photo.jpg" alt="<?php the_title(); ?>">
         <?php endif; ?>
     </div>
     <div class="teacher-info">
-        <h2><?php echo esc_html(get_field('teacher_name')); ?></h2>
+        <h2><?php the_title(); ?></h2>
         <div class="teacher-buttons">
             <button>Jeux-video</button>
             <button>Web</button>
         </div>
-        <p><?php echo nl2br(esc_html(get_field('teacher_description'))); ?></p>
+        <p><?php the_content(); ?></p>
     </div>
 </div>
 <?php get_footer(); ?>
