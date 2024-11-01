@@ -23,7 +23,7 @@
       <!-- Links with page IDs for Plain Permalinks -->
       <a href="<?php echo esc_url(add_query_arg('page_id', 5, home_url())); ?>">Stages</a>
       <a href="<?php echo esc_url(add_query_arg('page_id', 6, home_url())); ?>">Cours</a>
-      <a href="<?php echo esc_url(add_query_arg('page_id', 9, home_url())); ?>">Professeurs</a>  <!-- Enseignants -->
+      <a href="<?php echo esc_url(add_query_arg('page_id', 19, home_url())); ?>">Professeurs</a>  <!-- Enseignants -->
       <a href="<?php echo esc_url(add_query_arg('page_id', 8, home_url())); ?>">Projets</a>
     </div>
   </nav>
