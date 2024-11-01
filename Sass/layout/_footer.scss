@@ -1,96 +1,118 @@
-/* Footer général */
+/* Composition de base */
 footer {
-    background-color: #143139;
-    color: white;
-    padding: 2em 1em;
-    text-align: center;
-    font-family: 'FontGreycliff';
-  }
-  
-  /* Partenaires */
-  .partenaires h2 {
-    margin-bottom: 1em;
-  }
-  
-  .partenaires > h2 {
-    font-family: 'AppleGaramond';
-  }
-  
-  .partenaires-images {
+  position: relative;
+  display: flex;
+  overflow: hidden;
+  flex-direction: column;
+  background-color: #143139;
+  color: white;
+  text-align: center;
+  font-family: "FontGreycliff";
+}
+
+/* Les 3 partis du footer */
+.footer-sections {
+  margin-bottom: 1.5em;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 100;
+}
+
+/* Chacune des partis individuelles du footer */
+.footer-section {
+  margin-bottom: 1.5em;
+  text-align: center;
+  justify-content: space-around;
+  display: flex;
+}
+
+/* Le titre de chaques sections */
+.footer-section h3 {
+  position: relative;
+  margin-bottom: 0.5em;
+  font-family: "greycliff-cf", sans-serif;
+  font-size: clamp(1.3rem, -1.5rem + 5.6vw, 1.45rem);
+  font-style: normal;
+}
+
+/* Contenu complèt de chaques sections */
+.contenu-footer-section {
+  text-align: center;
+}
+
+/* Contenu complèt de l'information de chaques sections */
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+/* Contenu individuel de l'information de chaques sections */
+.footer-section ul li {
+  margin-bottom: 0.5em;
+  font-family: "greycliff-cf", sans-serif;
+  font-size: clamp(-0.7rem, 1rem + 0.1vw, 5rem);
+  font-style: normal;
+}
+
+/* Les liens clickables */
+.footer-section ul li a {
+  text-decoration: none;
+  color: white;
+}
+
+
+/********* Media Query *********/
+
+/* Responsivité pour Tablette */
+@media screen and (min-width: 768px) {
+  footer {
+    position: relative;
     display: flex;
-    justify-content: space-around;
-    margin-bottom: 2em;
-  }
-  
-  .partenaires-images img {
-    width: 105px;
-    height: auto;
-    margin: 0 10px;
-  }
-  
-  /* Footer sections */
-  .footer-sections {
-    display: flex;
+    overflow: hidden;
     flex-direction: column;
-    align-items: center;
   }
-  
+  /* Mets les section en row au lieu d'en ranger */
+  .footer-sections {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-top: 7vh;
+  }
+  /* Élargie le section */
   .footer-section {
-    margin-bottom: 1.5em;
-    text-align: center;
+    width: 30%;
+    margin-bottom: 0;
   }
-  
+  /* Élargie le contenue de la section */
+  .contenu-footer-section {
+    width: 67%;
+    text-align: left;
+  }
+  /* Alligne le titre à gauche */
   .footer-section h3 {
     position: relative;
-    padding-left: 25px;
     margin-bottom: 0.5em;
-    font-family: 'fontGreycliffBold';
+    text-align: left;
+    justify-content: flex-start;
+    display: flex;
+    flex-direction: row;
   }
-  
-  .footer-section h3::before , .info-additionnel h3::before {
-    content: '●';
-    position: absolute;
-    transform: translateX(-150%) translateY(-15%);
-    font-size: 1.2em;
-    color: #6bc1e6;
+}
+
+/* Pour Desktop */
+@media screen and (min-width: 1448px) {
+
+  /* AJuste la largeur de la section */
+  .footer-section {
+    width: 32%;
+    margin-bottom: 0;
   }
-  
-  .footer-section ul {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .footer-section ul li {
-    margin-bottom: 0.5em;
+  .contenu-footer-section {
+    width: 45%;
+    text-align: left;
   }
 
-  footer>p {
-    font-family: Arial, Helvetica, sans-serif;
-  }
-  
-  /* Responsivité pour écrans plus larges */
-  @media screen and (min-width: 768px) {
-    .footer-sections {
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: flex-start;
-      text-align: left;
-    }
-  
-    .footer-section {
-      width: 30%;
-      margin-bottom: 0;
-    }
-  
-    .partenaires-images img {
-      width: 80px;
-    }
-  
-    .nav-droite {
-      margin-left: 0;
-    }
-  
-    .titre-principal {
-      font-size: 3.5em;
-    }
-  }
+}
+
