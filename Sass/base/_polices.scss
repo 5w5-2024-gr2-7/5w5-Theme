@@ -1,18 +1,17 @@
 @font-face {
     font-family: 'FontGreycliff';
-    src: url("../../polices/Greycliff/Fontspring-DEMO-greycliffcf-light.otf");
+    src: url("polices/Greycliff/Fontspring-DEMO-greycliffcf-light.otf") format('opentype');
 }
 
 @font-face {
     font-family: 'FontGreycliffBold';
-    src: url("../../polices/Greycliff/Fontspring-DEMO-greycliffcf-bold.otf");
+    src: url("polices/Greycliff/Fontspring-DEMO-greycliffcf-bold.otf") format('opentype');
 }
 
 @font-face {
     font-family: 'AppleGaramond';
-    src: url("../../polices/apple_garamond/AppleGaramond-Italic.ttf");
+    src: url("polices/AppleGaramond/AppleGaramond-Italic.ttf") format('truetype');
 }
-
 .content {
     background-color: rgba(255, 255, 255, .8);
     border-radius: .25em;

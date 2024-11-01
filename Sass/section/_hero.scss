@@ -1,0 +1,81 @@
+.header {
+  position: relative;
+  z-index: 3;
+}
+
+.OuLa {
+  position: relative;
+  height: calc(100vh - 50px - 4em);
+  padding: 20px;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.content-wrapper {
+  text-align: left;
+  z-index: 2;
+}
+
+.Swirl {
+  position: absolute;
+  top: -114px;
+  right: 100px;
+  width: auto;
+  height: 100vh;
+  margin-left: 20px;
+  border-radius: 10px;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.Swirl picture,
+.Swirl img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.OuLa h1 {
+  position: relative;
+  font-size: 36px;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.OuLa h1 span {
+  font-style: italic;
+  color: black;
+}
+
+/* Tablet Styles */
+@media (min-width: 601px) and (max-width: 1024px) {
+  .OuLa {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 20px 40px;
+  }
+
+  .OuLa h1 {
+      font-size: 48px;
+      margin-top: 20px;
+  }
+}
+
+/* Desktop Styles */
+@media (min-width: 1025px) {
+  .OuLa {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 40px 80px;
+  }
+
+  .OuLa h1 {
+      font-size: 100px;
+      margin-top: 20px;
+  }
+  .OuLa h1 span {
+      font-family: 'AppleGaramond';
+  }
+}

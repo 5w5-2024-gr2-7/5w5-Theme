@@ -1,10 +1,27 @@
+<?php
 
-<?php get_header() ?>
+/* Template Name: Home */
+?>
+<?php
+get_header();
+?>
+<div class="OuLa">
+    <div class="content-wrapper">
+        <h1>
+            Où la <span>Création</span><br>commence
+        </h1>
+    </div>
+    <div class="Swirl">
+        <picture>
+            <img src="http://localhost/5w5-mathieu/wp-content/uploads/2024/10/Swirl.png" alt="">
+        </picture>
+    </div>
+</div>
 
   <div class="APropos arriere-plan-bleu">
     <div class="contenu-about">
       <div class="image-apropos">
-        <img src="images/Apropos.jpg" alt="À propos">
+        <img src="http://localhost/5w5-mathieu/wp-content/uploads/2024/10/Apropos-scaled.jpg" alt="À propos">
       </div>
       <div class="about-contenu">
         <h2>À propos</h2>
