@@ -1,5 +1,4 @@
 @charset "UTF-8";
-/*https://developer.wordpress.org/themes/basics/main-stylesheet-style-css/*/
 /*
 Theme Name: Refonte-TIM
 Theme URI: https://referenced.ca
@@ -13,6 +12,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: theme-gr2
 Ce thème a été développé dans le cadre du cours 4W4
 */
+/*https://developer.wordpress.org/themes/basics/main-stylesheet-style-css/*/
 /* ///////////////////////////////////////////////////////////////// */
 /* Règles de base                                                    */
 /* ///////////////////////////////////////////////////////////////// */
@@ -35,15 +35,15 @@ html {
 
 @font-face {
   font-family: "FontGreycliff";
-  src: url("polices/Greycliff/Fontspring-DEMO-greycliffcf-light.otf") format("opentype");
+  src: url("../../polices/Greycliff/Fontspring-DEMO-greycliffcf-light.otf");
 }
 @font-face {
   font-family: "FontGreycliffBold";
-  src: url("polices/Greycliff/Fontspring-DEMO-greycliffcf-bold.otf") format("opentype");
+  src: url("../../polices/Greycliff/Fontspring-DEMO-greycliffcf-bold.otf");
 }
 @font-face {
   font-family: "AppleGaramond";
-  src: url("polices/AppleGaramond/AppleGaramond-Italic.ttf") format("truetype");
+  src: url("../../polices/apple_garamond/AppleGaramond-Italic.ttf");
 }
 .content {
   background-color: rgba(255, 255, 255, 0.8);
@@ -527,6 +527,7 @@ h1 {
 
 .professor-card img {
   max-width: 100%;
+  border-radius: 5px;
 }
 
 button {
@@ -542,16 +543,16 @@ button:hover {
   background-color: #5c3fbe;
 }
 
-.professor-card > h2 {
-  color: black;
-}
-
 /* Mobile Styles */
 @media (max-width: 768px) {
   .professor-card {
     width: calc(100% - 40px);
   }
 }
+.professor-card > h2 {
+  color: black;
+}
+
 /*=============== CARD ===============*/
 .contenu {
   display: grid;
@@ -615,7 +616,7 @@ button:hover {
 }
 
 /*=============== BREAKPOINTS ===============*/
-/* Small devices */
+/* For small devices */
 @media screen and (max-width: 340px) {
   .contenu {
     margin-inline: 1rem;
@@ -625,14 +626,14 @@ button:hover {
     padding: 1rem;
   }
 }
-/* Medium devices */
+/* For medium devices */
 @media screen and (min-width: 768px) {
   .card__contenu {
     grid-template-columns: repeat(2, 1fr);
     column-gap: 1.5rem;
   }
 }
-/* Large devices */
+/* For large devices */
 @media screen and (min-width: 1120px) {
   .card__contenu {
     grid-template-columns: repeat(3, 1fr);
@@ -645,140 +646,55 @@ button:hover {
     padding-inline: 2.5rem;
   }
 }
+/* Mobile-first design */
+.teacher-profile {
+  text-align: center;
+}
+
 .profile-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  text-align: center;
+  padding: 20px;
 }
 
 .teacher-photo {
-  position: relative;
-  width: 300px;
-  height: auto;
+  width: 80%;
+  max-width: 200px;
   margin-bottom: 20px;
-  overflow: hidden;
-}
-
-.teacher-photo picture,
-.teacher-photo img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
 }
 
 .teacher-info {
-  text-align: center;
-  margin-top: 10px;
-  max-width: 600px;
-  padding: 0 20px;
+  text-align: left;
 }
 
-.teacher-info h2 {
-  font-size: 24px;
-  margin: 10px 0;
+.teacher-info ul {
+  padding: 0;
+  list-style-type: none;
 }
 
-/* Button Styles */
-.teacher-buttons {
-  display: flex;
-  justify-content: left;
-  gap: 15px;
-  margin: 20px 0;
-}
-
-.teacher-buttons button {
-  background-color: #6d50e6;
-  color: white;
-  border: none;
-  border-radius: 20px;
-  padding: 10px 15px;
-  cursor: pointer;
-}
-
-.teacher-buttons button:hover {
-  background-color: #5c3fbe;
-}
-
-.teacher-info p {
-  font-size: 16px;
-  line-height: 1.5;
-}
-
-/* Mobile Styles */
-@media (max-width: 600px) {
-  .teacher-photo {
-    width: 100%;
-    max-width: 100%;
-  }
-  .teacher-info h2 {
-    font-size: 20px;
-  }
-  .teacher-info p {
-    font-size: 14px;
-  }
-  .teacher-buttons {
-    display: flex;
-    justify-content: center;
-  }
-}
-/* Tablet Styles */
-@media (min-width: 601px) and (max-width: 1024px) {
-  .profile-container {
-    flex-direction: row;
-    align-items: flex-start;
-    justify-content: center;
-  }
-  .teacher-photo {
-    margin-right: 20px;
-    width: 300px;
-    height: auto;
-  }
-  .teacher-info {
-    flex: 1;
-    margin-top: 0;
-    text-align: left;
-  }
-  .teacher-info h2 {
-    font-size: 32px;
-    margin-bottom: 10px;
-  }
-  .teacher-info p {
-    font-size: 18px;
-  }
-}
 /* Desktop Styles */
-@media (min-width: 1025px) {
+@media screen and (min-width: 768px) {
   .profile-container {
     flex-direction: row;
-    align-items: flex-start;
     justify-content: center;
-    padding: 40px;
+    align-items: flex-start;
+    gap: 60px;
   }
   .teacher-photo {
-    margin-right: 40px;
-    width: 300px;
-    height: auto;
+    margin-right: 60px;
+    max-width: 300px;
   }
   .teacher-info {
-    flex: 1;
-    margin-top: 0;
-    text-align: left;
+    max-width: 600px;
+    padding: 20px;
+    line-height: 1.6;
   }
-  .teacher-info h2 {
-    font-size: 40px;
-    margin-bottom: 10px;
-  }
-  .teacher-info p {
-    font-size: 20px;
+  .teacher-info ul {
+    margin-top: 40px;
   }
 }
 /* Style général pour le contenu de la section "À propos" */
-.APropos {
-  height: 100vh;
-}
-
 .contenu-about {
   display: flex;
   flex-wrap: wrap;
@@ -1244,88 +1160,10 @@ button:hover {
     margin-bottom: 40px;
   }
 }
-.header {
-  position: relative;
-  z-index: 3;
-}
-
-.OuLa {
-  position: relative;
-  height: calc(100vh - 50px - 4em);
-  padding: 20px;
-  text-align: left;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.content-wrapper {
-  text-align: left;
-  z-index: 2;
-}
-
-.Swirl {
-  position: absolute;
-  top: -114px;
-  right: 100px;
-  width: auto;
-  height: 100vh;
-  margin-left: 20px;
-  border-radius: 10px;
-  overflow: hidden;
-  z-index: 1;
-}
-
-.Swirl picture,
-.Swirl img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.OuLa h1 {
-  position: relative;
-  font-size: 36px;
-  margin: 0;
-  line-height: 1.2;
-}
-
-.OuLa h1 span {
-  font-style: italic;
-  color: black;
-}
-
-/* Tablet Styles */
-@media (min-width: 601px) and (max-width: 1024px) {
-  .OuLa {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 20px 40px;
-  }
-  .OuLa h1 {
-    font-size: 48px;
-    margin-top: 20px;
-  }
-}
-/* Desktop Styles */
-@media (min-width: 1025px) {
-  .OuLa {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 40px 80px;
-  }
-  .OuLa h1 {
-    font-size: 100px;
-    margin-top: 20px;
-  }
-  .OuLa h1 span {
-    font-family: "AppleGaramond";
-  }
-}
 /* ///////////////////////////////////////////////////////////////// */
 /* Règles de layout                                                  */
 /* ///////////////////////////////////////////////////////////////// */
-.header {
+nav {
   display: flex;
   justify-content: space-between;
   background-color: transparent;
@@ -1333,8 +1171,6 @@ button:hover {
   border: 2px solid white;
   border-radius: 25px;
   margin: 1em;
-  align-items: center;
-  height: 50px;
 }
 
 nav a {
@@ -1365,115 +1201,95 @@ nav a:first-child {
     font-size: 1.2em;
   }
 }
-/* Composition de base */
+/* Footer général */
 footer {
-  position: relative;
-  display: flex;
-  overflow: hidden;
-  flex-direction: column;
   background-color: #143139;
   color: white;
+  padding: 2em 1em;
   text-align: center;
   font-family: "FontGreycliff";
 }
 
-/* Les 3 partis du footer */
+/* Partenaires */
+.partenaires h2 {
+  margin-bottom: 1em;
+}
+
+.partenaires > h2 {
+  font-family: "AppleGaramond";
+}
+
+.partenaires-images {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 2em;
+}
+
+.partenaires-images img {
+  width: 105px;
+  height: auto;
+  margin: 0 10px;
+}
+
+/* Footer sections */
 .footer-sections {
-  margin-bottom: 1.5em;
-  text-align: left;
   display: flex;
   flex-direction: column;
   align-items: center;
-  z-index: 100;
 }
 
-/* Chacune des partis individuelles du footer */
 .footer-section {
   margin-bottom: 1.5em;
   text-align: center;
-  justify-content: space-around;
-  display: flex;
 }
 
-/* Le titre de chaques sections */
 .footer-section h3 {
   position: relative;
+  padding-left: 25px;
   margin-bottom: 0.5em;
-  font-family: "greycliff-cf", sans-serif;
-  font-size: clamp(1.3rem, -1.5rem + 5.6vw, 1.45rem);
-  font-style: normal;
+  font-family: "fontGreycliffBold";
 }
 
-/* Contenu complèt de chaques sections */
-.contenu-footer-section {
-  text-align: center;
+.footer-section h3::before, .info-additionnel h3::before {
+  content: "●";
+  position: absolute;
+  transform: translateX(-150%) translateY(-15%);
+  font-size: 1.2em;
+  color: #6bc1e6;
 }
 
-/* Contenu complèt de l'information de chaques sections */
 .footer-section ul {
   list-style: none;
   padding: 0;
 }
 
-/* Contenu individuel de l'information de chaques sections */
 .footer-section ul li {
   margin-bottom: 0.5em;
-  font-family: "greycliff-cf", sans-serif;
-  font-size: clamp(-0.7rem, 1rem + 0.1vw, 5rem);
-  font-style: normal;
 }
 
-/* Les liens clickables */
-.footer-section ul li a {
-  text-decoration: none;
-  color: white;
+footer > p {
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-/********* Media Query *********/
-/* Responsivité pour Tablette */
+/* Responsivité pour écrans plus larges */
 @media screen and (min-width: 768px) {
-  footer {
-    position: relative;
-    display: flex;
-    overflow: hidden;
-    flex-direction: column;
-  }
-  /* Mets les section en row au lieu d'en ranger */
   .footer-sections {
     flex-direction: row;
-    align-items: flex-start;
     justify-content: space-between;
-    margin-top: 7vh;
+    align-items: flex-start;
+    text-align: left;
   }
-  /* Élargie le section */
   .footer-section {
     width: 30%;
     margin-bottom: 0;
   }
-  /* Élargie le contenue de la section */
-  .contenu-footer-section {
-    width: 67%;
-    text-align: left;
+  .partenaires-images img {
+    width: 80px;
   }
-  /* Alligne le titre à gauche */
-  .footer-section h3 {
-    position: relative;
-    margin-bottom: 0.5em;
-    text-align: left;
-    justify-content: flex-start;
-    display: flex;
-    flex-direction: row;
+  .nav-droite {
+    margin-left: 0;
   }
-}
-/* Pour Desktop */
-@media screen and (min-width: 1448px) {
-  /* AJuste la largeur de la section */
-  .footer-section {
-    width: 32%;
-    margin-bottom: 0;
-  }
-  .contenu-footer-section {
-    width: 45%;
-    text-align: left;
+  .titre-principal {
+    font-size: 3.5em;
   }
 }
