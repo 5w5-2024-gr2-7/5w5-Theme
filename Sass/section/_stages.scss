@@ -61,7 +61,6 @@
         margin-bottom: 40px;
     }
 
-    /* Conteneur pour centrer et aligner les sections stage-type et stage-company côte à côte */
     .stage-type, .stage-company {
         display: flex;
         flex-direction: column;
@@ -69,11 +68,10 @@
         margin-bottom: 40px;
     }
 
-    /* Nouvelle règle pour aligner les deux sections */
     .stage-wrapper {
         display: flex;
         justify-content: center;
-        gap: 40px; /* Espace entre les deux éléments */
+        gap: 40px;
     }
 
     .scroll-button {
