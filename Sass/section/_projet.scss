@@ -1,9 +1,16 @@
 // Section de projet au complet
 
 .galerie-projets {
+    display: flex;
+    width: 100%;
     padding: 20px;
     text-align: center;
+    flex-direction: column;
 }
+
+
+
+
 
 .galerie-projets h1 {
     font-size: 2rem;
@@ -31,8 +38,12 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    align-items: center;
     gap: 20px;
+    size: 100%;
 }
+
+
 
 .galerie-projets>h1 {
     color: white;
@@ -46,10 +57,15 @@
     flex: 0 1 calc(100% - 40px);
     max-width: 300px;
     text-align: center;
+    
+
+    
 }
 
 .projet img {
-    width: 100%;
+    display: flex;
+    background-color: blue;
+    width: 50vw;
     height: auto;
     border-radius: 8px;
 }
@@ -63,7 +79,14 @@
 @media (min-width: 768px) {
     .projet {
         flex: 0 1 calc(33.33% - 40px);
+       
     }
+
+   
+    
+
+
+
 }
 
 

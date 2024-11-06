@@ -1,5 +1,4 @@
 @charset "UTF-8";
-/*https://developer.wordpress.org/themes/basics/main-stylesheet-style-css/*/
 /*
 Theme Name: Refonte-TIM
 Theme URI: https://referenced.ca
@@ -13,6 +12,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: theme-gr2
 Ce thème a été développé dans le cadre du cours 4W4
 */
+/*https://developer.wordpress.org/themes/basics/main-stylesheet-style-css/*/
 /* ///////////////////////////////////////////////////////////////// */
 /* Règles de base                                                    */
 /* ///////////////////////////////////////////////////////////////// */
@@ -952,8 +952,11 @@ button:hover {
   }
 }
 .galerie-projets {
+  display: flex;
+  width: 100%;
   padding: 20px;
   text-align: center;
+  flex-direction: column;
 }
 
 .galerie-projets h1 {
@@ -982,7 +985,9 @@ button:hover {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  align-items: center;
   gap: 20px;
+  size: 100%;
 }
 
 .galerie-projets > h1 {
@@ -1000,7 +1005,9 @@ button:hover {
 }
 
 .projet img {
-  width: 100%;
+  display: flex;
+  background-color: blue;
+  width: 50vw;
   height: auto;
   border-radius: 8px;
 }
@@ -1476,4 +1483,4 @@ footer {
     width: 45%;
     text-align: left;
   }
-}
+}/*# sourceMappingURL=style.css.map */
