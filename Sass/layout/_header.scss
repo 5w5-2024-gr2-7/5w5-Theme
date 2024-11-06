@@ -13,7 +13,7 @@
 nav a {
   color: white;
   text-decoration: none;
-  font-size: .8em;
+  font-size: 0.8em;
 }
 
 nav a:first-child {
@@ -26,15 +26,30 @@ nav a:first-child {
   flex-grow: 1;
   max-width: 500px;
   margin-left: 30px;
-}
 
-.nav-droite a {
-  flex-grow: 1;
-  text-align: center;
+  a {
+    flex-grow: 1;
+    text-align: center;
+  }
 }
 
 @media screen and (min-width: 768px) {
   nav a {
     font-size: 1.2em;
   }
+}
+
+.nav-links li a:hover {
+  color: #f0f0f0;
+}
+
+.nav-links {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.nav-links li {
+  margin: 0 15px;
 }
