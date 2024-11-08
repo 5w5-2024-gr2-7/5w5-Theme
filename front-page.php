@@ -24,7 +24,7 @@ get_header();
     </div>
     <div class="contenu-about">
         <div class="image-apropos">
-            <img src="<?php echo get_site_url(); ?>/wp-content/uploads/2024/11/Apropos-scaled.jpg" alt="À propos">
+            <img src="<?php echo get_site_url(); ?>/wp-content/uploads/2024/11/Apropos.jpg" alt="À propos">
         </div>
         <div class="about-contenu">
             <p>Cette formation de trois ans prépare les étudiants à relever les défis du secteur technologique et créatif en constante évolution. Si l'apprentissage des compétences suivantes vous intéresse, vous vous trouvez au bon programme!</p>
@@ -45,19 +45,19 @@ get_header();
  
 <div class="conteneur-boutons">
     <a href="cours.html" class="bouton" id="jeu">
-        <div class="bouton-image" style="background-image: url('<?php echo get_site_url(); ?>/wp-content/uploads/2024/11/jeu-scaled.jpg');"></div>
+        <div class="bouton-image" style="background-image: url('<?php echo get_site_url(); ?>/wp-content/uploads/2024/11/jeu.jpg');"></div>
         <div class="bouton-title">Jeu</div>
     </a>
     <a href="cours.html" class="bouton" id="web">
-        <div class="bouton-image" style="background-image: url('<?php echo get_site_url(); ?>/wp-content/uploads/2024/11/web-scaled.jpg');"></div>
+        <div class="bouton-image" style="background-image: url('<?php echo get_site_url(); ?>/wp-content/uploads/2024/11/web.jpg');"></div>
         <div class="bouton-title">Web</div>
     </a>
     <a href="cours.html" class="bouton" id="conception-graphique">
-        <div class="bouton-image" style="background-image: url('<?php echo get_site_url(); ?>/wp-content/uploads/2024/11/conceptionGraphique-scaled.jpg');"></div>
+        <div class="bouton-image" style="background-image: url('<?php echo get_site_url(); ?>/wp-content/uploads/2024/11/conceptionGraphique.jpg');"></div>
         <div class="bouton-title">Conception graphique</div>
     </a>
     <a href="cours.html" class="bouton" id="3D">
-        <div class="bouton-image" style="background-image: url('<?php echo get_site_url(); ?>/wp-content/uploads/2024/11/3D-scaled.jpg');"></div>
+        <div class="bouton-image" style="background-image: url('<?php echo get_site_url(); ?>/wp-content/uploads/2024/11/3D.jpg');"></div>
         <div class="bouton-title">3D</div>
     </a>
     <a href="cours.html" class="bouton" id="projets">
