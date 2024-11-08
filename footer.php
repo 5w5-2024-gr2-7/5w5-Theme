@@ -37,7 +37,7 @@
         </div>
       </div>
       </div>
-      <img src="http://localhost/5w5-mathieu/wp-content/uploads/2024/10/tim-2.png" alt="image">
+      <img src="http://localhost:8081/5w5-gdv/wp-content/uploads/2024/11/tim-2-1.png" alt="image">
     </footer>
   <?php
 wp_footer();
