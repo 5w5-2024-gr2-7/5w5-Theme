@@ -1,46 +1,38 @@
-<?php get_header(); ?>
+<?php
+/*
+Template Name: Stages
+*/
+get_header();
+?>
 
 <main>
     <section class="stages-section">
         <h1>Les stages</h1>
+        <div class="stage-list">
+            <?php
+            $args = array('post_type' => 'stages', 'posts_per_page' => -1);
+            $stages_query = new WP_Query($args);
+            if ($stages_query->have_posts()) :
+                while ($stages_query->have_posts()) : $stages_query->the_post();
+            ?>
+                    <div class="stage-item">
+                        <h2><?php the_title(); ?></h2>
+                        <p><?php the_field('description'); ?></p>
+                        <?php
+$logo = get_field('logo_de_lentreprise');
+if ($logo) :
+?>
+    <img src="<?php echo esc_url($logo['url']); ?>" alt="<?php the_title(); ?>">
+<?php endif; ?>
 
-        <div class="filtration-stage">
-            <div class="stage-type">
-                <div class="volet-dropdown">
-                    <span>Type</span>
-                    <select>
-                        <option value="web">Design</option>
-                        <option value="jeux">Jeux</option>
-                        <option value="graphisme">Web</option>
-                        <option value="graphisme">Vidéo</option>
-                    </select>
-                </div>
-            </div>
-            <div class="stage-company">
-                <div class="volet-dropdown">
-                    <span>Compagnie</span>
-                    <select>
-                        <option value="ubisoft">Ubisoft</option>
-                        <option value="bombardier">Bombardier</option>
-                        <option value="uptimum">Groupe Uptimum</option>
-                        <option value="repentigny">Ville de Repentigny</option>
-                        <option value="ubisoft2">Ubisoft 2</option>
-                        <option value="indexdesign">Index-Design</option>
-                        <option value="princecharles">Prince Charles</option>
-                        <option value="sinep">Sinep</option>
-                        <option value="lipari">Lipari design</option>
-                    </select>
-                </div>
-            </div>
-        </div>
-
-        <div class="stage-details">
-            <h1>Ubisoft</h1>
-
-            <div class="description-stage">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                <img src="<?php echo get_template_directory_uri(); ?>/images/Apropos.jpg" alt="Logo Ubisoft">
-            </div>
+                    </div>
+            <?php
+                endwhile;
+            else :
+                echo '<p>Aucun stage trouvé</p>';
+            endif;
+            wp_reset_postdata();
+            ?>
         </div>
     </section>
 </main>
