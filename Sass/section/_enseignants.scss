@@ -52,10 +52,9 @@ button:hover {
 
 /*=============== CARD ===============*/
 .contenu {
-  display: grid;
   place-items: center;
   margin-inline: 1.5rem;
-  padding-block: 5rem;
+  padding-bottom: 5rem;
 }
 
 .card__contenu {
@@ -69,7 +68,10 @@ button:hover {
 }
 
 .card__img {
-  width: 328px;
+  width: 100%;
+  height: 220px; /* Adjust height as needed */
+  background-size: cover;
+  background-position: center;
   border-radius: 1.5rem;
 }
 
@@ -138,7 +140,7 @@ button:hover {
       grid-template-columns: repeat(3, 1fr);
   }
   .card__img {
-      width: 348px;
+      height: 250px;
   }
   .card__data {
       width: 316px;
