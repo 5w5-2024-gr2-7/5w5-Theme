@@ -19,11 +19,11 @@ get_header();
                         <h2><?php the_title(); ?></h2>
                         <p><?php the_field('description'); ?></p>
                         <?php
-$logo = get_field('logo_de_lentreprise');
-if ($logo) :
-?>
-    <img src="<?php echo esc_url($logo['url']); ?>" alt="<?php the_title(); ?>">
-<?php endif; ?>
+                        $logo = get_field('logo_de_lentreprise');
+                        if ($logo) :
+                        ?>
+                            <img src="<?php echo esc_url($logo['url']); ?>" alt="<?php the_title(); ?>">
+                        <?php endif; ?>
 
                     </div>
             <?php
