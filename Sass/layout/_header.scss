@@ -20,7 +20,7 @@ body.no-scroll {
   justify-content: flex-end;
   align-items: center;
   position: relative;
-  border: 1px solid black;
+  border: 1px solid rgb(255, 255, 255);
   border-radius: 9rem;
   width: 100%;
   padding: 1rem;
@@ -38,7 +38,7 @@ body.no-scroll {
   font-weight: 900;
   font-style: normal;
   text-decoration: none;
-  color: black;
+  color: rgb(255, 255, 255);
   font-size: clamp(1.563rem, 1.349rem + 0.526vw, 2.188rem);
 }
 
@@ -60,7 +60,7 @@ body.no-scroll {
   margin-bottom: -7px;
   transition: 0.15s ease-in-out;
   position: relative;
-  color: black;
+  color: rgb(255, 255, 255);
   font-family: "garamond-premier-pro-subhead", serif;
   font-weight: 400;
   font-style: normal;
@@ -75,7 +75,7 @@ body.no-scroll {
   left: 0;
   width: 0;
   height: 1px;
-  background-color: black;
+  background-color: rgb(255, 255, 255);
   transition: 0.15s ease-in-out;
 }
 

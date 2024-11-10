@@ -1433,7 +1433,7 @@ h2 {
 
 .h1-Contact {
   font-family: AppleGaramond2;
-  color: black;
+  color: rgb(255, 255, 255);
   font-size: clamp(2.5rem, 1.928rem + 2.347vw, 5.625rem);
   margin-left: 2rem;
   margin-right: 2rem;
@@ -1448,7 +1448,7 @@ h2 {
 }
 
 .h2-Contact {
-  color: black;
+  color: rgb(255, 255, 255);
   font-family: "greycliff-cf", sans-serif;
   font-weight: 700;
   font-style: normal;
@@ -1456,7 +1456,7 @@ h2 {
 }
 
 .h3-Contact {
-  color: black;
+  color: rgb(255, 255, 255);
   font-family: "greycliff-cf", sans-serif;
   font-weight: 100;
   font-style: normal;
@@ -1477,7 +1477,7 @@ h2 {
   font-family: "greycliff-cf", sans-serif;
   font-weight: 400;
   font-style: normal;
-  color: black;
+  color: rgb(255, 255, 255);
 }
 
 .inputBox input,
@@ -1487,7 +1487,7 @@ h2 {
   font-size: 16px;
   margin: 10px 0;
   border: none;
-  border-bottom: solid 1.4px black;
+  border-bottom: solid 1.4px rgb(255, 255, 255);
   outline: none;
   background-color: transparent;
   resize: none;
@@ -1495,7 +1495,7 @@ h2 {
 
 .inputBox-bouton {
   width: 100%;
-  padding: 5px 4px;
+  padding: 8px 6px;
   font-size: 16px;
   margin: 10px 0;
   outline: none;
@@ -1508,8 +1508,8 @@ h2 {
   right: 0;
   margin-right: 2rem;
   border-radius: 7px;
-  border: 1px solid black;
-  background: black;
+  border: 1px solid rgb(255, 255, 255);
+  background: rgb(255, 255, 255);
   font-family: "greycliff-cf", sans-serif;
   font-weight: 400;
   font-style: normal;
@@ -1518,8 +1518,9 @@ h2 {
 .form-bouton {
   border: none;
   padding: 0.2rem;
-  background: black;
-  color: white;
+  background: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  font-size: 15px;
 }
 
 .ligne {
@@ -1543,8 +1544,8 @@ h2 {
 }
 
 .material-symbols-outlined {
-  color: rgb(255, 255, 255);
-  background-color: #000000;
+  color: rgb(0, 0, 0);
+  background-color: #ffffff;
   padding: 6px;
   border-radius: 21px;
   font-size: clamp(1.25rem, 1.184rem + 0.316vw, 1.563rem);
@@ -1554,7 +1555,7 @@ h2 {
   font-size: clamp(2.1rem, 1.184rem + 1.4vw, 2.2rem);
   width: 1em;
   height: 1em;
-  background-color: #000000;
+  background-color: #ffffff;
   border-radius: 50%;
   display: flex;
   justify-content: center;
@@ -1564,7 +1565,7 @@ h2 {
 .icon-reseau-svg {
   width: 60%;
   height: 60%;
-  fill: white;
+  fill: rgb(0, 0, 0);
 }
 
 @media screen and (min-width: 768px) {
@@ -1603,7 +1604,7 @@ h2 {
     display: block;
     width: 2px;
     height: 650px;
-    background-color: black;
+    background-color: rgb(255, 255, 255);
   }
   .separation-contact {
     flex-direction: row;
@@ -1637,7 +1638,7 @@ body.no-scroll {
   justify-content: flex-end;
   align-items: center;
   position: relative;
-  border: 1px solid black;
+  border: 1px solid rgb(255, 255, 255);
   border-radius: 9rem;
   width: 100%;
   padding: 1rem;
@@ -1654,7 +1655,7 @@ body.no-scroll {
   font-weight: 900;
   font-style: normal;
   text-decoration: none;
-  color: black;
+  color: rgb(255, 255, 255);
   font-size: clamp(1.563rem, 1.349rem + 0.526vw, 2.188rem);
 }
 
@@ -1675,7 +1676,7 @@ body.no-scroll {
   margin-bottom: -7px;
   transition: 0.15s ease-in-out;
   position: relative;
-  color: black;
+  color: rgb(255, 255, 255);
   font-family: "garamond-premier-pro-subhead", serif;
   font-weight: 400;
   font-style: normal;
@@ -1689,7 +1690,7 @@ body.no-scroll {
   left: 0;
   width: 0;
   height: 1px;
-  background-color: black;
+  background-color: rgb(255, 255, 255);
   transition: 0.15s ease-in-out;
 }
 

@@ -7,7 +7,7 @@
 
 .h1-Contact{
  font-family: AppleGaramond2;
- color: black;
+ color: rgb(255, 255, 255);
  font-size: clamp(2.5rem, 1.928rem + 2.347vw, 5.625rem);
  margin-left: 2rem;
  margin-right: 2rem;
@@ -22,7 +22,7 @@ text-align: left;
 }
 
 .h2-Contact{
-color: black;
+color: rgb(255, 255, 255);
 font-family: "greycliff-cf", sans-serif;
 font-weight: 700;
 font-style: normal;
@@ -30,7 +30,7 @@ font-size: clamp(1.25rem, 0.967rem + 1.163vw, 1.9rem);
 }
 
 .h3-Contact{
-color: black;
+color: rgb(255, 255, 255);
 font-family: "greycliff-cf", sans-serif;
 font-weight: 100;
 font-style: normal;
@@ -51,7 +51,7 @@ font-size: clamp(1.163rem, 1.123rem + 0.189vw, 1.35rem);
 font-family: "greycliff-cf", sans-serif;
 font-weight: 400;
 font-style: normal;
-color: black;
+color: rgb(255, 255, 255);
 }
 
 
@@ -62,7 +62,7 @@ color: black;
     font-size: 16px;
     margin: 10px 0;
     border: none;
-    border-bottom: solid 1.4px black;
+    border-bottom: solid 1.4px rgb(255, 255, 255);
     outline: none;
     background-color: transparent;
     resize: none;
@@ -70,7 +70,7 @@ color: black;
 
 .inputBox-bouton{
     width: 100%;
-    padding: 5px 4px;
+    padding: 8px 6px;
     font-size: 16px;
     margin: 10px 0;
     outline: none;
@@ -83,8 +83,8 @@ color: black;
     right: 0;
     margin-right: 2rem;
     border-radius: 7px;
-    border: 1px solid black;
-    background: black;
+    border: 1px solid rgb(255, 255, 255);
+    background: rgb(255, 255, 255);
     font-family: "greycliff-cf", sans-serif;
     font-weight: 400;
     font-style: normal;
@@ -93,8 +93,9 @@ color: black;
 .form-bouton{
     border: none;
     padding: .2rem;
-    background: black;
-    color: white;
+    background: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    font-size: 15px;
 }
 
 .ligne{
@@ -120,8 +121,8 @@ color: black;
 
 
 .material-symbols-outlined{
-    color: rgb(255, 255, 255);
-    background-color: #000000;
+    color: rgb(0, 0, 0);
+    background-color: #ffffff;
     padding: 6px;
     border-radius: 21px;
     font-size: clamp(1.25rem, 1.184rem + 0.316vw, 1.563rem);   
@@ -131,7 +132,7 @@ color: black;
     font-size: clamp(2.1rem, 1.184rem + 1.4vw, 2.2rem);
     width: 1em;
     height: 1em;
-    background-color: #000000;
+    background-color: #ffffff;
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -141,7 +142,7 @@ color: black;
 .icon-reseau-svg{
     width: 60%;
     height: 60%;
-    fill: white;
+    fill: rgb(0, 0, 0);
 }
 
 
@@ -189,7 +190,7 @@ width: 42%;
         display: block;
         width: 2px;
         height: 650px;
-        background-color: black;
+        background-color: rgb(255, 255, 255);
       }
 
     .separation-contact{
