@@ -93,3 +93,15 @@ function add_menu_class($items) {
     return $items;
 }
 add_filter('wp_nav_menu_objects', 'add_menu_class');
+
+function custom_enqueue_styles() {
+    // Ajouter le lien vers la feuille de style Typekit
+    wp_enqueue_style('typekit-styles', 'https://use.typekit.net/tfg7cov.css');
+
+    // Ajouter le lien vers la feuille de style Material Symbols
+    wp_enqueue_style('material-symbols-styles', 'https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=call,language,location_on');
+
+    // Ajouter le lien vers Font Awesome
+    wp_enqueue_style('font-awesome-styles', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css', array(), '6.0.0-beta2', 'all');
+}
+add_action('wp_enqueue_scripts', 'custom_enqueue_styles');

@@ -22,6 +22,7 @@
           <li><a href="<?php echo esc_url(add_query_arg('page_id', 6, home_url())); ?>">Cours</a></li>
           <li><a href="<?php echo esc_url(add_query_arg('page_id', 9, home_url())); ?>">Professeurs</a></li> <!-- Enseignants -->
           <li><a href="<?php echo esc_url(add_query_arg('page_id', 8, home_url())); ?>">Projets</a></li>
+          <li><a href="<?php echo esc_url(add_query_arg('page_id', 8, home_url())); ?>">Contact</a></li>
           </ul>
         </div>
         </div>

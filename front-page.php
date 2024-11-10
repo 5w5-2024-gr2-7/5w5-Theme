@@ -13,7 +13,7 @@ get_header();
     </div>
     <div class="Swirl">
         <picture>
-            <img src="http://localhost/5w5-mathieu/wp-content/uploads/2024/10/Swirl.png" alt="">
+            <!-- <img src="http://localhost/5w5-mathieu/wp-content/uploads/2024/10/Swirl.png" alt=""> -->
         </picture>
     </div>
 </div>
