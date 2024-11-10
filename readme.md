@@ -19,6 +19,11 @@
 - Pour le Sprint 3, notre objectif principal est de finaliser et déployer le site Web en intégrant complètement le design et en ajoutant des fonctionnalités interactives pour améliorer l'expérience utilisateur. Nous devons d'abord terminer l'intégration de l'interface utilisateur, en s'assurant que tous les éléments du design soient en place et que les fichiers médias (images, vidéos, etc.) soient correctement ajoutés à la base de données WordPress. Ensuite, il s'agit de mettre en œuvre des fonctionnalités d'interactivité. Sur le plan backend, nous allons ajouter des fonctionnalités supplémentaires telles qu'un moteur de recherche ainsi qu'un système de connexion et d'inscription des utilisateurs. L'amélioration de l'utilisabilité est également une priorité, afin d'assurer que le site soit intuitif et agréable à naviguer pour tous les utilisateurs. Nous devons finaliser l’adaptabilité du site pour qu'il soit optimisé sur différents appareils et écrans. De plus, nous allons développer et déployer deux extensions personnalisées pour enrichir les fonctionnalités du site. Enfin, le sprint se conclura par le déploiement du site sur la plateforme d’hébergement WHC, incluant l’ensemble des médias et des fonctionnalités intégrées, afin de livrer un produit final complet et fonctionnel.
 
 
+### L'objectif du Sprint 4
+
+- À venir
+
+
 ### VOICI UN LIEN VERS NOTRE SITE EN LIGNE
  - https://gftnth00.mywhc.ca/tim51/
 
