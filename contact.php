@@ -13,7 +13,7 @@
 <div class="separation-contact">
 
 <div class="contact-courriel">
-  <h class="h2-Contact">Par courriéel</h>
+  <h class="h2-Contact">Par courriel</h>
   <h3 class="h3-Contact">Envoyer nous vos questions ou vos intérogations</h3>
   <form class="form-contact">
  

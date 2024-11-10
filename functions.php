@@ -4,6 +4,7 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
+
 function register_professor_post_type() {
     $labels = array(
         'name' => __('Professors', 'textdomain'),
@@ -66,7 +67,6 @@ function register_course_post_type() {
 }
 add_action('init', 'register_course_post_type');
 
-
 function register_my_menus() {
     register_nav_menus(array(
         'principal' => __('Principal Menu'),
@@ -76,15 +76,17 @@ add_action('init', 'register_my_menus');
 
 function theme_enqueue_styles() {
     wp_enqueue_style('main-style', get_stylesheet_uri());
+
 }
 add_action('wp_enqueue_scripts', 'theme_enqueue_styles');
+
 
 function mesoptions() {
     add_theme_support('post-thumbnails');
     add_theme_support('menus');
 }
-
 add_action('after_setup_theme', 'mesoptions');
+
 
 function add_menu_class($items) {
     foreach ($items as $item) {

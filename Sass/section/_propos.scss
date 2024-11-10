@@ -1,26 +1,16 @@
 /* Style général pour le contenu de la section "À propos" */
 
-.APropos {
-  height: auto;
-  padding: 2em;
+.APropos{
+  background-color: #0C293A;
+  z-index: 0;
 }
-
-.content-wrapper {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  padding: 1em 0;
+.line {
+  stroke: #43C4EB;
+  stroke-width: 5;
+  fill: none;
 }
-
-h2 {
-  width: 100%;
-  text-align: left;
-  font-size: 5em;
+.titre-principal h2 {
   font-family: "AppleGaramond";
-  padding-left: 1em;
-  margin-bottom: 1em;
-  margin-top: 0;
 }
 
 .contenu-about {
@@ -29,6 +19,7 @@ h2 {
   justify-content: space-between;
   align-items: flex-start;
   padding: 2em;
+  padding-bottom: 5em;
 }
 
 .image-apropos {
@@ -74,7 +65,7 @@ h2 {
       text-align: center;
   }
 
-  .content-wrapper {
+  .titre-principal {
       text-align: center;
   }
 
@@ -82,7 +73,6 @@ h2 {
       order: 1;
       width: 100%;
       text-align: center;
-      font-size: 2em;
       padding-left: 0;
   }
 
@@ -120,7 +110,7 @@ h2 {
       text-align: center;
   }
 
-  .content-wrapper {
+  .titre-principal {
       text-align: center;
   }
 
@@ -128,7 +118,6 @@ h2 {
       order: 1;
       width: 100%;
       text-align: center;
-      font-size: 2.5em;
       padding-left: 0;
   }
 
@@ -158,4 +147,12 @@ h2 {
       gap: 1em;
       width: 100%;
   }
+}
+.line.inactive {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.line.active {
+  opacity: 1;
 }
