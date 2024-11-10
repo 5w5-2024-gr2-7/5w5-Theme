@@ -2,18 +2,18 @@
 #### Date de remise du Sprint 3 : 15 novembre 2024
 ## Auteurs: Alexander Rankov, Guillaume Ducharme-Vanier, Mathieu Croteau-Dufour et Dominic Gibeau
 ### Description de ce qu'on a fait durant le sprint 3 :
- - Lors de notre Sprint 2, nous avons accompli plusieurs étapes cruciales pour le développement de notre projet. Nous avons d'abord effectué des tests utilisateurs, ce qui nous a permis de recueillir des retours sur l'interface et l'expérience générale. Après avoir compilé et analysé les résultats de ces tests, nous avons rédigé une conclusion détaillée, mettant en avant les points forts ainsi que les aspects à améliorer pour optimiser l'ergonomie et la fluidité de notre projet. Nous avons finalisé la maquette XD principale. Celle-ci intègre désormais toutes les fonctionnalités des boutons ainsi que leurs animations, offrant une interface utilisateur complète et fonctionnelle. De plus, nous avons terminé une seconde maquette en réserve, où toutes les fonctionnalités prévues sont désormais opérationnelles. Cela nous permet de couvrir l’ensemble des aspects interactifs et visuels de notre projet. En ce qui concerne l'intégration en ligne, nous avons réussi à mettre notre site web sur les plateformes Wordpress et WHC. Enfin, la page HTML / SASS a été finalisée. Ces éléments combinés constituent une étape importante dans l'avancement de notre projet et posent des bases solides pour les prochaines phases de développement.
+ - Durant le Sprint 3, nous avons intégré le code HTML en PHP pour l'ensemble du site et nous avons importé toutes les ressources médias nécessaires dans la médiathèque de WordPress. Nous avons également ajouté des animations pour la section "À propos", afin d'améliorer l'interactivité et l'expérience utilisateur. Le layout HTML et SASS de toutes les pages a été finalisé, et nous avons créé et intégré une page de contact en HTML et SASS, avant de l'adapter en PHP. De plus, nous avons installé des extensions utiles au projet, telles que SCF (Smart Custom Fields), qui nous ont permis de créer des groupes de champs personnalisés pour faciliter la gestion des contenus. Enfin, nous avons commencé à intégrer des animations supplémentaires pour enrichir l’interface utilisateur et dynamiser le site.
 
 ### Voici un résumé de notre projet en une liste de tâches :
 
-    Réalisation des tests utilisateurs
-    Compilation des résultats des tests
-    Rédaction de la conclusion basée sur les retours utilisateurs
-    Finalisation de la maquette XD principale (fonctionnalités des boutons et animations)
-    Terminaison de la deuxième maquette XD (réserve avec toutes ses fonctionnalités)
-    Intégration du site web en ligne sur Wordpress
-    Intégration du site web en ligne sur WHC
-    Finalisation de la page HTML / SASS du site web
+- Intégration du code HTML en PHP.
+- Importation des médias nécessaires dans la médiathèque WordPress.
+- Ajout d'animations pour la section "À propos".
+- Finalisation du layout HTML et SASS pour toutes les pages.
+- Création et intégration de la page de contact en HTML, SASS, et PHP.
+- Installation des extensions utiles, comme SCF (Smart Custom Fields).
+- Création de groupes de champs personnalisés avec l’extension SCF.
+- Début de l’intégration des animations supplémentaires sur le site.
 
 ### L'objectif du Sprint 3
 - Pour le Sprint 3, notre objectif principal est de finaliser et déployer le site Web en intégrant complètement le design et en ajoutant des fonctionnalités interactives pour améliorer l'expérience utilisateur. Nous devons d'abord terminer l'intégration de l'interface utilisateur, en s'assurant que tous les éléments du design soient en place et que les fichiers médias (images, vidéos, etc.) soient correctement ajoutés à la base de données WordPress. Ensuite, il s'agit de mettre en œuvre des fonctionnalités d'interactivité. Sur le plan backend, nous allons ajouter des fonctionnalités supplémentaires telles qu'un moteur de recherche ainsi qu'un système de connexion et d'inscription des utilisateurs. L'amélioration de l'utilisabilité est également une priorité, afin d'assurer que le site soit intuitif et agréable à naviguer pour tous les utilisateurs. Nous devons finaliser l’adaptabilité du site pour qu'il soit optimisé sur différents appareils et écrans. De plus, nous allons développer et déployer deux extensions personnalisées pour enrichir les fonctionnalités du site. Enfin, le sprint se conclura par le déploiement du site sur la plateforme d’hébergement WHC, incluant l’ensemble des médias et des fonctionnalités intégrées, afin de livrer un produit final complet et fonctionnel.
