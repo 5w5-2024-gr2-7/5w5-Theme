@@ -157,6 +157,7 @@ h1 {
 h2,
 h3 {
   color: white;
+  font-family: "FontGreycliffBold";
 }
 
 .about-contenu h2 {
@@ -368,6 +369,7 @@ h2 {
   font-size: 5em;
   font-weight: bold;
   margin-bottom: 1em;
+  margin-top: 1em;
 }
 
 /* Mobile Styles for .titre-principal */
@@ -375,12 +377,14 @@ h2 {
   .titre-principal {
     font-size: 2.5em;
     margin-bottom: 0.5em;
+    text-align: center;
   }
 }
 @media screen and (max-width: 480px) {
   .titre-principal {
     font-size: 2em;
     margin-bottom: 0.5em;
+    text-align: center;
   }
 }
 /* Style pour les boutons */
@@ -576,10 +580,9 @@ button:hover {
 }
 /*=============== CARD ===============*/
 .contenu {
-  display: grid;
   place-items: center;
   margin-inline: 1.5rem;
-  padding-block: 5rem;
+  padding-bottom: 5rem;
 }
 
 .card__contenu {
@@ -593,7 +596,10 @@ button:hover {
 }
 
 .card__img {
-  width: 328px;
+  width: 100%;
+  height: 220px; /* Adjust height as needed */
+  background-size: cover;
+  background-position: center;
   border-radius: 1.5rem;
 }
 
@@ -660,7 +666,7 @@ button:hover {
     grid-template-columns: repeat(3, 1fr);
   }
   .card__img {
-    width: 348px;
+    height: 250px;
   }
   .card__data {
     width: 316px;
@@ -798,26 +804,18 @@ button:hover {
 }
 /* Style général pour le contenu de la section "À propos" */
 .APropos {
-  height: auto;
-  padding: 2em;
+  background-color: #0C293A;
+  z-index: 0;
 }
 
-.content-wrapper {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  padding: 1em 0;
+.line {
+  stroke: #43C4EB;
+  stroke-width: 5;
+  fill: none;
 }
 
-h2 {
-  width: 100%;
-  text-align: left;
-  font-size: 5em;
+.titre-principal h2 {
   font-family: "AppleGaramond";
-  padding-left: 1em;
-  margin-bottom: 1em;
-  margin-top: 0;
 }
 
 .contenu-about {
@@ -870,14 +868,13 @@ h2 {
     flex-direction: column;
     text-align: center;
   }
-  .content-wrapper {
+  .titre-principal {
     text-align: center;
   }
   h2 {
     order: 1;
     width: 100%;
     text-align: center;
-    font-size: 2em;
     padding-left: 0;
   }
   .image-apropos {
@@ -909,14 +906,13 @@ h2 {
     flex-direction: column;
     text-align: center;
   }
-  .content-wrapper {
+  .titre-principal {
     text-align: center;
   }
   h2 {
     order: 1;
     width: 100%;
     text-align: center;
-    font-size: 2.5em;
     padding-left: 0;
   }
   .image-apropos {
@@ -943,6 +939,15 @@ h2 {
     width: 100%;
   }
 }
+.line.inactive {
+  opacity: 0; /* Keeps the paths hidden initially */
+  transition: opacity 0.5s ease;
+}
+
+.line.active {
+  opacity: 1; /* Make paths visible and animatable */
+}
+
 /* Section du cours de jeu exemple */
 .back-btn {
   display: none;
@@ -1422,6 +1427,21 @@ h2 {
     font-family: "AppleGaramond";
   }
 }
+.APropos {
+  position: relative;
+  overflow: hidden;
+}
+
+#corner-shape {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
+}
+
 /* ///////////////////////////////////////////////////////////////// */
 /* Règles de layout                                                  */
 /* ///////////////////////////////////////////////////////////////// */
