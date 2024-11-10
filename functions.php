@@ -105,3 +105,4 @@ function custom_enqueue_styles() {
     wp_enqueue_style('font-awesome-styles', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css', array(), '6.0.0-beta2', 'all');
 }
 add_action('wp_enqueue_scripts', 'custom_enqueue_styles');
+
