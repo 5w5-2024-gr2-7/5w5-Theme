@@ -19,6 +19,7 @@
   justify-content: space-between;
   align-items: flex-start;
   padding: 2em;
+  padding-bottom: 5em;
 }
 
 .image-apropos {
@@ -148,10 +149,10 @@
   }
 }
 .line.inactive {
-  opacity: 0; /* Keeps the paths hidden initially */
+  opacity: 0;
   transition: opacity 0.5s ease;
 }
 
 .line.active {
-  opacity: 1; /* Make paths visible and animatable */
+  opacity: 1;
 }
