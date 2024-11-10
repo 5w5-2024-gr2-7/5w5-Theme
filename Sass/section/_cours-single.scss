@@ -44,17 +44,32 @@
     gap: 1rem;
     width: 100%;
     flex-wrap: wrap;
+    padding-top: 1rem;
 }
 
 /* Styles pour les sessions et catégories */
 .info-session-cours {
-    background-color: #ffde6f;
     text-align: center;
     border-radius: 1rem;
     width: 45%;
     color: #000000;
     padding: 2px 1px;
     height: 50%;
+}
+
+.info-session-cours.session-jaune {
+    background-color: #ffde6f; /* Jaune */
+    color: #000000;
+}
+
+.info-session-cours.session-bleu {
+    background-color: #6fcaff; /* Bleu */
+    color: #ffffff;
+}
+
+.info-session-cours.session-vert {
+    background-color: #6fff91; /* Vert */
+    color: #000000;
 }
 
 .info-bulle-cours {
@@ -80,6 +95,7 @@
 .information-cours {
     display: flex;
     flex-direction: column;
+    gap: 2rem;
 }
 
 .texte-cours-information {
@@ -88,6 +104,7 @@
     font-style: normal;
     font-size: clamp(1.25rem, 0.967rem + 1.163vw, 1.9rem);
     text-align: justify;
+    color: white;
 }
 
 /* Bloc pour les logiciels */
@@ -108,6 +125,7 @@
     padding-top: 1rem;
     color: black;
     font-size: clamp(1.25rem, 0.967rem + 1.163vw, 1.9rem);
+    text-align: left;
 }
 
 .image-logiciel-info {
@@ -123,6 +141,9 @@
     .svg-bouton-retour {
         display: none;
     }
+    .partie1-cours-individuel {
+        align-items: center;
+    }
 
     .h1-cours-individuel {
         text-align: center;
@@ -131,6 +152,7 @@
 
     .span-cours-individuel {
         justify-content: center;
+
     }
 
     .info-session-cours {
@@ -149,18 +171,21 @@
 }
 
 @media screen and (min-width: 1448px) {
-    .partie1-cours-individuel {
-        align-items: center;
-    }
+
 
     .h1-cours-individuel {
         width: 75%;
+    }
+
+    .ligne-cours{
+        padding-top: 2rem;
     }
 
     .information-cours {
         flex-direction: row-reverse;
         justify-content: space-between;
         align-items: flex-start;
+        padding-top: 3rem;
     }
 
     .logiciel-info {
@@ -172,6 +197,6 @@
     }
 
     .image-logiciel-info {
-        width: 30%;
+        width: 45%;
     }
 }

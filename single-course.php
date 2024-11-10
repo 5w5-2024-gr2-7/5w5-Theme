@@ -17,9 +17,19 @@ if (have_posts()) :
                     <?php the_field('course_title'); ?>
                 </h1>
                 <span class="span-cours-individuel">
-                    <div class="info-session-cours">
-                        <?php the_field('session'); ?>
-                    </div>
+                <div class="info-session-cours 
+    <?php 
+        $session = get_field('session');
+        if ($session == 'Session 1') {
+            echo 'session-jaune';
+        } elseif ($session == 'Session 2') {
+            echo 'session-bleu';
+        } elseif ($session == 'Session 3') {
+            echo 'session-vert';
+        } 
+    ?>">
+    <?php echo esc_html($session); ?>
+</div>
                     <div class="info-bulle-cours">
                         <?php the_field('category'); ?>
                     </div>
@@ -29,11 +39,16 @@ if (have_posts()) :
             <div class="ligne-cours"></div>
 
             <div class="information-cours">
-                <div>
-                    <h3 class="texte-cours-information">
-                        <?php the_field('course_description'); ?>
-                    </h3>
-                </div>
+            <div class="texte-cours-information">
+    <?php 
+    // Get the course description with raw HTML tags
+    $course_description = get_field('course_description');
+    
+    // Output the raw HTML
+    echo $course_description;
+    ?>
+</div>
+                
 
                 <div class="logiciel-info">
                     <h2 class="h2-logiciel-info">
