@@ -1696,12 +1696,12 @@ button:hover {
 }
 
 .info-session-cours.session-jaune {
-  background-color: #ffde6f; /* Jaune */
+  background-color: #ffde6f;
   color: #000000;
 }
 
 .info-session-cours.session-bleu {
-  background-color: #6fcaff; /* Bleu */
+  background-color: #6fcaff;
   color: #ffffff;
 }
 
@@ -1788,7 +1788,7 @@ button:hover {
   padding-bottom: 1rem;
 }
 
-/* Media queries pour adaptabilité */
+/*********************** POUR TABLETTE  *********************/
 @media screen and (min-width: 650px) {
   .bouton-retour,
   .svg-bouton-retour {
