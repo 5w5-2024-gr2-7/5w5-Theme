@@ -35,7 +35,7 @@ html {
 
 body {
   background: linear-gradient(-45deg, #e73c7e, #3a66b8, #2383af, #ac5bcc);
-  background-size: 150% 150%;
+  background-size: 200% 200%;
   animation: gradient 70s ease infinite; /* Increased duration from 15s to 30s */
   height: 100%;
 }
@@ -1771,7 +1771,7 @@ button:hover {
 
 .h2-logiciel-info {
   font-family: "greycliff-cf", sans-serif;
-  font-weight: 700;
+  font-weight: 500;
   font-style: normal;
   width: 60%;
   margin-left: 11px;
@@ -1781,8 +1781,18 @@ button:hover {
   text-align: left;
 }
 
+.bold-text {
+  font-weight: bold;
+}
+
+.div-image-logiciel {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
 .image-logiciel-info {
-  width: 54%;
+  width: 31%;
   margin-left: 11px;
   margin-top: 11px;
   padding-bottom: 1rem;
@@ -1812,8 +1822,13 @@ button:hover {
     padding: 0.2rem 1rem;
     width: fit-content;
   }
+  .div-image-logiciel {
+    align-items: center;
+    flex-direction: row;
+    gap: 1rem;
+  }
   .image-logiciel-info {
-    width: 23%;
+    width: 16%;
   }
 }
 @media screen and (min-width: 1448px) {
@@ -1835,6 +1850,10 @@ button:hover {
     background: linear-gradient(135deg, rgba(223, 213, 188, 0.48), rgba(255, 255, 255, 0.65));
     clip-path: polygon(0 0, 69% 0, 100% 166%, -3% 107%);
     margin-bottom: 2rem;
+  }
+  .div-image-logiciel {
+    align-items: flex-start;
+    flex-direction: column;
   }
   .image-logiciel-info {
     width: 45%;
@@ -1921,7 +1940,7 @@ body.no-scroll {
 
 .ouvre-menu, .ferme-menu {
   position: absolute;
-  color: black;
+  color: rgb(255, 255, 255);
   cursor: pointer;
   font-size: 1.5rem;
   display: none;
@@ -2006,6 +2025,7 @@ footer {
   flex-direction: column;
   align-items: center;
   z-index: 100;
+  padding-top: 2rem;
 }
 
 /* Chacune des partis individuelles du footer */
@@ -2065,6 +2085,7 @@ footer {
     align-items: flex-start;
     justify-content: space-between;
     margin-top: 7vh;
+    padding-top: 0;
   }
   /* Élargie le section */
   .footer-section {

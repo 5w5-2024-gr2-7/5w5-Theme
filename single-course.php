@@ -46,6 +46,14 @@ if (have_posts()) :
                     <div class="info-bulle-cours">
                         <?php the_field('category'); ?>
                     </div>
+
+                    <!-- Si deuxieme categorie on l'affiche sinon Non -->
+                    <?php if( get_field('category2') ): ?>
+                        <div class="info-bulle-cours">
+                            <?php the_field('category2'); ?>
+                        </div>
+                    <?php endif; ?>
+                    
                 </span>
             </div>
 
@@ -64,10 +72,14 @@ if (have_posts()) :
                 
                 <!-- aFFICHE l'image du logiciel du cours -->
                 <div class="logiciel-info">
-                    <h2 class="h2-logiciel-info">
-                        Logiciels utilisés durant ce cours :
-                    </h2>
-                    <img class="image-logiciel-info" src="<?php the_field('software_image'); ?>" alt="">
+                <h2 class="h2-logiciel-info">
+    <span class="bold-text">Logiciels utilisés</span> durant ce cours :
+</h2>
+                    <div class="div-image-logiciel">
+                        <img class="image-logiciel-info" src="<?php the_field('software_image'); ?>" alt="">
+                        <img class="image-logiciel-info" src="<?php the_field('software_image2'); ?>" alt="">
+
+                    </div>
                 </div>
             </div>
         </main>
