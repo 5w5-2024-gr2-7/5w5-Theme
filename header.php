@@ -52,6 +52,9 @@
         }
     });
 </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+  <script src="<?php echo get_template_directory_uri() . '/js/script.js' ;?>">
+</script>
 
 </body>
 </html>

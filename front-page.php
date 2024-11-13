@@ -6,15 +6,19 @@ get_header();
 ?>
 <div class="OuLa">
     <div class="content-wrapper">
-        <h1>
-            Où la <span>Création</span><br>commence
+        <h1 class="titre-principale">
+            Où la <span class="titre-principale-italique">création</span><br>commencee
         </h1>
+
+        <div>
+            
+        </div>
     </div>
-    <div class="Swirl">
+    <!-- <div class="Swirl">
         <picture>
-            <!-- <img src="http://localhost/5w5-mathieu/wp-content/uploads/2024/10/Swirl.png" alt=""> -->
+            <img src="<?php echo get_site_url(); ?>/wp-content/uploads/2024/11/Swirl.png" alt="">
         </picture>
-    </div>
+    </div> -->
 </div>
 
 <div class="APropos">
@@ -74,6 +78,58 @@ get_header();
         <div class="bouton-title">Projets</div>
     </a>
 </div>
+
+<div class="section-projet">
+    <div class="projet-mobile">
+        <h class="h1-projet">Pour voir nos projets</h>
+
+    <div class="conteneur-projet-mobile">
+        <div class="contenue-projet">
+            <svg class="svg-projet" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                <path d="M352 96c0 14.3-3.1 27.9-8.8 40.2L396 227.4c-23.7 25.3-54.2 44.1-88.5 53.6L256 192c0 0 0 0 0 0s0 0 0 0l-68 117.5c21.5 6.8 44.3 10.5 68.1 10.5c70.7 0 133.8-32.7 174.9-84c11.1-13.8 31.2-16 45-5s16 31.2 5 45C428.1 341.8 347 384 256 384c-35.4 0-69.4-6.4-100.7-18.1L98.7 463.7C94 471.8 87 478.4 78.6 482.6L23.2 510.3c-5 2.5-10.9 2.2-15.6-.7S0 501.5 0 496l0-55.4c0-8.4 2.2-16.7 6.5-24.1l60-103.7C53.7 301.6 41.8 289.3 31.2 276c-11.1-13.8-8.8-33.9 5-45s33.9-8.8 45 5c5.7 7.1 11.8 13.8 18.2 20.1l69.4-119.9c-5.6-12.2-8.8-25.8-8.8-40.2c0-53 43-96 96-96s96 43 96 96zm21 297.9c32.6-12.8 62.5-30.8 88.9-52.9l43.7 75.5c4.2 7.3 6.5 15.6 6.5 24.1l0 55.4c0 5.5-2.9 10.7-7.6 13.6s-10.6 3.2-15.6 .7l-55.4-27.7c-8.4-4.2-15.4-10.8-20.1-18.9L373 393.9zM256 128a32 32 0 1 0 0-64 32 32 0 1 0 0 64z"/>  
+            </svg>
+
+            <div class="info-projet">
+                <h2>WEB</h2>
+                <button>kskakask</button>
+            </div>
+        </div>
+    </div>
+    </div>
+</div>
+
+<div class="word">
+        <div class="letter-container">
+            <span class="letter">P</span>
+            <div class="project">Projet 1</div>
+        </div>
+        <div class="letter-container">
+            <span class="letter">R</span>
+            <div class="project">Projet 2</div>
+        </div>
+        <div class="letter-container">
+            <span class="letter">O</span>
+            <div class="project">Projet 3</div>
+        </div>
+        <div class="letter-container">
+            <span class="letter">J</span>
+            <div class="project">Projet 4</div>
+        </div>
+        <div class="letter-container">
+            <span class="letter">E</span>
+            <div class="project">Projet 5</div>
+        </div>
+        <div class="letter-container">
+            <span class="letter">T</span>
+            <div class="project">Projet 6</div>
+        </div>
+        <div class="letter-container">
+            <span class="letter">S</span>
+            <div class="project">Projet 7</div>
+        </div>
+    </div>
+
+
 
 <header>
     <div class="titre-principal">Nos professeurs</div>
