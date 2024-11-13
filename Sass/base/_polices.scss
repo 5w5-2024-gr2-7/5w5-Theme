@@ -12,6 +12,13 @@
     font-family: 'AppleGaramond';
     src: url("polices/AppleGaramond/AppleGaramond-Italic.ttf") format('truetype');
 }
+
+@font-face {
+    font-family: 'AppleGaramond2';
+    src: url("polices/appleGaramond/AppleGaramond-Light.ttf");
+}
+
+
 .content {
     background-color: rgba(255, 255, 255, .8);
     border-radius: .25em;
@@ -44,7 +51,6 @@ header {
     font-family: 'AppleGaramond';
     font-size: 1.7em;
     text-align: left;
-    padding-left: 1em;
     margin: 0;
 }
 

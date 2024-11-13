@@ -1,0 +1,242 @@
+/* Style principal de la page cours individuel */
+
+.main-cours-individuel {
+    margin-left: 2rem;
+    margin-right: 2rem;
+    margin-top: -2.4rem;  
+}
+
+/* Bouton de retour */
+.bouton-retour {
+    background: transparent;
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 50%;
+}
+
+.svg-bouton-retour {
+    height: 21px;
+    width: auto;
+    transform: scaleX(-1);
+    margin: -1px;
+    top: 2px;
+    position: relative;
+    fill: white;
+}
+
+/* Partie titre et informations du cours */
+.partie1-cours-individuel {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.h1-cours-individuel {
+    text-align: left;
+    font-family: "greycliff-cf", sans-serif;
+    font-weight: 200;
+    font-style: normal;
+    font-size: clamp(2.5rem, 1.928rem + 2.347vw, 5.625rem);
+    margin: 0.5rem 0;
+}
+
+.span-cours-individuel {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    width: 100%;
+    flex-wrap: wrap;
+    padding-top: 1rem;
+}
+
+/* Styles pour les sessions et catégories */
+.info-session-cours {
+    text-align: center;
+    border-radius: 1rem;
+    width: 45%;
+    color: #000000;
+    padding: 2px 1px;
+    height: 50%;
+}
+
+// Pastile de couleur qui change dépendant de la session
+.info-session-cours.session-jaune {
+    background-color: #ffde6f; 
+    color: #000000;
+}
+
+.info-session-cours.session-bleu {
+    background-color: #6fcaff; 
+    color: #ffffff;
+}
+
+.info-session-cours.session-vert {
+    background-color: #87ce98; 
+    color: #000000;
+}
+
+.info-session-cours.session-rose {
+    background-color: #d16fff; 
+    color: #000000;
+}
+
+.info-session-cours.session-marine {
+    background-color: #a999ff; 
+    color: white;
+}
+
+.info-session-cours.session-rouge {
+    background-color: #ff986f; 
+    color: #000000;
+}
+
+.info-bulle-cours {
+    background-color: transparent;
+    border: 1.5px solid white;
+    text-align: center;
+    border-radius: 1rem;
+    width: 45%;
+    color: #ffffff;
+    padding: 2px 7px;
+    height: 50%;
+}
+
+/* Ligne de séparation */
+.ligne-cours {
+    border-bottom: 1.5px solid white;
+    margin: 1rem 0;
+    width: 100%;
+    margin-left: auto;
+}
+
+/* Informations détaillées du cours */
+.information-cours {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.texte-cours-information {
+    font-family: "greycliff-cf", sans-serif;
+    font-weight: 200;
+    font-style: normal;
+    font-size: clamp(1.25rem, 0.967rem + 1.163vw, 1.9rem);
+    text-align: justify;
+    color: white;
+}
+
+/* Bloc pour les logiciels */
+.logiciel-info {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgb(223 213 188 / 48%), rgb(255 255 255 / 65%));
+    clip-path: polygon(0 0, 73% 0, 100% 100%, 0% 100%);
+    margin-bottom: 2rem;
+}
+
+.h2-logiciel-info {
+    font-family: "greycliff-cf", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    width: 60%;
+    margin-left: 11px;
+    padding-top: 1rem;
+    color: black;
+    font-size: clamp(1.25rem, 0.967rem + 1.163vw, 1.9rem);
+    text-align: left;
+}
+
+.bold-text {
+    font-weight: bold;
+}
+
+.div-image-logiciel{
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.image-logiciel-info {
+    width: 31%;
+    margin-left: 11px;
+    margin-top: 11px;
+    padding-bottom: 1rem;
+}
+
+/*********************** POUR TABLETTE  *********************/
+@media screen and (min-width: 650px) {
+    .bouton-retour,
+    .svg-bouton-retour {
+        display: none;
+    }
+    .partie1-cours-individuel {
+        align-items: center;
+    }
+
+    .h1-cours-individuel {
+        text-align: center;
+        padding-top: 2rem;   
+    }
+
+    .span-cours-individuel {
+        justify-content: center;
+
+    }
+
+    .info-session-cours {
+        padding: .2rem 3rem;
+        width: fit-content; 
+    }
+
+    .info-bulle-cours {
+        padding: .2rem 1rem;
+        width: fit-content;
+    }
+
+    .div-image-logiciel{
+        align-items: center;
+        flex-direction: row;
+        gap: 1rem;
+    }
+        
+    .image-logiciel-info {
+        width: 16%;
+    }
+}
+
+////////////////////// POUR DESKTOP ///////////////////////////// 
+
+@media screen and (min-width: 1448px) {
+
+
+    .h1-cours-individuel {
+        width: 75%;
+    }
+
+    .ligne-cours{
+        padding-top: 2rem;
+    }
+
+    .information-cours {
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding-top: 3rem;
+    }
+
+    .logiciel-info {
+        width: 100%;
+        height: auto;
+        background: linear-gradient(135deg, rgba(223, 213, 188, 0.48), rgba(255, 255, 255, 0.65));
+        clip-path: polygon(0 0, 69% 0, 100% 166%, -3% 107%);
+        margin-bottom: 2rem;
+    }
+
+    .div-image-logiciel{
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .image-logiciel-info {
+        width: 45%;
+    }
+}

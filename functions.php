@@ -67,6 +67,37 @@ function register_course_post_type() {
 }
 add_action('init', 'register_course_post_type');
 
+function register_project_post_type() {
+    $labels = array(
+        'name' => __('Projects', 'textdomain'),
+        'singular_name' => __('Project', 'textdomain'),
+        'menu_name' => __('Projects', 'textdomain'),
+        'add_new' => __('Add New', 'textdomain'),
+        'add_new_item' => __('Add New Project', 'textdomain'),
+        'new_item' => __('New Project', 'textdomain'),
+        'edit_item' => __('Edit Project', 'textdomain'),
+        'view_item' => __('View Project', 'textdomain'),
+        'all_items' => __('All Projects', 'textdomain'),
+        'search_items' => __('Search Projects', 'textdomain'),
+        'not_found' => __('No projects found.', 'textdomain'),
+        'not_found_in_trash' => __('No projects found in trash.', 'textdomain'),
+    );
+
+    $args = array(
+        'labels' => $labels,
+        'public' => true,
+        'has_archive' => true,
+        'rewrite' => array('slug' => 'projects'),
+        'supports' => array('title', 'editor', 'thumbnail'),
+        'show_in_rest' => true,
+        'menu_icon' => 'dashicons-portfolio', // Icône spécifique aux projets
+    );
+
+    register_post_type('project', $args);
+}
+add_action('init', 'register_project_post_type');
+
+
 function register_my_menus() {
     register_nav_menus(array(
         'principal' => __('Principal Menu'),
@@ -95,3 +126,17 @@ function add_menu_class($items) {
     return $items;
 }
 add_filter('wp_nav_menu_objects', 'add_menu_class');
+
+function custom_enqueue_styles() {
+    // Ajouter le lien vers la feuille de style Typekit
+    wp_enqueue_style('typekit-styles', 'https://use.typekit.net/tfg7cov.css');
+
+    // Ajouter le lien vers la feuille de style Material Symbols
+    wp_enqueue_style('material-symbols-styles', 'https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=call,language,location_on');
+
+    // Ajouter le lien vers Font Awesome
+    wp_enqueue_style('font-awesome-styles', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css', array(), '6.0.0-beta2', 'all');
+}
+add_action('wp_enqueue_scripts', 'custom_enqueue_styles');
+
+

@@ -20,6 +20,7 @@
                 <div class="volet-dropdown">
                     <span>Volet</span>
                     <select>
+                        <option value="web">Tous</option>
                         <option value="web">Web</option>
                         <option value="jeux">Jeux</option>
                         <option value="graphisme">Vidéo</option>
@@ -40,9 +41,7 @@
                             <?php endif; ?>
                             <div class="course-oval"><?php the_field('session'); ?></div>
                             <div class="course-oval"><?php the_field('category'); ?></div> <!-- ACF field -->
-                            <button class="course-button">
-                                <a href="<?php the_permalink(); ?>">➔</a>
-                            </button>
+                            <a href="<?php the_permalink(); ?>" class="course-button">➔</a>
                         </div>
                     </div>
                 <?php endwhile; ?>

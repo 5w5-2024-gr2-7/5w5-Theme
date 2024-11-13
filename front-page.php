@@ -82,7 +82,7 @@ get_header();
 <div class="contenu">
     <div class="card__contenu">
         <article class="card__article">
-            <div class="card__img" style="background-image: url('<?php echo get_site_url(); ?>/wp-content/uploads/2024/11/3D.jpg');"></div>
+            <div class="card__img" style="background-image: url('<?php echo get_site_url(); ?>/wp-content/uploads/2024/11/lesSectionDeTipeDeCourWEB.png');"></div>
 
             <div class="card__data">
                 <h2 class="card__title">Web</h2>
@@ -91,7 +91,7 @@ get_header();
         </article>
 
         <article class="card__article">
-            <div class="card__img" style="background-image: url('<?php echo get_site_url(); ?>/wp-content/uploads/2024/11/Apropos.jpg');"></div>
+            <div class="card__img" style="background-image: url('<?php echo get_site_url(); ?>/wp-content/uploads/2024/11/lesSectionDeTipeDeCourJEUX.png');"></div>
 
             <div class="card__data">
                 <h2 class="card__title">Jeu</h2>
@@ -100,7 +100,7 @@ get_header();
         </article>
 
         <article class="card__article">
-            <div class="card__img" style="background-image: url('<?php echo get_site_url(); ?>/wp-content/uploads/2024/11/lesSectionDeTipeDeCourWEB.png');"></div>
+            <div class="card__img" style="background-image: url('<?php echo get_site_url(); ?>/wp-content/uploads/2024/11/lesSectionDeTipeDeCourVIDEO.png')"></div>
 
             <div class="card__data">
                 <h2 class="card__title">Montage et vidéo</h2>
@@ -109,7 +109,7 @@ get_header();
         </article>
 
         <article class="card__article">
-            <div class="card__img" style="background-image: url('<?php echo get_site_url(); ?>/wp-content/uploads/2024/11/Apropos.jpg');"></div>
+            <div class="card__img" style="background-image: url('<?php echo get_site_url(); ?>/wp-content/uploads/2024/11/lesSectionDeTipeDeCourDESIGN.png')"></div>
 
             <div class="card__data">
                 <h2 class="card__title">Conception Graphique</h2>

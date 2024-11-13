@@ -33,6 +33,24 @@ html {
   color: var(--text-color);
 }
 
+body {
+  background: linear-gradient(-45deg, #e73c7e, #3a66b8, #2383af, #ac5bcc);
+  background-size: 200% 200%;
+  animation: gradient 70s ease infinite; /* Increased duration from 15s to 30s */
+  height: 100%;
+}
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
 @font-face {
   font-family: "FontGreycliff";
   src: url("polices/Greycliff/Fontspring-DEMO-greycliffcf-light.otf") format("opentype");
@@ -44,6 +62,10 @@ html {
 @font-face {
   font-family: "AppleGaramond";
   src: url("polices/AppleGaramond/AppleGaramond-Italic.ttf") format("truetype");
+}
+@font-face {
+  font-family: "AppleGaramond2";
+  src: url("polices/appleGaramond/AppleGaramond-Light.ttf");
 }
 .content {
   background-color: rgba(255, 255, 255, 0.8);
@@ -75,7 +97,6 @@ header {
   font-family: "AppleGaramond";
   font-size: 1.7em;
   text-align: left;
-  padding-left: 1em;
   margin: 0;
 }
 
@@ -266,6 +287,9 @@ p {
 
 .course-box > h3 {
   color: black;
+  font-family: "greycliff-cf", sans-serif;
+  font-weight: 700;
+  font-style: normal;
 }
 
 .header {
@@ -318,15 +342,28 @@ h2 {
 }
 
 .course-button {
-  background-color: #4CAF50;
+  background-color: #5578B4;
   color: white;
   border: none;
-  padding: 10px;
+  width: 50px; /* Set explicit width and height for a perfect circle */
+  height: 50px;
   border-radius: 50%;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden; /* Ensures no overflow if content is larger */
+}
+
+.course-button a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.5em; /* Adjust font size to center the arrow inside */
+  line-height: 1; /* Helps center the icon vertically */
+}
+
+.course-button:hover {
+  background-color: #466899; /* Slightly darker green for hover effect */
 }
 
 /* Mode desktop */
@@ -370,6 +407,7 @@ h2 {
   font-weight: bold;
   margin-bottom: 1em;
   margin-top: 1em;
+  padding-left: 1em;
 }
 
 /* Mobile Styles for .titre-principal */
@@ -396,8 +434,8 @@ h2 {
 
 .bouton {
   border-radius: 8px;
-  width: 300px; /* Adjusted width for rectangular shape */
-  height: 400px; /* Adjusted height for rectangular shape */
+  width: 300px;
+  height: 400px;
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
   display: flex;
   flex-direction: column;
@@ -444,7 +482,7 @@ h2 {
 @media screen and (max-width: 480px) {
   .conteneur-boutons {
     padding: 0.5em;
-    gap: 0.5em; /* Further reduced gap */
+    gap: 0.5em;
   }
   .bouton {
     width: 200px;
@@ -553,17 +591,37 @@ h1 {
   max-width: 100%;
 }
 
-button {
-  background-color: #6d50e6;
+.button-link {
+  display: inline-block;
+  background-color: #5578B4;
+  background-image: linear-gradient(145deg, #5a84c5, #466899);
   color: white;
   border: none;
-  border-radius: 5px;
-  padding: 10px 15px;
+  border-radius: 25px;
+  padding: 10px 20px;
   cursor: pointer;
+  font-size: 1em;
+  font-weight: 600;
+  text-decoration: none;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  transition: background 0.3s ease, box-shadow 0.3s ease;
 }
 
-button:hover {
-  background-color: #5c3fbe;
+.button-link:hover {
+  background-color: #466899;
+  background-image: linear-gradient(145deg, #486d99, #3c5a80);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.button-link:active {
+  background-color: #3c5a80;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.button-link:focus {
+  outline: 2px solid #91a8d0;
+  outline-offset: 2px;
 }
 
 .professor-card > h2 {
@@ -1058,8 +1116,11 @@ button:hover {
   }
 }
 .galerie-projets {
+  display: flex;
+  width: 100%;
   padding: 20px;
   text-align: center;
+  flex-direction: column;
 }
 
 .galerie-projets h1 {
@@ -1088,7 +1149,9 @@ button:hover {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  align-items: center;
   gap: 20px;
+  size: 100%;
 }
 
 .galerie-projets > h1 {
@@ -1106,7 +1169,9 @@ button:hover {
 }
 
 .projet img {
-  width: 100%;
+  display: flex;
+  background-color: blue;
+  width: 50vw;
   height: auto;
   border-radius: 8px;
 }
@@ -1352,7 +1417,7 @@ button:hover {
 }
 .header {
   position: relative;
-  z-index: 3;
+  z-index: 4;
 }
 
 .OuLa {
@@ -1443,63 +1508,670 @@ button:hover {
   pointer-events: none;
 }
 
-/* ///////////////////////////////////////////////////////////////// */
-/* Règles de layout                                                  */
-/* ///////////////////////////////////////////////////////////////// */
-.header {
+.separation-contact {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.h1-Contact {
+  font-family: AppleGaramond2;
+  color: rgb(255, 255, 255);
+  font-size: clamp(2.5rem, 1.928rem + 2.347vw, 5.625rem);
+  margin-left: 2rem;
+  margin-right: 2rem;
+  text-align: left;
+}
+
+.contact-courriel,
+.contact-information {
+  margin-left: 2rem;
+  margin-right: 2rem;
+  text-align: left;
+}
+
+.h2-Contact {
+  color: rgb(255, 255, 255);
+  font-family: "greycliff-cf", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: clamp(1.25rem, 0.967rem + 1.163vw, 1.9rem);
+}
+
+.h3-Contact {
+  color: rgb(255, 255, 255);
+  font-family: "greycliff-cf", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+  font-size: clamp(1.163rem, 1.123rem + 0.189vw, 1.35rem);
+}
+
+.form-contact {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.inputBox {
+  padding-bottom: 2rem;
+}
+
+.inputBox span,
+.span-texte {
+  font-family: "greycliff-cf", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: rgb(255, 255, 255);
+}
+
+.inputBox input,
+.inputBox textarea {
+  width: 100%;
+  padding: 5px 0;
+  font-size: 16px;
+  margin: 10px 0;
+  border: none;
+  border-bottom: solid 1.4px rgb(255, 255, 255);
+  outline: none;
   background-color: transparent;
-  padding: 0.5em 1em;
-  border: 2px solid white;
-  border-radius: 25px;
-  margin: 1em;
-  align-items: center;
-  height: 50px;
+  resize: none;
 }
 
-nav a {
-  color: white;
-  text-decoration: none;
-  font-size: 0.8em;
+.inputBox-bouton {
+  width: 100%;
+  padding: 8px 6px;
+  font-size: 16px;
+  margin: 10px 0;
+  outline: none;
+  background-color: transparent;
+  resize: none;
+  border: 1px solid;
+  width: fit-content;
+  margin-top: -2rem;
+  position: absolute;
+  right: 0;
+  margin-right: 2rem;
+  border-radius: 7px;
+  border: 1px solid rgb(255, 255, 255);
+  background: rgb(255, 255, 255);
+  font-family: "greycliff-cf", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
-nav a:first-child {
-  margin-right: auto;
+.form-bouton {
+  border: none;
+  padding: 0.2rem;
+  background: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  font-size: 15px;
 }
 
-.nav-droite {
+.ligne {
+  display: none;
+}
+
+.contact-information {
   display: flex;
-  justify-content: space-between;
-  flex-grow: 1;
-  max-width: 500px;
-  margin-left: 30px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4rem;
+  padding-bottom: 2rem;
 }
-.nav-droite a {
-  flex-grow: 1;
-  text-align: center;
+
+.contact-information-icon {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1rem;
+  padding-top: 0.5rem;
+}
+
+.material-symbols-outlined {
+  color: rgb(0, 0, 0);
+  background-color: #ffffff;
+  padding: 6px;
+  border-radius: 21px;
+  font-size: clamp(1.25rem, 1.184rem + 0.316vw, 1.563rem);
+}
+
+.icon-reseau {
+  font-size: clamp(2.1rem, 1.184rem + 1.4vw, 2.2rem);
+  width: 1em;
+  height: 1em;
+  background-color: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon-reseau-svg {
+  width: 60%;
+  height: 60%;
+  fill: rgb(0, 0, 0);
 }
 
 @media screen and (min-width: 768px) {
-  nav a {
-    font-size: 1.2em;
+  .form-contact {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 2rem;
+  }
+  .inputBox {
+    width: 47%;
+  }
+  .inputBox.message {
+    width: 100%;
+  }
+  .inputBox-bouton {
+    position: relative;
+    margin-left: auto;
+    margin-right: 0;
+  }
+  .contact-information {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  .conctact-telephone,
+  .conctact-adresse,
+  .conctact-reseaux {
+    width: 42%;
   }
 }
-.nav-links li a:hover {
-  color: #f0f0f0;
+@media screen and (min-width: 1448px) {
+  .ligne {
+    display: block;
+    width: 2px;
+    height: 650px;
+    background-color: rgb(255, 255, 255);
+  }
+  .separation-contact {
+    flex-direction: row;
+  }
+  .contact-information {
+    flex-direction: column;
+    justify-content: space-around;
+  }
+  .conctact-telephone,
+  .conctact-adresse,
+  .conctact-reseaux {
+    width: 100%;
+  }
+}
+/* Style principal de la page cours individuel */
+.main-cours-individuel {
+  margin-left: 2rem;
+  margin-right: 2rem;
+  margin-top: -2.4rem;
+}
+
+/* Bouton de retour */
+.bouton-retour {
+  background: transparent;
+  border: 2px solid rgb(255, 255, 255);
+  border-radius: 50%;
+}
+
+.svg-bouton-retour {
+  height: 21px;
+  width: auto;
+  transform: scaleX(-1);
+  margin: -1px;
+  top: 2px;
+  position: relative;
+  fill: white;
+}
+
+/* Partie titre et informations du cours */
+.partie1-cours-individuel {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.h1-cours-individuel {
+  text-align: left;
+  font-family: "greycliff-cf", sans-serif;
+  font-weight: 200;
+  font-style: normal;
+  font-size: clamp(2.5rem, 1.928rem + 2.347vw, 5.625rem);
+  margin: 0.5rem 0;
+}
+
+.span-cours-individuel {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  width: 100%;
+  flex-wrap: wrap;
+  padding-top: 1rem;
+}
+
+/* Styles pour les sessions et catégories */
+.info-session-cours {
+  text-align: center;
+  border-radius: 1rem;
+  width: 45%;
+  color: #000000;
+  padding: 2px 1px;
+  height: 50%;
+}
+
+.info-session-cours.session-jaune {
+  background-color: #ffde6f;
+  color: #000000;
+}
+
+.info-session-cours.session-bleu {
+  background-color: #6fcaff;
+  color: #ffffff;
+}
+
+.info-session-cours.session-vert {
+  background-color: #87ce98;
+  color: #000000;
+}
+
+.info-session-cours.session-rose {
+  background-color: #d16fff;
+  color: #000000;
+}
+
+.info-session-cours.session-marine {
+  background-color: #a999ff;
+  color: white;
+}
+
+.info-session-cours.session-rouge {
+  background-color: #ff986f;
+  color: #000000;
+}
+
+.info-bulle-cours {
+  background-color: transparent;
+  border: 1.5px solid white;
+  text-align: center;
+  border-radius: 1rem;
+  width: 45%;
+  color: #ffffff;
+  padding: 2px 7px;
+  height: 50%;
+}
+
+/* Ligne de séparation */
+.ligne-cours {
+  border-bottom: 1.5px solid white;
+  margin: 1rem 0;
+  width: 100%;
+  margin-left: auto;
+}
+
+/* Informations détaillées du cours */
+.information-cours {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.texte-cours-information {
+  font-family: "greycliff-cf", sans-serif;
+  font-weight: 200;
+  font-style: normal;
+  font-size: clamp(1.25rem, 0.967rem + 1.163vw, 1.9rem);
+  text-align: justify;
+  color: white;
+}
+
+/* Bloc pour les logiciels */
+.logiciel-info {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(223, 213, 188, 0.48), rgba(255, 255, 255, 0.65));
+  clip-path: polygon(0 0, 73% 0, 100% 100%, 0% 100%);
+  margin-bottom: 2rem;
+}
+
+.h2-logiciel-info {
+  font-family: "greycliff-cf", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  width: 60%;
+  margin-left: 11px;
+  padding-top: 1rem;
+  color: black;
+  font-size: clamp(1.25rem, 0.967rem + 1.163vw, 1.9rem);
+  text-align: left;
+}
+
+.bold-text {
+  font-weight: bold;
+}
+
+.div-image-logiciel {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.image-logiciel-info {
+  width: 31%;
+  margin-left: 11px;
+  margin-top: 11px;
+  padding-bottom: 1rem;
+}
+
+/*********************** POUR TABLETTE  *********************/
+@media screen and (min-width: 650px) {
+  .bouton-retour,
+  .svg-bouton-retour {
+    display: none;
+  }
+  .partie1-cours-individuel {
+    align-items: center;
+  }
+  .h1-cours-individuel {
+    text-align: center;
+    padding-top: 2rem;
+  }
+  .span-cours-individuel {
+    justify-content: center;
+  }
+  .info-session-cours {
+    padding: 0.2rem 3rem;
+    width: fit-content;
+  }
+  .info-bulle-cours {
+    padding: 0.2rem 1rem;
+    width: fit-content;
+  }
+  .div-image-logiciel {
+    align-items: center;
+    flex-direction: row;
+    gap: 1rem;
+  }
+  .image-logiciel-info {
+    width: 16%;
+  }
+}
+@media screen and (min-width: 1448px) {
+  .h1-cours-individuel {
+    width: 75%;
+  }
+  .ligne-cours {
+    padding-top: 2rem;
+  }
+  .information-cours {
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-top: 3rem;
+  }
+  .logiciel-info {
+    width: 100%;
+    height: auto;
+    background: linear-gradient(135deg, rgba(223, 213, 188, 0.48), rgba(255, 255, 255, 0.65));
+    clip-path: polygon(0 0, 69% 0, 100% 166%, -3% 107%);
+    margin-bottom: 2rem;
+  }
+  .div-image-logiciel {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .image-logiciel-info {
+    width: 45%;
+  }
+}
+.projet-single {
+  margin-left: 2rem;
+  margin-right: 2rem;
+  margin-top: -2.4rem;
+}
+
+.projet-single-information {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2rem;
+  min-height: 100vh;
+  padding-bottom: 2rem;
+}
+
+.titre-projet {
+  font-family: "garamond-premier-pro-display", serif;
+  font-weight: 300;
+  font-style: normal;
+  font-size: clamp(3.5rem, 1.928rem + 3.347vw, 5.625rem);
+  margin-bottom: 0;
+  text-align: left;
+}
+
+.par-projet {
+  text-align: left;
+  font-family: "greycliff-cf", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  font-size: clamp(1.7rem, 0.928rem + 2.347vw, 2.625rem);
+}
+
+.description-projet,
+.description-projet2 {
+  display: flex;
+  gap: 2rem;
+  flex-direction: column;
+}
+
+.image-projet {
+  padding-top: 1rem;
+}
+
+.texte-projet {
+  text-align: justify;
+  font-family: "greycliff-cf", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+  font-size: clamp(1.25rem, 0.967rem + 1.163vw, 1.9rem);
+}
+
+.button-projet {
+  text-align: justify;
+  font-family: "greycliff-cf", sans-serif;
+  font-weight: 100;
+  background-color: transparent;
+  color: white;
+  padding: 10px 15px;
+  cursor: pointer;
+  border: 1px solid white;
+  border-radius: 37px;
+  font-size: clamp(1.25rem, 0.967rem + 1.163vw, 1.9rem);
+  font-size: 1rem;
+  font-size: 1.2rem;
+  transition: transform 0.3s ease-in-out;
+}
+
+.button-projet:hover {
+  transform: scale(1.1); /* Augmente la taille du bouton de 10% */
+}
+
+@media screen and (min-width: 1448px) {
+  .projet-titres {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  .description-projet {
+    align-items: stretch;
+    flex-direction: row;
+  }
+  .image-projet {
+    width: 45%;
+    object-fit: cover;
+  }
+  .description-projet2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
+    padding: 1rem;
+  }
+  .button-a {
+    margin-left: auto;
+  }
+  .button-projet {
+    font-size: 1.5rem;
+  }
+}
+/* ///////////////////////////////////////////////////////////////// */
+/* Règles de layout                                                  */
+/* ///////////////////////////////////////////////////////////////// */
+body.no-scroll {
+  overflow: hidden;
+}
+
+.nav-bar {
+  width: 100%;
+  list-style: none;
+  position: relative;
+  padding: 12px 20px;
+  z-index: 100;
+}
+
+.menu {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  position: relative;
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 9rem;
+  width: 100%;
+  padding: 1rem;
+  padding-right: 2rem;
+}
+
+.logo-tim {
+  position: absolute;
+  left: 1rem;
+}
+
+.logo-tim a {
+  font-family: "termina", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  font-size: clamp(1.563rem, 1.349rem + 0.526vw, 2.188rem);
 }
 
 .nav-links {
-  list-style-type: none;
+  display: flex;
+  list-style: none;
   margin: 0;
   padding: 0;
-  display: flex;
 }
 
 .nav-links li {
-  margin: 0 15px;
+  padding-left: 30px;
 }
 
+.nav-links li a {
+  display: inline-block;
+  text-decoration: none;
+  margin-bottom: -7px;
+  transition: 0.15s ease-in-out;
+  position: relative;
+  color: rgb(255, 255, 255);
+  font-family: "garamond-premier-pro-subhead", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: clamp(1rem, 0.743rem + 0.632vw, 1.75rem);
+}
+
+.nav-links li a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: rgb(255, 255, 255);
+  transition: 0.15s ease-in-out;
+}
+
+.nav-links li a:hover:after {
+  width: 100%;
+}
+
+.ouvre-menu, .ferme-menu {
+  position: absolute;
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  font-size: 1.5rem;
+  display: none;
+}
+
+.ouvre-menu {
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+}
+
+.ferme-menu {
+  top: 20px;
+  right: 20px;
+}
+
+#check {
+  display: none;
+}
+
+@media (max-width: 650px) {
+  .menu {
+    gap: 1.2rem;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    right: -100%;
+    top: 0;
+    z-index: 100;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+    backdrop-filter: blur(15px);
+    transition: all 0.2s ease-in-out;
+    border-radius: 0;
+    border: 0px;
+  }
+  .logo-tim {
+    padding-left: 0.5rem;
+    position: static;
+  }
+  .logo-tim a {
+    font-size: clamp(3.438rem, 2.057rem + 8.242vw, 4.375rem);
+  }
+  .nav-links {
+    flex-direction: column;
+  }
+  .nav-links li {
+    margin-top: 40px;
+    padding-left: 0;
+  }
+  .nav-links li a {
+    padding: 10px;
+    margin-left: 0;
+    font-size: clamp(2.5rem, 1.58rem + 5.495vw, 3.125rem);
+  }
+  .ouvre-menu, .ferme-menu {
+    display: block;
+  }
+  #check:checked ~ .menu {
+    right: 0;
+  }
+}
 /* Composition de base */
 footer {
   position: relative;
@@ -1514,6 +2186,7 @@ footer {
 
 /* Les 3 partis du footer */
 .footer-sections {
+  margin-top: 7vh;
   margin-bottom: 1.5em;
   text-align: left;
   display: flex;
