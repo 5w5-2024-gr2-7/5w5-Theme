@@ -47,6 +47,8 @@ get_header();
           <h3>Production audiovisuelle</h3>
           <h3>Gestion de projet multimédia</h3>
           <h3>Intégration et optimisation de solutions interactives</h3>
+          <h3><?php echo do_shortcode('[compteur_visites]'); ?></h3>
+          
         </div>
       </div>
     </div>
