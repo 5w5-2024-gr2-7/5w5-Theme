@@ -4,7 +4,9 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
+//////////////////////////////// CLASSE SCF ////////////////////////////////////
 
+// Professeurs
 function register_professor_post_type() {
     $labels = array(
         'name' => __('Professors', 'textdomain'),
@@ -37,6 +39,7 @@ function register_professor_post_type() {
 add_action('init', 'register_professor_post_type');
 
 
+// Cours
 function register_course_post_type() {
     $labels = array(
         'name' => __('Courses', 'textdomain'),
@@ -67,6 +70,7 @@ function register_course_post_type() {
 }
 add_action('init', 'register_course_post_type');
 
+// Projets
 function register_project_post_type() {
     $labels = array(
         'name' => __('Projects', 'textdomain'),
@@ -97,6 +101,7 @@ function register_project_post_type() {
 }
 add_action('init', 'register_project_post_type');
 
+////////////////////////////////// MENU ////////////////////////////////////////
 
 function register_my_menus() {
     register_nav_menus(array(
@@ -104,22 +109,6 @@ function register_my_menus() {
     ));
 }
 add_action('init', 'register_my_menus');
-
-
-
-function theme_enqueue_styles() {
-    wp_enqueue_style('main-style', get_stylesheet_uri());
-
-}
-add_action('wp_enqueue_scripts', 'theme_enqueue_styles');
-
-function ajouter_scripts_carrousel() {
-    wp_enqueue_script('carrousel-js', get_template_directory_uri() . '/js/carrousel.js', array('jquery'), null, true);
-
-}
-
-add_action('wp_enqueue_scripts', 'ajouter_scripts_carrousel');
-
 
 function mesoptions() {
     add_theme_support('post-thumbnails');
@@ -135,6 +124,30 @@ function add_menu_class($items) {
     return $items;
 }
 add_filter('wp_nav_menu_objects', 'add_menu_class');
+
+
+
+///////////////////////////// AJOUT JAVA SCRIPT /////////////////////////////////
+
+
+// Script.js
+function theme_enqueue_styles() {
+    wp_enqueue_style('main-style', get_stylesheet_uri());
+
+}
+add_action('wp_enqueue_scripts', 'theme_enqueue_styles');
+
+
+// Carrousel.js
+function ajouter_scripts_carrousel() {
+    wp_enqueue_script('carrousel-js', get_template_directory_uri() . '/js/carrousel.js', array('jquery'), null, true);
+
+}
+add_action('wp_enqueue_scripts', 'ajouter_scripts_carrousel');
+
+
+///////////////////////////// AJOUT LIEN STYLE /////////////////////////////////
+
 
 function custom_enqueue_styles() {
     // Ajouter le lien vers la feuille de style Typekit

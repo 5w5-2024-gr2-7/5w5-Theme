@@ -2064,7 +2064,7 @@ button:hover {
     font-size: 1.5rem;
   }
   .carrousel-container {
-    max-width: 800px;
+    max-width: 55rem;
     margin: 0;
   }
 }
