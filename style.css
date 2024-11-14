@@ -303,10 +303,6 @@ p {
   align-items: center;
 }
 
-h2 {
-  margin: 0;
-}
-
 .dropdown-button {
   background-color: #333;
   border: none;
@@ -801,6 +797,7 @@ h1 {
   }
   .teacher-info p {
     font-size: 14px;
+    margin-bottom: 3em;
   }
   .teacher-buttons {
     display: flex;
@@ -928,7 +925,7 @@ h1 {
   .titre-principal {
     text-align: center;
   }
-  h2 {
+  .titre-principal h2 {
     order: 1;
     width: 100%;
     text-align: center;
@@ -966,7 +963,7 @@ h1 {
   .titre-principal {
     text-align: center;
   }
-  h2 {
+  .titre-principal h2 {
     order: 1;
     width: 100%;
     text-align: center;
@@ -1168,12 +1165,16 @@ h1 {
   text-align: center;
 }
 
+.projet h2 {
+  margin-bottom: 1em;
+}
+
 .projet img {
   display: flex;
   background-color: blue;
-  width: 50vw;
   height: auto;
   border-radius: 8px;
+  margin-bottom: 1em;
 }
 
 .projet p {

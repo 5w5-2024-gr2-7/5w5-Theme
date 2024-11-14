@@ -4,7 +4,6 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-
 function register_professor_post_type() {
     $labels = array(
         'name' => __('Professors', 'textdomain'),
@@ -90,7 +89,7 @@ function register_project_post_type() {
         'rewrite' => array('slug' => 'projects'),
         'supports' => array('title', 'editor', 'thumbnail'),
         'show_in_rest' => true,
-        'menu_icon' => 'dashicons-portfolio', // Icône spécifique aux projets
+        'menu_icon' => 'dashicons-portfolio',
     );
 
     register_post_type('project', $args);
@@ -107,7 +106,6 @@ add_action('init', 'register_my_menus');
 
 function theme_enqueue_styles() {
     wp_enqueue_style('main-style', get_stylesheet_uri());
-
 }
 add_action('wp_enqueue_scripts', 'theme_enqueue_styles');
 
@@ -140,3 +138,45 @@ function custom_enqueue_styles() {
 add_action('wp_enqueue_scripts', 'custom_enqueue_styles');
 
 
+function filter_courses_by_session_and_volet($query) {
+    if (!is_admin() && $query->is_main_query() && is_post_type_archive('course')) {
+
+        if (isset($_GET['session']) && !empty($_GET['session'])) {
+            $query->set('meta_query', array(
+                array(
+                    'key' => 'session', 
+                    'value' => sanitize_text_field($_GET['session']),
+                    'compare' => 'LIKE'
+                ),
+            ));
+        }
+
+        if (isset($_GET['volet']) && !empty($_GET['volet'])) {
+            $query->set('meta_query', array(
+                array(
+                    'key' => 'category', 
+                    'value' => sanitize_text_field($_GET['volet']),
+                    'compare' => 'LIKE'
+                ),
+            ));
+        }
+    }
+}
+add_action('pre_get_posts', 'filter_courses_by_session_and_volet');
+
+// Added filtering logic for projects by category (session, etc.)
+function filter_projects_by_category($query) {
+    if (!is_admin() && $query->is_main_query() && is_post_type_archive('project')) {
+
+        if (isset($_GET['category']) && !empty($_GET['category'])) {
+            $query->set('meta_query', array(
+                array(
+                    'key' => 'category', 
+                    'value' => sanitize_text_field($_GET['category']),
+                    'compare' => 'LIKE'
+                ),
+            ));
+        }
+    }
+}
+add_action('pre_get_posts', 'filter_projects_by_category');

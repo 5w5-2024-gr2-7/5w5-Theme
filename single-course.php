@@ -1,4 +1,3 @@
-<!-- Code pour la page single d'un cours -->
 <?php
 get_header();
 

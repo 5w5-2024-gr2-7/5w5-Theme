@@ -14,7 +14,7 @@
 
 <div class="contact-courriel">
   <h class="h2-Contact">Par courriel</h>
-  <h3 class="h3-Contact">Envoyer nous vos questions ou vos intérogations</h3>
+  <h3 class="h3-Contact">Envoyez-nous vos questions ou vos intérogations</h3>
   <form class="form-contact">
  
     <div class="inputBox">
