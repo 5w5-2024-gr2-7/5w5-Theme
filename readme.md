@@ -21,8 +21,17 @@
 
 ### L'objectif du Sprint 4
 
-- À venir
+- L’objectif du sprint 4 est de finaliser l’intégration du design et l’interactivité du projet, tout en s'assurant que le site fonctionne parfaitement sur le serveur distant en vue de la présentation finale. Ce sprint inclut une revue permettant aux professeurs de valider l’état d’avancement du projet, notamment l’intégration et la programmation d’un thème et de deux extensions WordPress. Les tâches principales incluent l’intégration finale du design, l’amélioration des animations et de l’interactivité, l’optimisation de l’usabilité et l’adaptabilité du site pour garantir sa réactivité. Il est également demandé d’effectuer des tests d’accessibilité avec l’outil Lighthouse et de corriger les éventuels problèmes. Le sprint se termine par la mise en œuvre des deux extensions et la vérification que l’ensemble du site fonctionne correctement sur le serveur distant.
 
+
+### Voici un résumé de nos objectifs pour le Sprint 4 en une liste de tâches : 
+    
+- Intégration du design du site Web -> finaliser l’intégration du design complet du site.
+- Amélioration de l’interactivité et des animations -> optimiser les fonctionnalités d’interactivité + améliorer les animations du site.
+- Amélioration de l’usabilité -> vérifier et optimiser l’utilisabilité du site.
+- Vérification et mise en œuvre de l’adaptabilité -> finaliser et tester le fonctionnement adaptatif du site pour garantir sa réactivité.
+- Finalisation des extensions WordPress -> compléter et mettre en place les deux extensions WordPress.
+- Vérification du fonctionnement sur le serveur distant -> assurer un fonctionnement sans faille du site sur le serveur d’hébergement.
 
 ### VOICI UN LIEN VERS NOTRE SITE EN LIGNE
  - https://gftnth00.mywhc.ca/tim51/
