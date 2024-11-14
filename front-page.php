@@ -83,7 +83,7 @@ get_header();
 
 <div class="section-projet">
     <div class="projet-mobile">
-        <h class="h1-projet">Pour voir nos projets</h>
+        <h class="h1-projet">Pour voir nos</h>
 
     <div class="conteneur-projet-mobile">
         <div class="contenue-projet">
@@ -100,34 +100,34 @@ get_header();
     </div>
 </div>
 
-<div class="word">
-        <div class="letter-container">
-            <span class="letter">P</span>
-            <div class="project">Projet 1</div>
+<div class="projet-mot">
+        <div class="projet-container">
+            <span class="lettre">P</span>
+            <div class="projet">Projet 1</div>
         </div>
-        <div class="letter-container">
-            <span class="letter">R</span>
-            <div class="project">Projet 2</div>
+        <div class="projet-container">
+            <span class="lettre">R</span>
+            <div class="projet">Projet 2</div>
         </div>
-        <div class="letter-container">
-            <span class="letter">O</span>
-            <div class="project">Projet 3</div>
+        <div class="projet-container lettreO">
+            <span class="lettre">O</span>
+            <div class="projet">Projet 3</div>
         </div>
-        <div class="letter-container">
-            <span class="letter">J</span>
-            <div class="project">Projet 4</div>
+        <div class="projet-container">
+            <span class="lettre">J</span>
+            <div class="projet">Projet 4</div>
         </div>
-        <div class="letter-container">
-            <span class="letter">E</span>
-            <div class="project">Projet 5</div>
+        <div class="projet-container">
+            <span class="lettre">E</span>
+            <div class="projet">Projet 5</div>
         </div>
-        <div class="letter-container">
-            <span class="letter">T</span>
-            <div class="project">Projet 6</div>
+        <div class="projet-container">
+            <span class="lettre">T</span>
+            <div class="projet">Projet 6</div>
         </div>
-        <div class="letter-container">
-            <span class="letter">S</span>
-            <div class="project">Projet 7</div>
+        <div class="projet-container">
+            <span class="lettre">S</span>
+            <div class="projet">Projet 7</div>
         </div>
     </div>
 
