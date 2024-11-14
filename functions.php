@@ -105,11 +105,20 @@ function register_my_menus() {
 }
 add_action('init', 'register_my_menus');
 
+
+
 function theme_enqueue_styles() {
     wp_enqueue_style('main-style', get_stylesheet_uri());
 
 }
 add_action('wp_enqueue_scripts', 'theme_enqueue_styles');
+
+function ajouter_scripts_carrousel() {
+    wp_enqueue_script('carrousel-js', get_template_directory_uri() . '/js/carrousel.js', array('jquery'), null, true);
+
+}
+
+add_action('wp_enqueue_scripts', 'ajouter_scripts_carrousel');
 
 
 function mesoptions() {

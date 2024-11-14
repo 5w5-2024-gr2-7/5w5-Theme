@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
   function handleScroll() {
       const svg = document.getElementById('corner-shape');
-      const svgPosition = svg.getBoundingClientRect().top;
+    //   const svgPosition = svg.getBoundingClientRect().top;
       const screenHeight = window.innerHeight;
 
 

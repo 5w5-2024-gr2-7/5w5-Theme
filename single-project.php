@@ -22,7 +22,30 @@ get_header();
 
         <div class="description-projet">
             <!-- Image dynamique -->
-                <img class="image-projet" src="<?php the_field('image_projet1'); ?>" alt="Image du projet">
+            <div class="carrousel-container">
+    <div class="carrousel">
+        <?php 
+        // Afficher les images du projet, selon les champs ACF (image_projet1 à image_projet3)
+        $images = []; // Tableau pour stocker les images
+        for ($i = 1; $i <= 5; $i++) { // On vérifie jusqu'à 5 images
+            $image_projet = get_field('image_projet' . $i);
+            if ($image_projet) {
+                $images[] = $image_projet;
+            }
+        }
+
+        // Afficher les images du tableau
+        foreach ($images as $image_projet) : ?>
+            <div class="carrousel__item">
+                <img class="carrousel__image" src="<?php echo esc_url($image_projet); ?>" alt="Image du projet">
+            </div>
+        <?php endforeach; ?>
+    </div>
+    
+    <!-- Flèches de navigation -->
+    <button class="carrousel__prev">&#10094;</button>
+    <button class="carrousel__next">&#10095;</button>
+</div>
             
 
             <div class="description-projet2">
@@ -40,6 +63,8 @@ get_header();
         </div>        
     </div>
 </div>
+
+
 
 <!----------------------- FOOTER ---------------------->
 
