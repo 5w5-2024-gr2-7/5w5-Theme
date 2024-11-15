@@ -37,3 +37,7 @@
   </div>
   <img src="<?php echo get_site_url(); ?>/wp-content/uploads/2024/11/tim2.png" alt="image">
 </footer>
+
+<?php wp_footer(); ?>
+</body>
+</html>

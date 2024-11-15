@@ -36,7 +36,7 @@ html {
 body {
   background: linear-gradient(-45deg, #e73c7e, #3a66b8, #2383af, #ac5bcc);
   background-size: 200% 200%;
-  animation: gradient 70s ease infinite; /* Increased duration from 15s to 30s */
+  animation: gradient 70s ease infinite;
   height: 100%;
 }
 @keyframes gradient {
@@ -150,21 +150,17 @@ header {
 }
 /*=============== VARIABLES CSS ===============*/
 :root {
-  /*========== Colors ==========*/
-  /*Color mode HSL(hue, saturation, lightness)*/
   --first-color: hsl(82, 60%, 28%);
   --title-color: hsl(0, 0%, 15%);
   --text-color: hsl(0, 0%, 35%);
   --body-color: hsl(0, 0%, 95%);
   --contenu-color: hsl(0, 0%, 100%);
-  /*========== Font and typography ==========*/
   /*.5rem = 8px | 1rem = 16px ...*/
   --body-font: "Poppins", sans-serif;
   --h2-font-size: 1.25rem;
   --small-font-size: .813rem;
 }
 
-/*========== Responsive typography ==========*/
 @media screen and (min-width: 1120px) {
   :root {
     --h2-font-size: 1.5rem;
@@ -224,7 +220,6 @@ p {
   animation-duration: 5s;
 }
 
-/* Naming animations in hover */
 .card__article:hover .card__data {
   animation: show-data 1s forwards;
   opacity: 1;
@@ -243,7 +238,6 @@ p {
   animation: remove-data 1s forwards;
 }
 
-/* Card animation */
 @keyframes show-data {
   50% {
     transform: translateY(-10rem);
@@ -341,25 +335,25 @@ p {
   background-color: #5578B4;
   color: white;
   border: none;
-  width: 50px; /* Set explicit width and height for a perfect circle */
+  width: 50px;
   height: 50px;
   border-radius: 50%;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden; /* Ensures no overflow if content is larger */
+  overflow: hidden;
 }
 
 .course-button a {
   color: white;
   text-decoration: none;
-  font-size: 1.5em; /* Adjust font size to center the arrow inside */
-  line-height: 1; /* Helps center the icon vertically */
+  font-size: 1.5em;
+  line-height: 1;
 }
 
 .course-button:hover {
-  background-color: #466899; /* Slightly darker green for hover effect */
+  background-color: #466899;
 }
 
 /* Mode desktop */
@@ -397,16 +391,13 @@ p {
   background-color: green;
 }
 
-/* Title Styling */
 .titre-principal {
   font-size: 5em;
   font-weight: bold;
   margin-bottom: 1em;
   margin-top: 1em;
-  padding-left: 1em;
 }
 
-/* Mobile Styles for .titre-principal */
 @media screen and (max-width: 768px) {
   .titre-principal {
     font-size: 2.5em;
@@ -425,7 +416,7 @@ p {
   flex-wrap: wrap;
   justify-content: space-around;
   padding: 1em;
-  gap: 1em; /* Reduced gap */
+  gap: 1em;
 }
 
 .bouton {
@@ -465,7 +456,6 @@ p {
   bottom: 0;
 }
 
-/* Responsivity */
 @media screen and (max-width: 768px) {
   .bouton {
     width: 250px;
@@ -488,7 +478,6 @@ p {
     font-size: 1em;
   }
 }
-/* Add the remaining styles for other sections */
 .card-contenu {
   display: flex;
   flex-wrap: wrap;
@@ -624,7 +613,6 @@ h1 {
   color: black;
 }
 
-/* Mobile Styles */
 @media (max-width: 768px) {
   .professor-card {
     width: calc(100% - 40px);
@@ -632,7 +620,6 @@ h1 {
 }
 /*=============== CARD ===============*/
 .contenu {
-  place-items: center;
   margin-inline: 1.5rem;
   padding-bottom: 5rem;
 }
@@ -649,7 +636,7 @@ h1 {
 
 .card__img {
   width: 100%;
-  height: 220px; /* Adjust height as needed */
+  height: 220px;
   background-size: cover;
   background-position: center;
   border-radius: 1.5rem;
@@ -695,7 +682,6 @@ h1 {
 }
 
 /*=============== BREAKPOINTS ===============*/
-/* Small devices */
 @media screen and (max-width: 340px) {
   .contenu {
     margin-inline: 1rem;
@@ -705,20 +691,18 @@ h1 {
     padding: 1rem;
   }
 }
-/* Medium devices */
 @media screen and (min-width: 768px) {
   .card__contenu {
     grid-template-columns: repeat(2, 1fr);
     column-gap: 1.5rem;
   }
 }
-/* Large devices */
 @media screen and (min-width: 1120px) {
   .card__contenu {
     grid-template-columns: repeat(2, 1fr);
   }
   .card__img {
-    height: 250px;
+    height: 400px;
   }
   .card__data {
     width: 316px;
@@ -1038,7 +1022,6 @@ h1 {
   text-align: center;
 }
 
-/* Software section */
 .software-section {
   text-align: center;
   margin-top: 20px;
@@ -1061,7 +1044,6 @@ h1 {
   margin-top: 10px;
 }
 
-/* Mobile View (Max Width 768px) */
 @media only screen and (max-width: 768px) {
   .back-btn {
     display: block;
@@ -2004,6 +1986,7 @@ h1 {
   overflow: hidden;
   display: flex;
   justify-content: center;
+  width: 100%;
 }
 
 .carrousel {
@@ -2013,11 +1996,9 @@ h1 {
 
 .carrousel__item {
   min-width: 100%;
-  flex-shrink: 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
 }
 
 .carrousel__image {
@@ -2083,7 +2064,7 @@ h1 {
     font-size: 1.5rem;
   }
   .carrousel-container {
-    max-width: 55rem;
+    max-width: 77rem;
     margin: 0;
   }
 }

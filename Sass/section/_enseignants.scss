@@ -63,7 +63,7 @@ h1 {
   color: black;
 }
 
-/* Mobile Styles */
+
 @media (max-width: 768px) {
   .professor-card {
       width: calc(100% - 40px);
@@ -72,7 +72,6 @@ h1 {
 
 /*=============== CARD ===============*/
 .contenu {
-  place-items: center;
   margin-inline: 1.5rem;
   padding-bottom: 5rem;
 }
@@ -89,7 +88,7 @@ h1 {
 
 .card__img {
   width: 100%;
-  height: 220px; /* Adjust height as needed */
+  height: 220px;
   background-size: cover;
   background-position: center;
   border-radius: 1.5rem;
@@ -135,7 +134,7 @@ h1 {
 }
 
 /*=============== BREAKPOINTS ===============*/
-/* Small devices */
+
 @media screen and (max-width: 340px) {
   .contenu {
       margin-inline: 1rem;
@@ -146,7 +145,7 @@ h1 {
   }
 }
 
-/* Medium devices */
+
 @media screen and (min-width: 768px) {
   .card__contenu {
       grid-template-columns: repeat(2, 1fr);
@@ -154,13 +153,13 @@ h1 {
   }
 }
 
-/* Large devices */
+
 @media screen and (min-width: 1120px) {
   .card__contenu {
       grid-template-columns: repeat(2, 1fr);
   }
   .card__img {
-      height: 250px;
+      height: 400px;
   }
   .card__data {
       width: 316px;

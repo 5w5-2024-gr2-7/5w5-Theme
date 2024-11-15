@@ -61,25 +61,25 @@ font-style: normal;
   background-color: #5578B4;
   color: white;
   border: none;
-  width: 50px; /* Set explicit width and height for a perfect circle */
+  width: 50px;
   height: 50px;
   border-radius: 50%;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden; /* Ensures no overflow if content is larger */
+  overflow: hidden;
 }
 
 .course-button a {
   color: white;
   text-decoration: none;
-  font-size: 1.5em; /* Adjust font size to center the arrow inside */
-  line-height: 1; /* Helps center the icon vertically */
+  font-size: 1.5em;
+  line-height: 1;
 }
 
 .course-button:hover {
-  background-color: #466899; /* Slightly darker green for hover effect */
+  background-color: #466899;
 }
 
 /* Mode desktop */
@@ -122,16 +122,13 @@ font-style: normal;
   background-color: green;
 }
 
-/* Title Styling */
 .titre-principal {
   font-size: 5em;
   font-weight: bold;
   margin-bottom: 1em;
   margin-top: 1em;
-  padding-left: 1em;
 }
 
-/* Mobile Styles for .titre-principal */
 @media screen and (max-width: 768px) {
   .titre-principal {
     font-size: 2.5em;
@@ -154,7 +151,7 @@ font-style: normal;
   flex-wrap: wrap;
   justify-content: space-around;
   padding: 1em;
-  gap: 1em;  /* Reduced gap */
+  gap: 1em;
 }
 
 .bouton {
@@ -194,7 +191,7 @@ font-style: normal;
   bottom: 0;
 }
 
-/* Responsivity */
+
 @media screen and (max-width: 768px) {
   .bouton {
     width: 250px;
@@ -222,7 +219,6 @@ font-style: normal;
   }
 }
 
-/* Add the remaining styles for other sections */
 .card-contenu {
   display: flex;
   flex-wrap: wrap;
