@@ -19,6 +19,7 @@
   justify-content: space-between;
   align-items: flex-start;
   padding: 2em;
+  padding-bottom: 5em;
 }
 
 .image-apropos {
@@ -68,7 +69,7 @@
       text-align: center;
   }
 
-  h2 {
+  .titre-principal h2 {
       order: 1;
       width: 100%;
       text-align: center;
@@ -113,7 +114,7 @@
       text-align: center;
   }
 
-  h2 {
+  .titre-principal h2 {
       order: 1;
       width: 100%;
       text-align: center;
@@ -148,10 +149,10 @@
   }
 }
 .line.inactive {
-  opacity: 0; /* Keeps the paths hidden initially */
+  opacity: 0;
   transition: opacity 0.5s ease;
 }
 
 .line.active {
-  opacity: 1; /* Make paths visible and animatable */
+  opacity: 1;
 }

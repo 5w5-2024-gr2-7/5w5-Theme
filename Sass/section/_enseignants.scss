@@ -26,24 +26,44 @@ h1 {
   max-width: 100%;
 }
 
-button {
-  background-color: #6d50e6;
+.button-link {
+  display: inline-block;
+  background-color: #5578B4;
+  background-image: linear-gradient(145deg, #5a84c5, #466899);
   color: white;
   border: none;
-  border-radius: 5px;
-  padding: 10px 15px;
+  border-radius: 25px;
+  padding: 10px 20px;
   cursor: pointer;
+  font-size: 1em;
+  font-weight: 600;
+  text-decoration: none;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  transition: background 0.3s ease, box-shadow 0.3s ease;
 }
 
-button:hover {
-  background-color: #5c3fbe;
+.button-link:hover {
+  background-color: #466899;
+  background-image: linear-gradient(145deg, #486d99, #3c5a80);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.button-link:active {
+  background-color: #3c5a80;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.button-link:focus {
+  outline: 2px solid #91a8d0;
+  outline-offset: 2px;
 }
 
 .professor-card > h2 {
   color: black;
 }
 
-/* Mobile Styles */
+
 @media (max-width: 768px) {
   .professor-card {
       width: calc(100% - 40px);
@@ -52,7 +72,6 @@ button:hover {
 
 /*=============== CARD ===============*/
 .contenu {
-  place-items: center;
   margin-inline: 1.5rem;
   padding-bottom: 5rem;
 }
@@ -69,7 +88,7 @@ button:hover {
 
 .card__img {
   width: 100%;
-  height: 220px; /* Adjust height as needed */
+  height: 220px;
   background-size: cover;
   background-position: center;
   border-radius: 1.5rem;
@@ -115,7 +134,7 @@ button:hover {
 }
 
 /*=============== BREAKPOINTS ===============*/
-/* Small devices */
+
 @media screen and (max-width: 340px) {
   .contenu {
       margin-inline: 1rem;
@@ -126,7 +145,7 @@ button:hover {
   }
 }
 
-/* Medium devices */
+
 @media screen and (min-width: 768px) {
   .card__contenu {
       grid-template-columns: repeat(2, 1fr);
@@ -134,13 +153,13 @@ button:hover {
   }
 }
 
-/* Large devices */
+
 @media screen and (min-width: 1120px) {
   .card__contenu {
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(2, 1fr);
   }
   .card__img {
-      height: 250px;
+      height: 400px;
   }
   .card__data {
       width: 316px;
@@ -225,6 +244,7 @@ button:hover {
 
   .teacher-info p {
       font-size: 14px;
+      margin-bottom: 3em;
   }
   .teacher-buttons {
     display: flex;
