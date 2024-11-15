@@ -36,7 +36,7 @@ html {
 body {
   background: linear-gradient(-45deg, #e73c7e, #3a66b8, #2383af, #ac5bcc);
   background-size: 200% 200%;
-  animation: gradient 70s ease infinite; /* Increased duration from 15s to 30s */
+  animation: gradient 70s ease infinite;
   height: 100%;
 }
 @keyframes gradient {
@@ -97,7 +97,6 @@ header {
   font-family: "AppleGaramond";
   font-size: 1.7em;
   text-align: left;
-  padding-left: 1em;
   margin: 0;
 }
 
@@ -151,21 +150,17 @@ header {
 }
 /*=============== VARIABLES CSS ===============*/
 :root {
-  /*========== Colors ==========*/
-  /*Color mode HSL(hue, saturation, lightness)*/
   --first-color: hsl(82, 60%, 28%);
   --title-color: hsl(0, 0%, 15%);
   --text-color: hsl(0, 0%, 35%);
   --body-color: hsl(0, 0%, 95%);
   --contenu-color: hsl(0, 0%, 100%);
-  /*========== Font and typography ==========*/
   /*.5rem = 8px | 1rem = 16px ...*/
   --body-font: "Poppins", sans-serif;
   --h2-font-size: 1.25rem;
   --small-font-size: .813rem;
 }
 
-/*========== Responsive typography ==========*/
 @media screen and (min-width: 1120px) {
   :root {
     --h2-font-size: 1.5rem;
@@ -204,7 +199,27 @@ p {
 /* ///////////////////////////////////////////////////////////////// */
 /* Règles d'animations                                               */
 /* ///////////////////////////////////////////////////////////////// */
-/* Naming animations in hover */
+.bg {
+  animation: slide 3s ease-in-out infinite alternate;
+  background-image: linear-gradient(-60deg, #6c3 50%, #09f 50%);
+  bottom: 0;
+  left: -50%;
+  opacity: 0.5;
+  position: fixed;
+  right: -50%;
+  top: 0;
+  z-index: -1;
+}
+
+.bg2 {
+  animation-direction: alternate-reverse;
+  animation-duration: 4s;
+}
+
+.bg3 {
+  animation-duration: 5s;
+}
+
 .card__article:hover .card__data {
   animation: show-data 1s forwards;
   opacity: 1;
@@ -223,7 +238,6 @@ p {
   animation: remove-data 1s forwards;
 }
 
-/* Card animation */
 @keyframes show-data {
   50% {
     transform: translateY(-10rem);
@@ -267,6 +281,9 @@ p {
 
 .course-box > h3 {
   color: black;
+  font-family: "greycliff-cf", sans-serif;
+  font-weight: 700;
+  font-style: normal;
 }
 
 .header {
@@ -278,10 +295,6 @@ p {
 .header-item {
   display: flex;
   align-items: center;
-}
-
-h2 {
-  margin: 0;
 }
 
 .dropdown-button {
@@ -319,15 +332,28 @@ h2 {
 }
 
 .course-button {
-  background-color: #4CAF50;
+  background-color: #5578B4;
   color: white;
   border: none;
-  padding: 10px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
+}
+
+.course-button a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.5em;
+  line-height: 1;
+}
+
+.course-button:hover {
+  background-color: #466899;
 }
 
 /* Mode desktop */
@@ -365,7 +391,6 @@ h2 {
   background-color: green;
 }
 
-/* Title Styling */
 .titre-principal {
   font-size: 5em;
   font-weight: bold;
@@ -373,7 +398,6 @@ h2 {
   margin-top: 1em;
 }
 
-/* Mobile Styles for .titre-principal */
 @media screen and (max-width: 768px) {
   .titre-principal {
     font-size: 2.5em;
@@ -392,13 +416,13 @@ h2 {
   flex-wrap: wrap;
   justify-content: space-around;
   padding: 1em;
-  gap: 1em; /* Reduced gap */
+  gap: 1em;
 }
 
 .bouton {
   border-radius: 8px;
-  width: 300px; /* Adjusted width for rectangular shape */
-  height: 400px; /* Adjusted height for rectangular shape */
+  width: 300px;
+  height: 400px;
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
   display: flex;
   flex-direction: column;
@@ -432,7 +456,6 @@ h2 {
   bottom: 0;
 }
 
-/* Responsivity */
 @media screen and (max-width: 768px) {
   .bouton {
     width: 250px;
@@ -445,7 +468,7 @@ h2 {
 @media screen and (max-width: 480px) {
   .conteneur-boutons {
     padding: 0.5em;
-    gap: 0.5em; /* Further reduced gap */
+    gap: 0.5em;
   }
   .bouton {
     width: 200px;
@@ -455,7 +478,6 @@ h2 {
     font-size: 1em;
   }
 }
-/* Add the remaining styles for other sections */
 .card-contenu {
   display: flex;
   flex-wrap: wrap;
@@ -554,24 +576,43 @@ h1 {
   max-width: 100%;
 }
 
-button {
-  background-color: #6d50e6;
+.button-link {
+  display: inline-block;
+  background-color: #5578B4;
+  background-image: linear-gradient(145deg, #5a84c5, #466899);
   color: white;
   border: none;
-  border-radius: 5px;
-  padding: 10px 15px;
+  border-radius: 25px;
+  padding: 10px 20px;
   cursor: pointer;
+  font-size: 1em;
+  font-weight: 600;
+  text-decoration: none;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  transition: background 0.3s ease, box-shadow 0.3s ease;
 }
 
-button:hover {
-  background-color: #5c3fbe;
+.button-link:hover {
+  background-color: #466899;
+  background-image: linear-gradient(145deg, #486d99, #3c5a80);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.button-link:active {
+  background-color: #3c5a80;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.button-link:focus {
+  outline: 2px solid #91a8d0;
+  outline-offset: 2px;
 }
 
 .professor-card > h2 {
   color: black;
 }
 
-/* Mobile Styles */
 @media (max-width: 768px) {
   .professor-card {
     width: calc(100% - 40px);
@@ -579,7 +620,6 @@ button:hover {
 }
 /*=============== CARD ===============*/
 .contenu {
-  place-items: center;
   margin-inline: 1.5rem;
   padding-bottom: 5rem;
 }
@@ -596,7 +636,7 @@ button:hover {
 
 .card__img {
   width: 100%;
-  height: 220px; /* Adjust height as needed */
+  height: 220px;
   background-size: cover;
   background-position: center;
   border-radius: 1.5rem;
@@ -642,7 +682,6 @@ button:hover {
 }
 
 /*=============== BREAKPOINTS ===============*/
-/* Small devices */
 @media screen and (max-width: 340px) {
   .contenu {
     margin-inline: 1rem;
@@ -652,20 +691,18 @@ button:hover {
     padding: 1rem;
   }
 }
-/* Medium devices */
 @media screen and (min-width: 768px) {
   .card__contenu {
     grid-template-columns: repeat(2, 1fr);
     column-gap: 1.5rem;
   }
 }
-/* Large devices */
 @media screen and (min-width: 1120px) {
   .card__contenu {
     grid-template-columns: repeat(2, 1fr);
   }
   .card__img {
-    height: 250px;
+    height: 400px;
   }
   .card__data {
     width: 316px;
@@ -744,6 +781,7 @@ button:hover {
   }
   .teacher-info p {
     font-size: 14px;
+    margin-bottom: 3em;
   }
   .teacher-buttons {
     display: flex;
@@ -871,7 +909,7 @@ button:hover {
   .titre-principal {
     text-align: center;
   }
-  h2 {
+  .titre-principal h2 {
     order: 1;
     width: 100%;
     text-align: center;
@@ -909,7 +947,7 @@ button:hover {
   .titre-principal {
     text-align: center;
   }
-  h2 {
+  .titre-principal h2 {
     order: 1;
     width: 100%;
     text-align: center;
@@ -984,7 +1022,6 @@ button:hover {
   text-align: center;
 }
 
-/* Software section */
 .software-section {
   text-align: center;
   margin-top: 20px;
@@ -1007,7 +1044,6 @@ button:hover {
   margin-top: 10px;
 }
 
-/* Mobile View (Max Width 768px) */
 @media only screen and (max-width: 768px) {
   .back-btn {
     display: block;
@@ -1059,8 +1095,11 @@ button:hover {
   }
 }
 .galerie-projets {
+  display: flex;
+  width: 100%;
   padding: 20px;
   text-align: center;
+  flex-direction: column;
 }
 
 .galerie-projets h1 {
@@ -1089,7 +1128,9 @@ button:hover {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  align-items: center;
   gap: 20px;
+  size: 100%;
 }
 
 .galerie-projets > h1 {
@@ -1106,10 +1147,16 @@ button:hover {
   text-align: center;
 }
 
+.projet h2 {
+  margin-bottom: 1em;
+}
+
 .projet img {
-  width: 100%;
+  display: flex;
+  background-color: blue;
   height: auto;
   border-radius: 8px;
+  margin-bottom: 1em;
 }
 
 .projet p {
@@ -1351,7 +1398,7 @@ button:hover {
 }
 .header {
   position: relative;
-  z-index: 3;
+  z-index: 4;
 }
 
 .OuLa {
@@ -1442,161 +1489,6 @@ button:hover {
   pointer-events: none;
 }
 
-.titre-principale {
-  font-family: "garamond-premier-pro-subhead", serif;
-  font-weight: 400;
-  font-style: normal;
-}
-
-.titre-principale-italique {
-  font-family: "garamond-premier-pro", serif;
-  font-weight: 400;
-  font-style: italic;
-}
-
-.projet-mobile {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-}
-
-.h1-projet {
-  font-family: AppleGaramond2;
-  color: rgb(255, 255, 255);
-  font-size: clamp(2.5rem, 1.928rem + 2.347vw, 5.625rem);
-}
-
-.contenue-projet {
-  display: flex;
-  align-items: center;
-}
-
-.conteneur-projet-mobile {
-  width: 85%;
-  border: 2px solid;
-  margin: 1rem;
-}
-
-.svg-projet {
-  width: 22%;
-  margin: 8px;
-  background-color: aliceblue;
-  padding: 1rem;
-  border-radius: 12px;
-}
-
-.projet-mot {
-  display: none;
-}
-
-@media screen and (min-width: 650px) {
-  .conteneur-projet-mobile {
-    display: none;
-  }
-  .projet-mot {
-    display: flex;
-    justify-content: space-between;
-    width: 90vw;
-    position: relative;
-    height: 20rem;
-    width: 100%;
-    align-items: center;
-    font-family: "FontGreycliffBold";
-    color: white;
-  }
-  .projet-container {
-    position: relative;
-    display: flex;
-    flex: 1;
-    justify-content: center;
-    align-items: center;
-    transition: flex 0.3s ease;
-    overflow: hidden;
-    height: 100%;
-    z-index: 1;
-  }
-  .lettre {
-    font-size: clamp(6.25rem, -3.3608rem + 23.5849vw, 18.75rem);
-    font-weight: bold;
-    transition: transform 0.3s ease, background-color 0.3s ease;
-    display: inline-block;
-    cursor: pointer;
-    background-color: transparent;
-    padding: 10px;
-    border-radius: 5px;
-    text-align: center;
-    z-index: 2;
-  }
-  .projet-container:hover {
-    flex: 2;
-  }
-  .projet-container:hover::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-    z-index: 1;
-    transition: background-image 0.3s ease;
-  }
-  .projet-container:nth-child(1):hover::before {
-    background-image: url("https://next-images.123rf.com/index/_next/image/?url=https://assets-cdn.123rf.com/index/static/assets/top-section-bg.jpeg&w=3840&q=75");
-  }
-  .projet-container:nth-child(2):hover::before {
-    background-image: url("https://media.istockphoto.com/id/1696167872/photo/aerial-view-of-forest-at-sunset-on-the-background-of-mountains-in-dolomites.jpg?s=2048x2048&w=is&k=20&c=uLAmWeg4couEsq_U62PY4mfUnM7Zut1RxGYDHhqYCNs=");
-  }
-  .projet-container:nth-child(3):hover::before {
-    background-image: url("https://cdn.pixabay.com/photo/2024/11/08/07/03/ai-generated-9182653_1280.jpg");
-  }
-  .projet-container:nth-child(4):hover::before {
-    background-image: url("https://cdn.pixabay.com/photo/2024/11/08/15/36/giraffes-9183614_1280.jpg");
-  }
-  .projet-container:nth-child(5):hover::before {
-    background-image: url("https://cdn.pixabay.com/photo/2024/11/11/04/59/rabbit-9189125_1280.jpg");
-  }
-  .projet-container:nth-child(6):hover::before {
-    background-image: url("https://cdn.pixabay.com/photo/2024/11/11/15/14/winter-9190298_1280.jpg");
-  }
-  .projet-container:nth-child(7):hover::before {
-    background-image: url("https://media.istockphoto.com/id/481229372/photo/spiral-galaxy-illustration-of-milky-way.jpg?s=2048x2048&w=is&k=20&c=dQERb_aK3VHpocNEAkcONe1TUVP86QlCu18nI8QEfAQ=");
-  }
-  .projet-container:hover .lettre {
-    transform: scaleX(2);
-    color: white; /* La couleur de la lettre devient blanche */
-  }
-  .projet:hover .lettreO {
-    transform: scaleX(1.5);
-    color: white;
-    z-index: 10;
-  }
-  .projet {
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: #333;
-    color: white;
-    padding: 10px;
-    border-radius: 5px;
-    white-space: nowrap;
-    opacity: 0;
-    transition: opacity 0.3s ease, transform 0.3s ease;
-    transform: translateY(10px);
-  }
-  .projet-container:hover .projet {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-@media screen and (min-width: 650px) {
-  .projet-mot {
-    height: 40rem;
-  }
-}
 .separation-contact {
   display: flex;
   flex-direction: column;
@@ -2092,6 +1984,7 @@ button:hover {
   overflow: hidden;
   display: flex;
   justify-content: center;
+  width: 100%;
 }
 
 .carrousel {
@@ -2101,11 +1994,9 @@ button:hover {
 
 .carrousel__item {
   min-width: 100%;
-  flex-shrink: 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
 }
 
 .carrousel__image {
@@ -2141,7 +2032,7 @@ button:hover {
   right: 10px;
 }
 
-@media screen and (min-width: 1448px) {
+@media screen and (min-width: 1280px) {
   .projet-titres {
     display: flex;
     flex-direction: column;
@@ -2171,9 +2062,8 @@ button:hover {
     font-size: 1.5rem;
   }
   .carrousel-container {
-    max-width: 55rem;
-    margin: 0;
     max-width: 77rem;
+    margin: 0;
   }
 }
 /* ///////////////////////////////////////////////////////////////// */
@@ -2188,6 +2078,7 @@ body.no-scroll {
   list-style: none;
   position: relative;
   padding: 12px 20px;
+  z-index: 100;
 }
 
 .menu {
@@ -2336,6 +2227,7 @@ footer {
 
 /* Les 3 partis du footer */
 .footer-sections {
+  margin-top: 7vh;
   margin-bottom: 1.5em;
   text-align: left;
   display: flex;
