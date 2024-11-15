@@ -249,14 +249,14 @@ font-style: italic;
 }
 
 // Ajustement lettre O
-.projet:hover .lettreO {
+.projet-titre:hover .lettreO {
   transform: scaleX(1.5); 
   color: white;
   z-index: 10;
 }
 
 // Les images
-.projet {
+.projet-titre {
   position: absolute;
   top: 100%;
   left: 50%;
@@ -271,7 +271,7 @@ font-style: italic;
   transform: translateY(10px);
 }
 
-.projet-container:hover .projet {
+.projet-container:hover .projet-titre {
   opacity: 1;
   transform: translateY(0);
 }

@@ -48,7 +48,8 @@ get_header();
           <h3>Production audiovisuelle</h3>
           <h3>Gestion de projet multimédia</h3>
           <h3>Intégration et optimisation de solutions interactives</h3>
-          <h3>Nombre de personnes intéressées par ce programme : <?php echo do_shortcode('[compteur_visites]'); ?></h3>
+          <h3><?php echo do_shortcode('[compteur_visites]'); ?></h3>
+          
         </div>
       </div>
     </div>
@@ -99,31 +100,31 @@ get_header();
 <div class="projet-mot">
         <div class="projet-container">
             <span class="lettre">P</span>
-            <div class="projet">Projet 1</div>
+            <div class="projet-titre">Projet 1</div>
         </div>
         <div class="projet-container">
             <span class="lettre">R</span>
-            <div class="projet">Projet 2</div>
+            <div class="projet-titre">Projet 2</div>
         </div>
         <div class="projet-container lettreO">
             <span class="lettre">O</span>
-            <div class="projet">Projet 3</div>
+            <div class="projet-titre">Projet 3</div>
         </div>
         <div class="projet-container">
             <span class="lettre">J</span>
-            <div class="projet">Projet 4</div>
+            <div class="projet-titre">Projet 4</div>
         </div>
         <div class="projet-container">
             <span class="lettre">E</span>
-            <div class="projet">Projet 5</div>
+            <div class="projet-titre">Projet 5</div>
         </div>
         <div class="projet-container">
             <span class="lettre">T</span>
-            <div class="projet">Projet 6</div>
+            <div class="projet-titre">Projet 6</div>
         </div>
         <div class="projet-container">
             <span class="lettre">S</span>
-            <div class="projet">Projet 7</div>
+            <div class="projet-titre">Projet 7</div>
         </div>
     </div>
 

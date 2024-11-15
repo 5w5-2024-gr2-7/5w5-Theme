@@ -1,4 +1,22 @@
-.header {
+// CSS POUR LE HEADER/MENU
+
+// Pour empecher de scroller quand le menu bg est ouvert
+body.no-scroll {
+  overflow: hidden; 
+}
+
+//////////////////////// VERSION DESKTOP ////////////////////////
+
+// La barre de menu
+.nav-bar {
+  width: 100%;
+  list-style: none;
+  position: relative;
+  padding: 12px 20px;
+  z-index: 100;
+}
+
+.menu {
   display: flex;
   justify-content: flex-end;
   align-items: center;

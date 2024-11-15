@@ -64,7 +64,7 @@ function register_course_post_type() {
         'labels' => $labels,
         'public' => true,
         'has_archive' => true,
-        'rewrite' => array('slug' => 'courses'),
+        'rewrite' => array('slug' => 'Courses'),
         'supports' => array('title', 'editor', 'thumbnail'),
         'show_in_rest' => true,
         'menu_icon' => 'dashicons-welcome-learn-more',

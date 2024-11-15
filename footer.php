@@ -43,19 +43,6 @@ wp_footer();
 ?>
 </body>
 
-    <div class="footer-section">
-      <div class="contenu-footer-section">
-        <h3>À propos</h3>
-        <ul>
-          <li>Collège de Maisonneuve</li>
-          <li>3800 Sherbrooke St E, Montreal, Quebec H1X 2A2</li>
-          <li>514 254 7131</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-  <img src="<?php echo get_site_url(); ?>/wp-content/uploads/2024/11/tim2.png" alt="image">
-</footer>
 
 <?php wp_footer(); ?>
 </body>
