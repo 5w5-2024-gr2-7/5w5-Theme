@@ -36,6 +36,14 @@ function register_professor_post_type() {
 add_action('init', 'register_professor_post_type');
 
 
+// Carrousel.js
+function ajouter_scripts_carrousel() {
+    wp_enqueue_script('carrousel-js', get_template_directory_uri() . '/js/carrousel.js', array('jquery'), null, true);
+
+}
+add_action('wp_enqueue_scripts', 'ajouter_scripts_carrousel');
+
+
 function register_course_post_type() {
     $labels = array(
         'name' => __('Courses', 'textdomain'),
@@ -138,40 +146,53 @@ function custom_enqueue_styles() {
 add_action('wp_enqueue_scripts', 'custom_enqueue_styles');
 
 
-function filter_courses_by_session_and_volet($query) {
-    if (!is_admin() && $query->is_main_query() && is_post_type_archive('course')) {
 
-        if (isset($_GET['session']) && !empty($_GET['session'])) {
-            $query->set('meta_query', array(
-                array(
-                    'key' => 'session', 
-                    'value' => sanitize_text_field($_GET['session']),
-                    'compare' => 'LIKE'
-                ),
-            ));
-        }
 
-        if (isset($_GET['volet']) && !empty($_GET['volet'])) {
-            $query->set('meta_query', array(
-                array(
-                    'key' => 'category', 
-                    'value' => sanitize_text_field($_GET['volet']),
-                    'compare' => 'LIKE'
-                ),
-            ));
-        }
+function filter_projects_by_category() {
+    $category = sanitize_text_field($_POST['category']);
+    $args = [
+        'post_type' => 'project',
+        'posts_per_page' => -1,
+        'meta_query' => [],
+    ];
+
+    if ($category) {
+        $args['meta_query'][] = [
+            'key' => 'category', 
+            'value' => $category,
+            'compare' => 'LIKE',
+        ];
     }
+
+    $query = new WP_Query($args);
+    if ($query->have_posts()) :
+        while ($query->have_posts()) : $query->the_post(); ?>
+            <div class="projet" data-category="<?php echo get_field('category'); ?>">
+                <h2><?php the_title(); ?></h2>
+                <?php if (has_post_thumbnail()) : ?>
+                    <img src="<?php the_post_thumbnail_url('medium'); ?>" alt="<?php the_title(); ?>">
+                <?php else : ?>
+                    <img src="<?php echo get_template_directory_uri(); ?>/images/default-image.png" alt="Default Image">
+                <?php endif; ?>
+                <p><?php the_excerpt(); ?></p>
+                <a href="<?php the_permalink(); ?>" class="button-link">En savoir plus...</a>
+            </div>
+        <?php endwhile;
+    else :
+        echo '<p>No projects found.</p>';
+    endif;
+
+    wp_reset_postdata();
+    die();
 }
-add_action('pre_get_posts', 'filter_courses_by_session_and_volet');
-
-// Added filtering logic for projects by category (session, etc.)
-function filter_projects_by_category($query) {
-    if (!is_admin() && $query->is_main_query() && is_post_type_archive('project')) {
-
+add_action('wp_ajax_filter_projects', 'filter_projects_by_category');
+add_action('wp_ajax_nopriv_filter_projects', 'filter_projects_by_category');
+function filter_professors_by_category($query) {
+    if (!is_admin() && $query->is_main_query() && is_post_type_archive('professor')) {
         if (isset($_GET['category']) && !empty($_GET['category'])) {
             $query->set('meta_query', array(
                 array(
-                    'key' => 'category', 
+                    'key' => 'Category', 
                     'value' => sanitize_text_field($_GET['category']),
                     'compare' => 'LIKE'
                 ),
@@ -179,4 +200,60 @@ function filter_projects_by_category($query) {
         }
     }
 }
-add_action('pre_get_posts', 'filter_projects_by_category');
+add_action('pre_get_posts', 'filter_professors_by_category');
+function filter_courses_ajax() {
+
+    $session = isset($_POST['session']) ? sanitize_text_field($_POST['session']) : '';
+    $volet = isset($_POST['volet']) ? sanitize_text_field($_POST['volet']) : '';
+
+
+    $args = array(
+        'post_type' => 'course',
+        'posts_per_page' => -1,
+        'meta_query' => array(),
+    );
+
+
+    if (!empty($session)) {
+        $args['meta_query'][] = array(
+            'key' => 'session',
+            'value' => $session,
+            'compare' => '='
+        );
+    }
+
+
+    if (!empty($volet)) {
+        $args['meta_query'][] = array(
+            'key' => 'category',
+            'value' => $volet,
+            'compare' => '='
+        );
+    }
+
+
+    $query = new WP_Query($args);
+
+
+    if ($query->have_posts()) {
+        while ($query->have_posts()) : $query->the_post(); ?>
+            <div class="course-box">
+                <h3><?php the_title(); ?></h3>
+                <div class="course-info">
+                    <?php if (has_post_thumbnail()) : ?>
+                        <img src="<?php the_post_thumbnail_url('medium'); ?>" alt="<?php the_title(); ?>">
+                    <?php endif; ?>
+                    <div class="course-oval"><?php the_field('session'); ?></div>
+                    <div class="course-oval"><?php the_field('category'); ?></div>
+                    <a href="<?php the_permalink(); ?>" class="course-button">➔</a>
+                </div>
+            </div>
+        <?php endwhile;
+    } else {
+        echo '<p>Aucun cours trouvé</p>';
+    }
+
+    wp_die();
+}
+add_action('wp_ajax_filter_courses', 'filter_courses_ajax'); 
+add_action('wp_ajax_nopriv_filter_courses', 'filter_courses_ajax'); 

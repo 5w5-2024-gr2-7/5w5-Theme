@@ -16,10 +16,10 @@
       <div class="contenu-footer-section">
         <h3>Naviguer</h3>
         <ul>
-          <li><a href="<?php echo esc_url(add_query_arg('page_id', 5, home_url())); ?>">Stages</a></li>
-          <li><a href="<?php echo esc_url(add_query_arg('page_id', 6, home_url())); ?>">Cours</a></li>
-          <li><a href="<?php echo esc_url(add_query_arg('page_id', 9, home_url())); ?>">Professeurs</a></li>
-          <li><a href="<?php echo esc_url(add_query_arg('page_id', 8, home_url())); ?>">Projets</a></li>
+          <li><a href="<?php echo site_url('/stages/'); ?>">Stages</a></li>
+          <li><a href="<?php echo get_post_type_archive_link('course'); ?>">Cours</a></li>
+          <li><a href="<?php echo get_post_type_archive_link('professor'); ?>">Professeurs</a></li>
+          <li><a href="<?php echo get_post_type_archive_link('project'); ?>">Projets</a></li>
         </ul>
       </div>
     </div>
