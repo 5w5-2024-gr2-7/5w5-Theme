@@ -11,11 +11,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  min-height: 100vh;
 }
 
 .content-wrapper {
   text-align: left;
   z-index: 2;
+  margin-top: -11rem;
 }
 
 .Swirl {
@@ -35,18 +37,27 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  font-family: "garamond-premier-pro", serif;
+font-weight: 600;
+font-style: normal;
 }
 
 .OuLa h1 {
   position: relative;
-  font-size: 36px;
+  font-size: 70px;
   margin: 0;
-  line-height: 1.2;
+  line-height: 0.8;
+  text-align: left;
+  width: 85%;
 }
 
 .OuLa h1 span {
   font-style: italic;
   color: black;
+  font-family: "garamond-premier-pro-display", serif;
+font-weight: 500;
+font-style: italic;
+font-size: 85px;
 }
 
 /* Tablet Styles */
@@ -109,60 +120,23 @@ font-style: italic;
 }
 
 ///////////////////// SECTION PROJET ///////////////////////////
+.h1-projet{
+  text-align: left;
+    width: 100%;
+    display: block;
+    color: white;
+    padding: 1rem 1rem;
+    font-family: "garamond-premier-pro-subhead", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: clamp(3.125rem, 2.031rem + 5vw, 4.063rem);
+}
 
 // Version Mobile
-.projet-mobile{
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-}
-
-.h1-projet{
-  font-family: AppleGaramond2;
-  color: rgb(255, 255, 255);
-  font-size: clamp(2.5rem, 1.928rem + 2.347vw, 5.625rem);
-}
-
-.contenue-projet{
-  display: flex;
-  align-items: center;
-}
-
-.conteneur-projet-mobile{
-  width: 85%;
-  border: 2px solid;
-  margin: 1rem;
-}
-
-.svg-projet{
-  width: 22%;
-  margin: 8px;
-  background-color: aliceblue;
-  padding: 1rem;
-  border-radius: 12px;
-}
 
 .projet-mot{
-  display: none;
-}
-
-//////// Version Desktop
-
-@media screen and (min-width: 650px){
-  
-.conteneur-projet-mobile{
-  display: none;
-}
-
-// Contenu de tout
-.projet-mot {
   display: flex;
-  justify-content: space-between;
-  width: 90vw; 
-  position: relative;
-  height: 20rem;
-  width: 100%;
+  flex-direction: column;
   align-items: center; 
   font-family: 'FontGreycliffBold';
   color: white;
@@ -173,33 +147,35 @@ font-style: italic;
   position: relative;
   display: flex;
   flex: 1; 
-  justify-content: center;
+  justify-content: flex-start;
+  padding-left: 1rem;
   align-items: center; 
   transition: flex 0.3s ease;
   overflow: hidden;
   height: 100%; 
   z-index: 1; 
+  width: 100%;
 }
 
 // La lettre
 .lettre {
-  font-size: clamp(6.25rem, -3.3608rem + 23.5849vw, 18.75rem);
+  font-size: clamp(5.313rem, 3.854rem + 6.667vw, 6.563rem);
   font-weight: bold;
   transition: transform 0.3s ease, background-color 0.3s ease;
   display: inline-block;
   cursor: pointer;
   background-color: transparent;
-  padding: 10px;
+  padding: 0;
   border-radius: 5px;
   text-align: center;
   z-index: 2; 
+  margin: -.5rem;
 }
 
 .projet-container:hover {
   flex: 2;
 }
 
-// Ce dont cela doit ressembler avant hover
 .projet-container:hover::before {
   content: '';
   position: absolute;
@@ -213,46 +189,39 @@ font-style: italic;
   transition: background-image 0.3s ease; 
 }
 
-// Images derrière chaque lettres
-.projet-container:nth-child(1):hover::before { 
+.projet-container:nth-child(1){ 
+  background-image: url('http://localhost:8081/5w5-gdv/wp-content/uploads/2024/11/lettreProjetV2_2.png');
+  background-size: cover;
+}
+
+.projet-container:nth-child(2){ 
+  background-image: url('http://localhost:8081/5w5-gdv/wp-content/uploads/2024/11/lettreProjetV2_4.png');
+  background-size: cover;
+}
+
+.projet-container:nth-child(3){ 
+  background-image: url('http://localhost:8081/5w5-gdv/wp-content/uploads/2024/11/lettreProjetV2_5.png');
+  background-size: cover;
+}
+
+.projet-container:nth-child(4){ 
+  background-image: url('http://localhost:8081/5w5-gdv/wp-content/uploads/2024/11/lettreProjetV2_8.png');
+  background-size: cover;
+}
+
+.projet-container:nth-child(5){ 
+  background-image: url('http://localhost:8081/5w5-gdv/wp-content/uploads/2024/11/lettreProjetV2_1.png');
+  background-size: cover;
+}
+
+.projet-container:nth-child(6){ 
   background-image: url('https://next-images.123rf.com/index/_next/image/?url=https://assets-cdn.123rf.com/index/static/assets/top-section-bg.jpeg&w=3840&q=75');
+  background-size: cover;
 }
 
-.projet-container:nth-child(2):hover::before { 
-  background-image: url('https://media.istockphoto.com/id/1696167872/photo/aerial-view-of-forest-at-sunset-on-the-background-of-mountains-in-dolomites.jpg?s=2048x2048&w=is&k=20&c=uLAmWeg4couEsq_U62PY4mfUnM7Zut1RxGYDHhqYCNs=');
-}
-
-.projet-container:nth-child(3):hover::before { 
-  background-image: url('https://cdn.pixabay.com/photo/2024/11/08/07/03/ai-generated-9182653_1280.jpg');
-}
-
-.projet-container:nth-child(4):hover::before { 
-  background-image: url('https://cdn.pixabay.com/photo/2024/11/08/15/36/giraffes-9183614_1280.jpg');
-}
-
-.projet-container:nth-child(5):hover::before { 
-  background-image: url('https://cdn.pixabay.com/photo/2024/11/11/04/59/rabbit-9189125_1280.jpg');
-}
-
-.projet-container:nth-child(6):hover::before { 
-  background-image: url('https://cdn.pixabay.com/photo/2024/11/11/15/14/winter-9190298_1280.jpg');
-}
-
-.projet-container:nth-child(7):hover::before { 
-  background-image: url('https://media.istockphoto.com/id/481229372/photo/spiral-galaxy-illustration-of-milky-way.jpg?s=2048x2048&w=is&k=20&c=dQERb_aK3VHpocNEAkcONe1TUVP86QlCu18nI8QEfAQ=');
-}
-
-// Agrandissement quand hover
-.projet-container:hover .lettre {
-  transform: scaleX(2);
-  color: white; /* La couleur de la lettre devient blanche */
-}
-
-// Ajustement lettre O
-.projet-titre:hover .lettreO {
-  transform: scaleX(1.5); 
-  color: white;
-  z-index: 10;
+.projet-container:nth-child(7){ 
+  background-image: url('https://next-images.123rf.com/index/_next/image/?url=https://assets-cdn.123rf.com/index/static/assets/top-section-bg.jpeg&w=3840&q=75');
+  background-size: cover;
 }
 
 // Les images
@@ -270,6 +239,114 @@ font-style: italic;
   transition: opacity 0.3s ease, transform 0.3s ease;
   transform: translateY(10px);
 }
+
+//////// Version Desktop
+
+@media screen and (min-width: 650px){
+  
+  .h1-projet{
+    font-size: clamp(4.063rem, 2.855rem + 2.973vw, 7.5rem);
+    text-align: center;
+  }
+
+// Contenu de tout
+.projet-mot {
+  flex-direction: row;
+  justify-content: space-between;
+  width: 90vw; 
+  position: relative;
+  height: 20rem;
+  width: 100%;
+
+}
+
+
+// Contenue de chaque lettre
+.projet-container {
+  position: relative;
+  display: flex;
+  flex: 1; 
+  justify-content: center;
+  align-items: center; 
+  transition: flex 0.3s ease;
+  overflow: hidden;
+  height: 100%; 
+  z-index: 1; 
+  width: 100%;
+}
+
+.projet-container:nth-child(1){ 
+  background-image: none
+}
+
+.lettre {
+  font-size: clamp(4.688rem, 1.394rem + 8.108vw, 14.063rem);
+  font-weight: bold;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  display: inline-block;
+  cursor: pointer;
+  background-color: transparent;
+  padding: 0;
+  border-radius: 5px;
+  text-align: center;
+  z-index: 2; 
+  margin: -.5rem;
+}
+
+
+// Ce dont cela doit ressembler avant hover
+.projet-container:nth-child(1),
+.projet-container:nth-child(2),
+.projet-container:nth-child(3),
+.projet-container:nth-child(4),
+.projet-container:nth-child(5),
+.projet-container:nth-child(6),
+.projet-container:nth-child(7){ 
+  background-image: none;
+}
+
+// Images derrière chaque lettres
+.projet-container:nth-child(1):hover::before { 
+  background-image: url('http://localhost:8081/5w5-gdv/wp-content/uploads/2024/11/ProjetLettre2.png');
+}
+
+.projet-container:nth-child(2):hover::before { 
+  background-image: url('http://localhost:8081/5w5-gdv/wp-content/uploads/2024/11/ProjetLettre3.png');
+}
+
+.projet-container:nth-child(3):hover::before { 
+  background-image: url('http://localhost:8081/5w5-gdv/wp-content/uploads/2024/11/ProjetLettre4.png');
+}
+
+.projet-container:nth-child(4):hover::before { 
+  background-image: url('http://localhost:8081/5w5-gdv/wp-content/uploads/2024/11/ProjetLettre5.png');
+}
+
+.projet-container:nth-child(5):hover::before { 
+  background-image: url('http://localhost:8081/5w5-gdv/wp-content/uploads/2024/11/ProjetLettre6.png');
+}
+
+.projet-container:nth-child(6):hover::before { 
+  background-image: url('http://localhost:8081/5w5-gdv/wp-content/uploads/2024/11/ProjetLettre7.png');
+}
+
+.projet-container:nth-child(7):hover::before { 
+  background-image: url('http://localhost:8081/5w5-gdv/wp-content/uploads/2024/11/ProjetLettre1.png');
+}
+
+// Agrandissement quand hover
+.projet-container:hover .lettre {
+  transform: scaleX(2);
+  color: white; /* La couleur de la lettre devient blanche */
+}
+
+// Ajustement lettre O
+.projet-titre:hover .lettreO {
+  transform: scaleX(1.5); 
+  color: white;
+  z-index: 10;
+}
+
 
 .projet-container:hover .projet-titre {
   opacity: 1;
