@@ -46,9 +46,7 @@ get_header();
             <!-- Autres informations sur le projet -->
             <div class="description-projet2">
                 <p class="texte-projet"><?php the_field('description'); ?></p>
-                <a class="button-a" href="<?php the_field('lien_projet'); ?>">
-                    <button class="button-projet">Voir le projet</button>
-                </a>
+                <a class="button-projet" href="<?php the_field('lien_projet'); ?>" target="_blank" rel="noopener noreferrer">Voir le projet</a>
             </div>
         </div>
     </div>

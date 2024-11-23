@@ -37,10 +37,10 @@ document.addEventListener('DOMContentLoaded', () => {
       let translateX = -(percentage * maxScrollWidth / 100);
       scrollSection.style.transform = `translate3d(${translateX}px, 0, 0)`;
 
-      document.documentElement.style.overflow = 'hidden'; // Block vertical scroll
-      window.scrollTo(0, offsetTop); // Fix vertical scroll position
+      document.documentElement.style.overflow = 'hidden';
+      window.scrollTo(0, offsetTop);
     } else {
-      document.documentElement.style.overflow = 'auto'; // Allow vertical scroll outside section
+      document.documentElement.style.overflow = 'auto';
     }
   }
 });
