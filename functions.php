@@ -239,4 +239,20 @@ function filter_courses_ajax() {
 
 add_action('wp_ajax_filter_courses', 'filter_courses_ajax');
 add_action('wp_ajax_nopriv_filter_courses', 'filter_courses_ajax');
+// Section des stages
+function create_stages_post_type() {
+    register_post_type('stages',
+        array(
+            'labels' => array(
+                'name' => __('Stages'),
+                'singular_name' => __('Stage')
+            ),
+            'public' => true,
+            'has_archive' => true,
+            'rewrite' => array('slug' => 'stages'),
+            'supports' => array('title', 'editor', 'thumbnail'),
+        )
+    );
+}
+add_action('init', 'create_stages_post_type');
 ?>

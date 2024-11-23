@@ -7,15 +7,19 @@ get_header();
 ?>
 <div class="OuLa">
     <div class="content-wrapper">
-        <h1>
-            Où la <span>Création</span><br>commence
+        <h1 class="titre-principale">
+            Où la <span class="titre-principale-italique">création</span><br>commencee
         </h1>
+
+        <div>
+            
+        </div>
     </div>
-    <div class="Swirl">
+    <!-- <div class="Swirl">
         <picture>
             <img src="<?php echo get_site_url(); ?>/wp-content/uploads/2024/11/Swirl.png" alt="">
         </picture>
-    </div>
+    </div> -->
 </div>
 
 <div class="APropos">
@@ -44,13 +48,14 @@ get_header();
           <h3>Production audiovisuelle</h3>
           <h3>Gestion de projet multimédia</h3>
           <h3>Intégration et optimisation de solutions interactives</h3>
-          <h3>Nombre de personnes intéressées par ce programme : <?php echo do_shortcode('[compteur_visites]'); ?></h3>
+          <h3><?php echo do_shortcode('[compteur_visites]'); ?></h3>
+          
         </div>
       </div>
     </div>
   </div>
 
-<header>
+<!-- <header>
     <div class="titre-principal">Explorez l'innovation <br> numérique*</div>
 </header>
 
@@ -71,7 +76,288 @@ get_header();
         <div class="bouton-image" style="background-image: url('<?php echo get_site_url(); ?>/wp-content/uploads/2024/11/3D.jpg');"></div>
         <div class="bouton-title">Montage et vidéo</div>
     </a>
-</div>
+</div> -->
+
+    <style>
+       
+.h1-projet{
+  text-align: left;
+    width: 100%;
+    display: block;
+    color: white;
+    padding: 1rem 1rem;
+    font-family: "garamond-premier-pro-subhead", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: clamp(3.125rem, 2.031rem + 5vw, 4.063rem);
+}
+
+
+
+.projet-mot{
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  font-family: 'FontGreycliffBold';
+  color: white;
+}
+
+.projet-container {
+  position: relative;
+  display: flex;
+  flex: 1; 
+  justify-content: flex-start;
+  padding-left: 1rem;
+  align-items: center; 
+  transition: flex 0.3s ease;
+  overflow: hidden;
+  height: 100%; 
+  z-index: 1; 
+  width: 100%;
+}
+
+
+.lettre {
+  font-size: clamp(5.313rem, 3.854rem + 6.667vw, 6.563rem);
+  font-weight: bold;
+  transition: transform 0.3s ease, background-color 0.3s ease; !important;
+  display: inline-block;
+  cursor: pointer;
+  background-color: transparent;
+  padding: 0;
+  border-radius: 5px;
+  text-align: center;
+  z-index: 2; 
+  margin: -.5rem;
+}
+
+.projet-container:hover {
+  flex: 2;
+}
+
+.projet-container:hover::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  z-index: 1;
+  transition: background-image 0.3s ease;
+  display: block;
+}
+
+.projet-container:nth-child(1){ 
+background-image: url('<?php echo get_site_url(); ?>/wp-content/uploads/2024/11/lettreQuiManque2.png');
+  background-size: cover;
+}
+
+.projet-container:nth-child(2){ 
+background-image: url('<?php echo get_site_url(); ?>/wp-content/uploads/2024/11/lettreProjetV2_1.png');
+  background-size: cover;
+}
+
+.projet-container:nth-child(3){ 
+    background-image: url('<?php echo get_site_url(); ?>/wp-content/uploads/2024/11/lettreProjetV2_2.png');
+  background-size: cover;
+}
+
+.projet-container:nth-child(4){ 
+background-image: url('<?php echo get_site_url(); ?>/wp-content/uploads/2024/11/lettreProjetV2_4.png');
+  background-size: cover;
+}
+
+.projet-container:nth-child(5){ 
+    background-image: url('<?php echo get_site_url(); ?>/wp-content/uploads/2024/11/lettreProjetV2_5.png');
+  background-size: cover;
+}
+
+.projet-container:nth-child(6){ 
+    background-image: url('<?php echo get_site_url(); ?>/wp-content/uploads/2024/11/lettreProjetV2_3.png');
+  background-size: cover;
+}
+
+.projet-container:nth-child(7){ 
+    background-image: url('<?php echo get_site_url(); ?>/wp-content/uploads/2024/11/lettreProjetV2_8.png');
+  background-size: cover;
+}
+
+
+.projet-titre {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #333;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  transform: translateY(10px);
+}
+
+
+
+@media screen and (min-width: 650px){
+  
+  .h1-projet{
+    font-size: clamp(4.063rem, 2.855rem + 2.973vw, 7.5rem);
+    text-align: center;
+  }
+
+
+.projet-mot {
+  flex-direction: row;
+  justify-content: space-between;
+  width: 90vw; 
+  position: relative;
+  height: 20rem;
+  width: 100%;
+
+}
+
+
+
+.projet-container {
+  position: relative;
+  display: flex;
+  flex: 1; 
+  justify-content: center;
+  align-items: center; 
+  transition: flex 0.3s ease;
+  overflow: hidden;
+  height: 100%; 
+  z-index: 1; 
+  width: 100%;
+}
+
+.projet-container:nth-child(1){ 
+  background-image: none
+}
+
+.lettre {
+  font-size: clamp(4.688rem, 1.394rem + 8.108vw, 14.063rem);
+  font-weight: bold;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  display: inline-block;
+  cursor: pointer;
+  background-color: transparent;
+  padding: 0;
+  border-radius: 5px;
+  text-align: center;
+  z-index: 2; 
+  margin: -.5rem;
+}
+
+
+
+.projet-container:nth-child(1),
+.projet-container:nth-child(2),
+.projet-container:nth-child(3),
+.projet-container:nth-child(4),
+.projet-container:nth-child(5),
+.projet-container:nth-child(6),
+.projet-container:nth-child(7){ 
+  background-image: none;
+}
+
+
+.projet-container:nth-child(1):hover::before { 
+background-image: url('<?php echo get_site_url(); ?>/wp-content/uploads/2024/11/lettreQuiManque1.png');
+}
+
+.projet-container:nth-child(2):hover::before { 
+    background-image: url('<?php echo get_site_url(); ?>/wp-content/uploads/2024/11/ProjetLettre1.png');
+}
+
+.projet-container:nth-child(3):hover::before { 
+    background-image: url('<?php echo get_site_url(); ?>/wp-content/uploads/2024/11/ProjetLettre2.png');
+}
+
+.projet-container:nth-child(4):hover::before { 
+background-image: url('<?php echo get_site_url(); ?>/wp-content/uploads/2024/11/ProjetLettre3.png');
+}
+
+.projet-container:nth-child(5):hover::before { 
+background-image: url('<?php echo get_site_url(); ?>/wp-content/uploads/2024/11/ProjetLettre4.png');
+}
+
+.projet-container:nth-child(6):hover::before { 
+background-image: url('<?php echo get_site_url(); ?>/wp-content/uploads/2024/11/ProjetLettre5.png');
+}
+
+.projet-container:nth-child(7):hover::before { 
+background-image: url('<?php echo get_site_url(); ?>/wp-content/uploads/2024/11/ProjetLettre7.png');
+}
+
+
+.projet-container:hover .lettre {
+  transform: scaleX(2);
+  color: white; /* La couleur de la lettre devient blanche */
+}
+
+// Ajustement lettre O
+.projet-titre:hover .lettreO {
+  transform: scaleX(1.5); 
+  color: white;
+  z-index: 10;
+}
+
+
+.projet-container:hover .projet-titre {
+  opacity: 1;
+  transform: translateY(0);
+}
+}
+
+@media screen and (min-width: 650px){
+  .projet-mot{
+    height: 40rem;
+  }
+}
+        
+    </style>
+    <div class="section-projet">
+        <h class="h1-projet">Pour voir nos</h>
+        <div class="projet-mot">
+        <div class="projet-container">
+        <span class="lettre" onclick="window.location.href='<?php echo 'https://gftnth00.mywhc.ca/tim51/projects/achernar/'; ?>'">P</span>
+        <div class="projet-titre">Projet 1</div>
+                </div>
+            <div class="projet-container">
+            <span class="lettre" onclick="window.location.href='<?php echo 'https://gftnth00.mywhc.ca/tim51/projects/checo/'; ?>'">R</span>
+                <div class="projet-titre">Projet 2</div>
+            </div>
+            <div class="projet-container">
+            <span class="lettre" onclick="window.location.href='<?php echo 'https://gftnth00.mywhc.ca/tim51/projects/spaceship/'; ?>'">O</span>
+                <div class="projet-titre">Projet 3</div>
+            </div>
+            <div class="projet-container">
+            <span class="lettre" onclick="window.location.href='<?php echo 'https://gftnth00.mywhc.ca/tim51/projects/jai-envie-de-chier/'; ?>'">J</span>
+                <div class="projet-titre">Projet 4</div>
+            </div>
+            <div class="projet-container">
+            <span class="lettre" onclick="window.location.href='<?php echo 'https://gftnth00.mywhc.ca/tim51/projects/vengeance-et-vertu/'; ?>'">E</span>
+                <div class="projet-titre">Projet 5</div>
+            </div>
+            <div class="projet-container">
+            <span class="lettre" onclick="window.location.href='<?php echo 'https://gftnth00.mywhc.ca/tim51/projects/triptique/'; ?>'">T</span>
+                <div class="projet-titre">Projet 6</div>
+            </div>
+            <div class="projet-container">
+            <span class="lettre" onclick="window.location.href='<?php echo 'https://gftnth00.mywhc.ca/tim51/projects/matinou-bg/'; ?>'">S</span>
+                <div class="projet-titre">Projet 7</div>
+            </div>
+        </div>
+    </div>
+
+
+
+
 
 <header>
     <div class="titre-principal">Nos professeurs</div>
