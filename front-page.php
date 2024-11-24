@@ -32,9 +32,6 @@ get_header();
     <header>
       <div class="titre-principal">
       <h2 class="h2-info">À propos</h2>
-
-       
-
       </div>
     </header>
 
@@ -45,6 +42,7 @@ get_header();
         <img src="<?php echo get_site_url(); ?>/wp-content/uploads/2024/11/file.jpg" alt="À propos">
       </div>
       <div class="about-contenu">
+      <h class="h2-info2">À propos</h>
       <h3 class="h3-info2">Technique d'intégration multimédia ?</h3>
         <p>Cette formation de trois ans prépare les étudiants à relever les défis d’un secteur <span class="mot-couleur">technologique</span> et <span class="mot-couleur">créatif</span> en constante évolution. Axé sur la <span class="mot-couleur">technique</span>, ce programme encourage les étudiants à expérimenter concrètement par eux-mêmes, favorisant ainsi un apprentissage <span class="mot-couleur">davantage pratique</span> que théorique.
             Mêlant création et innovation, ce programme englobe plusieurs aspects qui se retrouvent dans l'utilisation courante. <br><br>
