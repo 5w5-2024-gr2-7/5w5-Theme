@@ -123,6 +123,8 @@ font-style: italic;
 
 
 ///////////////////// SECTION PROJET ///////////////////////////
+
+// Caractéristiqus de base
 .h1-projet{
   text-align: left;
     width: 100%;
@@ -135,8 +137,6 @@ font-style: italic;
     font-size: clamp(3.125rem, 2.031rem + 5vw, 4.063rem);
 }
 
-// Version Mobile
-
 .projet-mot{
   display: flex;
   flex-direction: column;
@@ -145,86 +145,28 @@ font-style: italic;
   color: white;
 }
 
-// Contenue de chaque lettre
-.projet-container {
-  position: relative;
-  display: flex;
-  flex: 1; 
-  justify-content: flex-start;
-  padding-left: 1rem;
-  align-items: center; 
-  transition: flex 0.3s ease;
-  overflow: hidden;
-  height: 100%; 
-  z-index: 1; 
-  width: 100%;
-}
-
-// La lettre
-.lettre {
-  font-size: clamp(5.313rem, 3.854rem + 6.667vw, 6.563rem);
-  font-weight: bold;
-  transition: transform 0.3s ease, background-color 0.3s ease;
-  display: inline-block;
-  cursor: pointer;
-  background-color: transparent;
-  padding: 0;
-  border-radius: 5px;
-  text-align: center;
-  z-index: 2; 
-  margin: -.5rem;
+.projet-mot a{
+  text-decoration: none;
+  color: white;
 }
 
 .projet-container:hover {
   flex: 2;
 }
 
-.projet-container:hover::before {
+// Lettre avant de hover
+.projet-container::before {
   content: '';
   position: absolute;
-  top: 0;
   left: 0;
   width: 100%;
-  height: 100%; 
-  background-size: cover; 
-  background-position: center; 
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  animation: fade-in 0.6s ease-out forwards;
   z-index: 1; 
-  transition: background-image 0.3s ease; 
-}
-
-.projet-container:nth-child(1){ 
-  background-image: url('http://localhost:8081/5w5-gdv/wp-content/uploads/2024/11/lettreProjetV2_2.png');
-  background-size: cover;
-}
-
-.projet-container:nth-child(2){ 
-  background-image: url('http://localhost:8081/5w5-gdv/wp-content/uploads/2024/11/lettreProjetV2_4.png');
-  background-size: cover;
-}
-
-.projet-container:nth-child(3){ 
-  background-image: url('http://localhost:8081/5w5-gdv/wp-content/uploads/2024/11/lettreProjetV2_5.png');
-  background-size: cover;
-}
-
-.projet-container:nth-child(4){ 
-  background-image: url('http://localhost:8081/5w5-gdv/wp-content/uploads/2024/11/lettreProjetV2_8.png');
-  background-size: cover;
-}
-
-.projet-container:nth-child(5){ 
-  background-image: url('http://localhost:8081/5w5-gdv/wp-content/uploads/2024/11/lettreProjetV2_1.png');
-  background-size: cover;
-}
-
-.projet-container:nth-child(6){ 
-  background-image: url('https://next-images.123rf.com/index/_next/image/?url=https://assets-cdn.123rf.com/index/static/assets/top-section-bg.jpeg&w=3840&q=75');
-  background-size: cover;
-}
-
-.projet-container:nth-child(7){ 
-  background-image: url('https://next-images.123rf.com/index/_next/image/?url=https://assets-cdn.123rf.com/index/static/assets/top-section-bg.jpeg&w=3840&q=75');
-  background-size: cover;
+  top: 0;
 }
 
 // Les images
@@ -242,6 +184,115 @@ font-style: italic;
   transition: opacity 0.3s ease, transform 0.3s ease;
   transform: translateY(10px);
 }
+
+// Contenue de chaque lettre
+.projet-container {
+  display: flex;
+  align-items: center;
+  justify-content:flex-start;
+  position: relative;
+  flex: 1; 
+  width: 100%;
+  height: 100%;
+  animation: slide-down-container 0.6s ease-out forwards;
+  opacity: 0; 
+}
+
+/* Pour défilement mobile */
+@media screen and (max-width: 650px) {
+
+  /* Effet de défilement */
+  .projet-container:nth-child(1) {
+    animation-delay: 0s;
+  }
+  .projet-container:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+  .projet-container:nth-child(3) {
+    animation-delay: 0.4s;
+  }
+  .projet-container:nth-child(4) {
+    animation-delay: 0.6s;
+  }
+  .projet-container:nth-child(5) {
+    animation-delay: 0.8s;
+  }
+  .projet-container:nth-child(6) {
+    animation-delay: 1s;
+  }
+  .projet-container:nth-child(7) {
+    animation-delay: 1.2s;
+  }
+
+  /* Lettre à l'intérieur du conteneur */
+  .lettre {
+    font-size: clamp(5.313rem, 3.854rem + 6.667vw, 6.563rem);
+    font-weight: bold;
+    display: inline-block;
+    cursor: pointer;
+    background-color: transparent;
+    z-index: 2;
+    padding-left: 1rem;
+  }
+
+  /* Images pour chaque conteneur */
+  .projet-container:nth-child(1)::before {
+    background-image: url('http://localhost:8081/5w5-gdv/wp-content/uploads/2024/11/lettreProjetV2_2.png');
+    animation-delay: 0s;
+  }
+  .projet-container:nth-child(2)::before {
+    background-image: url('http://localhost:8081/5w5-gdv/wp-content/uploads/2024/11/lettreProjetV2_4.png');
+    animation-delay: 0.2s;
+  }
+  .projet-container:nth-child(3)::before {
+    background-image: url('http://localhost:8081/5w5-gdv/wp-content/uploads/2024/11/lettreProjetV2_5.png');
+    animation-delay: 0.4s;
+  }
+  .projet-container:nth-child(4)::before {
+    background-image: url('http://localhost:8081/5w5-gdv/wp-content/uploads/2024/11/lettreProjetV2_8.png');
+    animation-delay: 0.6s;
+  }
+  .projet-container:nth-child(5)::before {
+    background-image: url('http://localhost:8081/5w5-gdv/wp-content/uploads/2024/11/lettreProjetV2_1.png');
+    animation-delay: 0.8s;
+  }
+  .projet-container:nth-child(6)::before {
+    background-image: url('https://next-images.123rf.com/index/_next/image/?url=https://assets-cdn.123rf.com/index/static/assets/top-section-bg.jpeg&w=3840&q=75');
+    animation-delay: 1s;
+  }
+  .projet-container:nth-child(7)::before {
+    background-image: url('https://next-images.123rf.com/index/_next/image/?url=https://assets-cdn.123rf.com/index/static/assets/top-section-bg.jpeg&w=3840&q=75');
+    animation-delay: 1.2s;
+  }
+}
+
+/* l'animatoin de défilement pour mobile */
+@keyframes slide-down-container {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Animation de fade-in pour les images */
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+
+
 
 //////// Version Desktop
 
@@ -261,8 +312,8 @@ font-style: italic;
   position: relative;
   height: 20rem;
   width: 100%;
-
 }
+
 
 
 // Contenue de chaque lettre
@@ -277,6 +328,8 @@ font-style: italic;
   height: 100%; 
   z-index: 1; 
   width: 100%;
+  animation: none;
+  opacity: 1;
 }
 
 .projet-container:nth-child(1){ 

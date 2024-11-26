@@ -126,37 +126,38 @@ get_header();
 <div class="section-projet">
     <h class="h1-projet">Pour voir nos</h>
 
-        <div class="projet-mot">
-                <div class="projet-container">
-                    <span class="lettre">P</span>
-                    <div class="projet-titre">Projet 1</div>
-                </div>
-                <div class="projet-container">
-                    <span class="lettre">R</span>
-                    <div class="projet-titre">Projet 2</div>
-                </div>
-                <div class="projet-container lettreO">
-                    <span class="lettre">O</span>
-                    <div class="projet-titre">Projet 3</div>
-                </div>
-                <div class="projet-container">
-                    <span class="lettre">J</span>
-                    <div class="projet-titre">Projet 4</div>
-                </div>
-                <div class="projet-container">
-                    <span class="lettre">E</span>
-                    <div class="projet-titre">Projet 5</div>
-                </div>
-                <div class="projet-container">
-                    <span class="lettre">T</span>
-                    <div class="projet-titre">Projet 6</div>
-                </div>
-                <div class="projet-container">
-                    <span class="lettre">S</span>
-                    <div class="projet-titre">Projet 7</div>
-                </div>
-            </div>
-            </div>
+    <div class="projet-mot">
+        <a href="http://localhost:8081/5w5-gdv/projects" class="projet-container">
+            <span class="lettre">P</span>
+            <div class="projet-titre">Projet 1</div>
+        </a>
+        <a href="http://localhost:8081/5w5-gdv/projects" class="projet-container">
+            <span class="lettre">R</span>
+            <div class="projet-titre">Projet 2</div>
+        </a>
+        <a href="http://localhost:8081/5w5-gdv/projects" class="projet-container">
+            <span class="lettre">O</span>
+            <div class="projet-titre">Projet 3</div>
+        </a>
+        <a href="http://localhost:8081/5w5-gdv/projects" class="projet-container">
+            <span class="lettre">J</span>
+            <div class="projet-titre">Projet 4</div>
+        </a>
+        <a href="http://localhost:8081/5w5-gdv/projects" class="projet-container">
+            <span class="lettre">E</span>
+            <div class="projet-titre">Projet 5</div>
+        </a>
+        <a href="http://localhost:8081/5w5-gdv/projects" class="projet-container">
+            <span class="lettre">T</span>
+            <div class="projet-titre">Projet 6</div>
+        </a>
+        <a href="http://localhost:8081/5w5-gdv/projects" class="projet-container">
+            <span class="lettre">S</span>
+            <div class="projet-titre">Projet 7</div>
+        </a>
+    </div>
+</div>
+
 
 
 
@@ -203,6 +204,12 @@ get_header();
         </article>
     </div>
 </div>
+
+<script>
+
+
+
+</script>
 
 <?php
 get_footer();
