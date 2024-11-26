@@ -226,6 +226,8 @@ function filter_courses_ajax() {
                         <img src="<?php the_post_thumbnail_url('medium'); ?>" alt="<?php the_title(); ?>">
                     <?php endif; ?>
                     <div class="course-oval"><?php the_field('session'); ?></div>
+                    <div class="course-oval"><?php the_field('category'); ?></div>
+                    <a href="<?php the_permalink(); ?>" class="course-button">➔</a>
                 </div>
             </div>
         <?php endwhile;
