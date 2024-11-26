@@ -1,4 +1,19 @@
 /* SECTION DES PROFS */
+
+.professeur-front-page{
+  background-color: #0C293A;
+  z-index: 0;
+  min-height: 110vh;
+}
+
+.titre-professeur{
+  font-family: "garamond-premier-pro-subhead", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: clamp(3.125rem, 2.031rem + 5vw, 4.063rem);
+  padding: 2.5rem 2rem;
+}
+
 h1 {
   text-align: center;
   margin: 20px 0;
@@ -77,8 +92,11 @@ h1 {
 }
 
 .card__contenu {
-  display: grid;
-  row-gap: 3.5rem;
+  display: flex;
+  flex-direction: column;
+    gap: 2.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .card__article {
@@ -147,10 +165,16 @@ h1 {
 
 
 @media screen and (min-width: 768px) {
-  .card__contenu {
-      grid-template-columns: repeat(2, 1fr);
-      column-gap: 1.5rem;
-  }
+
+.card__contenu {
+  flex-direction: row;
+}
+
+
+.titre-professeur {
+  font-size: clamp(4.063rem, 2.855rem + 2.973vw, 6.5rem);
+  text-align: center;
+}
 }
 
 
@@ -312,3 +336,28 @@ h1 {
       font-size: 20px;
   }
 }
+
+@media screen and (min-width: 1240px) {
+.card__article{
+  width: 48%;
+
+}
+  
+}
+
+@media screen and (min-width: 1639px) {
+  img {
+    width: 70%;
+}
+
+.card__article{
+  display: flex;
+  justify-content: center;
+}
+
+.card__article {
+  width: 48%;
+}
+    
+  }
+  

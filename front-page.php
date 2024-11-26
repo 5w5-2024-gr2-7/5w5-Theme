@@ -160,24 +160,25 @@ get_header();
 
 
 
+<section class="professeur-front-page">
 
 <header>
-    <div class="titre-principal">Nos professeurs</div>
+    <div class="titre-professeur">Nos Professeurs</div>
 </header>
 
 <div class="contenu">
     <div class="card__contenu">
         <article class="card__article">
-            <div class="card__img" style="background-image: url('<?php echo get_site_url(); ?>/wp-content/uploads/2024/11/lesSectionDeTipeDeCourWEB.png');"></div>
+            <img src="<?php echo get_site_url(); ?>/wp-content/uploads/2024/11/lesSectionDeTipeDeCourWEBEssaie3.png');">
 
             <div class="card__data">
                 <h2 class="card__title">Web</h2>
                 <a href="<?php echo get_post_type_archive_link('professor'); ?>?category=Web" class="card__bouton">Voir les professeurs de web</a>
-            </div>
+            </div> 
         </article>
 
         <article class="card__article">
-            <div class="card__img" style="background-image: url('<?php echo get_site_url(); ?>/wp-content/uploads/2024/11/lesSectionDeTipeDeCourJEUX.png');"></div>
+            <img src="<?php echo get_site_url(); ?>/wp-content/uploads/2024/11/lesSectionDeTipeDeCourJEUX2.png');">
 
             <div class="card__data">
                 <h2 class="card__title">Jeu</h2>
@@ -186,7 +187,7 @@ get_header();
         </article>
 
         <article class="card__article">
-            <div class="card__img" style="background-image: url('<?php echo get_site_url(); ?>/wp-content/uploads/2024/11/lesSectionDeTipeDeCourVIDEO.png')"></div>
+            <img src="<?php echo get_site_url(); ?>/wp-content/uploads/2024/11/lesSectionDeTipeDeCourVIDEO2.png')">
 
             <div class="card__data">
                 <h2 class="card__title">Montage et vidéo</h2>
@@ -195,7 +196,7 @@ get_header();
         </article>
 
         <article class="card__article">
-            <div class="card__img" style="background-image: url('<?php echo get_site_url(); ?>/wp-content/uploads/2024/11/lesSectionDeTipeDeCourDESIGN.png')"></div>
+            <img src="<?php echo get_site_url(); ?>/wp-content/uploads/2024/11/lesSectionDeTipeDeCourDESIGN-2.png')">
 
             <div class="card__data">
                 <h2 class="card__title">Conception Graphique</h2>
@@ -204,6 +205,7 @@ get_header();
         </article>
     </div>
 </div>
+</section>
 
 <script>
 
