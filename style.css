@@ -852,7 +852,6 @@ h1 {
     width: 48%;
   }
 }
-/* Style général pour le contenu de la section "À propos" */
 .APropos {
   background-color: #0C293A;
   z-index: 0;
@@ -906,18 +905,22 @@ h1 {
   flex-direction: column;
 }
 
+.image-apropos img {
+  width: 80%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 8px;
+}
+
+.image-apropos {
+  flex: 1;
+  margin-right: 1em;
+  max-width: 100%;
+}
+
 .about-contenu {
   padding-top: 1rem;
   width: 100%;
-}
-
-.tenor-gif-embed {
-  background: none !important;
-  box-shadow: none !important;
-}
-
-.info-additionnel {
-  padding-top: 2.5rem;
 }
 
 .about-contenu p,
@@ -959,36 +962,39 @@ h1 {
   text-align: left;
 }
 
+.info-additionnel {
+  padding-top: 2.5rem;
+}
+
 .info-additionnel-section-svg {
   width: 6%;
   fill: aqua;
+  animation: spin 12s linear infinite;
 }
 
-.image-apropos {
-  flex: 1;
-  margin-right: 1em;
-  max-width: 100%;
+.tenor-gif-embed {
+  background: none !important;
+  box-shadow: none !important;
 }
 
-.image-apropos img {
-  width: 80%;
-  max-width: 400px;
-  height: auto;
-  border-radius: 8px;
+@keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
 }
-
-/* Style pour les petits écrans */
+/************** TABLETTE  ******************/
 @media screen and (max-width: 768px) {
+  .titre-principal {
+    text-align: center;
+  }
   .contenu-about {
     flex-direction: column;
     text-align: center;
   }
-  .titre-principal {
-    text-align: center;
-  }
   .titre-principal h2 {
-    order: 1;
     width: 100%;
+    order: 1;
     text-align: center;
     padding-left: 0;
   }
@@ -1015,7 +1021,7 @@ h1 {
     width: 100%;
   }
 }
-/* Style pour les écrans de tablette */
+/****************** UN PEU PLUS GROS QUE TABLETTE ******************/
 @media screen and (min-width: 769px) and (max-width: 1024px) {
   .line.inactive {
     opacity: 0;
@@ -1025,6 +1031,7 @@ h1 {
     opacity: 1;
   }
 }
+/****************** DESKTOP LAPTOP  ******************/
 @media screen and (min-width: 768px) {
   .APropos {
     padding: 20px 40px;
@@ -1079,6 +1086,7 @@ h1 {
     width: 47%;
   }
 }
+/****************** DESKTOP  ******************/
 @media screen and (min-width: 1448px) {
   .h2-info {
     display: none;
@@ -1111,6 +1119,7 @@ h1 {
     padding-top: 5em;
   }
 }
+/****************** POUR LES GROS ORDIS  ******************/
 @media screen and (min-width: 1740px) {
   .image-apropos {
     min-width: 33%;
@@ -1124,6 +1133,7 @@ h1 {
     padding-right: 4rem;
   }
 }
+/****************** POUR LES MEGA ORDIS  ******************/
 @media screen and (min-width: 2140px) {
   .image-apropos {
     min-width: 28%;
@@ -2501,6 +2511,7 @@ body.no-scroll {
   position: relative;
   padding: 12px 20px;
   z-index: 100;
+  position: relative;
 }
 
 .menu {
@@ -2547,10 +2558,11 @@ body.no-scroll {
   transition: 0.15s ease-in-out;
   position: relative;
   color: rgb(255, 255, 255);
-  font-family: "garamond-premier-pro-subhead", serif;
+  font-family: "greycliff-cf", sans-serif;
   font-weight: 400;
   font-style: normal;
   font-size: clamp(1rem, 0.743rem + 0.632vw, 1.75rem);
+  letter-spacing: 1px;
 }
 
 .nav-links li a::after {
@@ -2566,6 +2578,13 @@ body.no-scroll {
 
 .nav-links li a:hover:after {
   width: 100%;
+}
+
+.fa-bars {
+  background: rgb(52, 126, 179);
+  padding: 0.8rem;
+  border-radius: 60%;
+  height: 48px;
 }
 
 .ouvre-menu, .ferme-menu {
@@ -2592,6 +2611,9 @@ body.no-scroll {
 }
 
 @media (max-width: 650px) {
+  .nav-bar {
+    position: fixed;
+  }
   .menu {
     gap: 1.2rem;
     flex-direction: column;
