@@ -64,6 +64,17 @@ footer {
   color: white;
 }
 
+// Les cérdits du site dans le footer
+.credit{
+  position: relative;
+  font-size: clamp(0.75rem, 0.609rem + 0.683vw, 0.938rem);
+  text-align: center;
+  line-height: 10px;
+  padding-bottom: 1rem;
+  font-family: "greycliff-cf", sans-serif;
+  font-style: normal;
+}
+
 
 /********* Media Query *********/
 
@@ -102,6 +113,12 @@ footer {
     display: flex;
     flex-direction: row;
   }
+
+  // Met les crédits plus bas
+  .credit{
+    margin-bottom: -1rem;
+    padding-top: 2rem;
+  }
 }
 
 /* Pour Desktop */
@@ -115,6 +132,16 @@ footer {
   .contenu-footer-section {
     width: 45%;
     text-align: left;
+  }
+
+  // Crédit sur le coté gauche en desktop
+  .credit{
+    position: absolute;
+    bottom: 0;
+    padding-left: 1rem;
+    font-size: clamp(0.813rem, -0.146rem + 1.059vw, 1.125rem);
+    text-align: justify;
+    padding-bottom: 1.5rem;
   }
 
 }

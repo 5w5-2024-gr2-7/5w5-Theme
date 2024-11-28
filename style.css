@@ -841,7 +841,7 @@ h1 {
   }
 }
 @media screen and (min-width: 1639px) {
-  img {
+  .teacher-photo img {
     width: 70%;
   }
   .card__article {
@@ -2701,6 +2701,16 @@ footer {
   color: white;
 }
 
+.credit {
+  position: relative;
+  font-size: clamp(0.75rem, 0.609rem + 0.683vw, 0.938rem);
+  text-align: center;
+  line-height: 10px;
+  padding-bottom: 1rem;
+  font-family: "greycliff-cf", sans-serif;
+  font-style: normal;
+}
+
 /********* Media Query *********/
 /* Responsivité pour Tablette */
 @media screen and (min-width: 768px) {
@@ -2737,6 +2747,10 @@ footer {
     display: flex;
     flex-direction: row;
   }
+  .credit {
+    margin-bottom: -1rem;
+    padding-top: 2rem;
+  }
 }
 /* Pour Desktop */
 @media screen and (min-width: 1448px) {
@@ -2748,5 +2762,13 @@ footer {
   .contenu-footer-section {
     width: 45%;
     text-align: left;
+  }
+  .credit {
+    position: absolute;
+    bottom: 0;
+    padding-left: 1rem;
+    font-size: clamp(0.813rem, -0.146rem + 1.059vw, 1.125rem);
+    text-align: justify;
+    padding-bottom: 1.5rem;
   }
 }/*# sourceMappingURL=style.css.map */
