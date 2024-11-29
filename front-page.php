@@ -93,8 +93,6 @@ get_header();
                 </svg>
                 <h3>Intégration et optimisation de solutions interactives</h3>
             </div>         
-          
-          
         </div>
       </div>
     </div>
@@ -326,23 +324,29 @@ background-image: url('<?php echo get_site_url(); ?>/wp-content/uploads/2024/11/
         </div>
     </div>
 
+<!--/////////////////////// SECTION PROFESSEURS  ///////////////////////// -->
+<section class="professeur-front-page">
+
+<!-- Titre de la section -->
 <header>
-    <div class="titre-principal">Nos professeurs</div>
+    <div class="titre-professeur">Nos Professeurs</div>
 </header>
 
+<!-- Conteneur des cartes -->
 <div class="contenu">
     <div class="card__contenu">
+
         <article class="card__article">
-            <div class="card__img" style="background-image: url('<?php echo get_site_url(); ?>/wp-content/uploads/2024/11/lesSectionDeTipeDeCourWEBEssaie3.png');"></div>
+            <img src="<?php echo get_site_url(); ?>/wp-content/uploads/2024/11/lesSectionDeTipeDeCourWEBEssaie3.png');">
 
             <div class="card__data">
                 <h2 class="card__title">Web</h2>
                 <a href="<?php echo get_post_type_archive_link('professor'); ?>?category=Web" class="card__bouton">Voir les professeurs de web</a>
-            </div>
+            </div> 
         </article>
 
         <article class="card__article">
-            <div class="card__img" style="background-image: url('<?php echo get_site_url(); ?>/wp-content/uploads/2024/11/lesSectionDeTipeDeCourJEUX2.png');"></div>
+            <img src="<?php echo get_site_url(); ?>/wp-content/uploads/2024/11/lesSectionDeTipeDeCourJEUX2.png');">
 
             <div class="card__data">
                 <h2 class="card__title">Jeu</h2>
@@ -351,7 +355,7 @@ background-image: url('<?php echo get_site_url(); ?>/wp-content/uploads/2024/11/
         </article>
 
         <article class="card__article">
-            <div class="card__img" style="background-image: url('<?php echo get_site_url(); ?>/wp-content/uploads/2024/11/lesSectionDeTipeDeCourVIDEO2.png')"></div>
+            <img src="<?php echo get_site_url(); ?>/wp-content/uploads/2024/11/lesSectionDeTipeDeCourVIDEO2.png')">
 
             <div class="card__data">
                 <h2 class="card__title">Montage et vidéo</h2>
@@ -360,15 +364,18 @@ background-image: url('<?php echo get_site_url(); ?>/wp-content/uploads/2024/11/
         </article>
 
         <article class="card__article">
-            <div class="card__img" style="background-image: url('<?php echo get_site_url(); ?>/wp-content/uploads/2024/11/lesSectionDeTipeDeCourDESIGN-1.png')"></div>
+            <img src="<?php echo get_site_url(); ?>/wp-content/uploads/2024/11/lesSectionDeTipeDeCourDESIGN-2.png')">
 
             <div class="card__data">
                 <h2 class="card__title">Conception Graphique</h2>
                 <a href="<?php echo get_post_type_archive_link('professor'); ?>?category=Design" class="card__bouton">Voir les professeurs de Design</a>
             </div>
         </article>
+
     </div>
 </div>
+</section>
+
 
 <?php
 get_footer();

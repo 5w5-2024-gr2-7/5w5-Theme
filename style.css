@@ -189,11 +189,6 @@ h3 {
   text-align: center;
 }
 
-.info-additionnel h3 {
-  font-family: "FontGreycliffBold";
-  margin-bottom: 0.5em;
-}
-
 p {
   color: white;
 }
@@ -554,6 +549,20 @@ img {
 }
 
 /* SECTION DES PROFS */
+.professeur-front-page {
+  background-color: #0C293A;
+  z-index: 0;
+  min-height: 110vh;
+}
+
+.titre-professeur {
+  font-family: "garamond-premier-pro-subhead", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: clamp(3.125rem, 2.031rem + 5vw, 4.063rem);
+  padding: 2.5rem 2rem;
+}
+
 h1 {
   text-align: center;
   margin: 20px 0;
@@ -630,8 +639,11 @@ h1 {
 }
 
 .card__contenu {
-  display: grid;
-  row-gap: 3.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .card__article {
@@ -698,8 +710,11 @@ h1 {
 }
 @media screen and (min-width: 768px) {
   .card__contenu {
-    grid-template-columns: repeat(2, 1fr);
-    column-gap: 1.5rem;
+    flex-direction: row;
+  }
+  .titre-professeur {
+    font-size: clamp(4.063rem, 2.855rem + 2.973vw, 6.5rem);
+    text-align: center;
   }
 }
 @media screen and (min-width: 1120px) {
@@ -844,10 +859,27 @@ h1 {
     font-size: 20px;
   }
 }
-/* Style général pour le contenu de la section "À propos" */
+@media screen and (min-width: 1240px) {
+  .card__article {
+    width: 48%;
+  }
+}
+@media screen and (min-width: 1639px) {
+  .teacher-photo img {
+    width: 70%;
+  }
+  .card__article {
+    display: flex;
+    justify-content: center;
+  }
+  .card__article {
+    width: 48%;
+  }
+}
 .APropos {
   background-color: #0C293A;
   z-index: 0;
+  min-height: 110vh;
 }
 
 .line {
@@ -897,18 +929,22 @@ h1 {
   flex-direction: column;
 }
 
+.image-apropos img {
+  width: 80%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 8px;
+}
+
+.image-apropos {
+  flex: 1;
+  margin-right: 1em;
+  max-width: 100%;
+}
+
 .about-contenu {
   padding-top: 1rem;
   width: 100%;
-}
-
-.tenor-gif-embed {
-  background: none !important;
-  box-shadow: none !important;
-}
-
-.info-additionnel {
-  padding-top: 2.5rem;
 }
 
 .about-contenu p,
@@ -950,36 +986,39 @@ h1 {
   text-align: left;
 }
 
+.info-additionnel {
+  padding-top: 2.5rem;
+}
+
 .info-additionnel-section-svg {
   width: 6%;
   fill: aqua;
+  animation: spin 12s linear infinite;
 }
 
-.image-apropos {
-  flex: 1;
-  margin-right: 1em;
-  max-width: 100%;
+.tenor-gif-embed {
+  background: none !important;
+  box-shadow: none !important;
 }
 
-.image-apropos img {
-  width: 80%;
-  max-width: 400px;
-  height: auto;
-  border-radius: 8px;
+@keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
 }
-
-/* Style pour les petits écrans */
+/************** TABLETTE  ******************/
 @media screen and (max-width: 768px) {
+  .titre-principal {
+    text-align: center;
+  }
   .contenu-about {
     flex-direction: column;
     text-align: center;
   }
-  .titre-principal {
-    text-align: center;
-  }
   .titre-principal h2 {
-    order: 1;
     width: 100%;
+    order: 1;
     text-align: center;
     padding-left: 0;
   }
@@ -1006,7 +1045,7 @@ h1 {
     width: 100%;
   }
 }
-/* Style pour les écrans de tablette */
+/****************** UN PEU PLUS GROS QUE TABLETTE ******************/
 @media screen and (min-width: 769px) and (max-width: 1024px) {
   .line.inactive {
     opacity: 0;
@@ -1016,6 +1055,7 @@ h1 {
     opacity: 1;
   }
 }
+/****************** DESKTOP LAPTOP  ******************/
 @media screen and (min-width: 768px) {
   .APropos {
     padding: 20px 40px;
@@ -1070,6 +1110,7 @@ h1 {
     width: 47%;
   }
 }
+/****************** DESKTOP  ******************/
 @media screen and (min-width: 1448px) {
   .h2-info {
     display: none;
@@ -1092,13 +1133,34 @@ h1 {
     max-width: 400px;
   }
   .image-apropos img {
-    width: 88%;
-    max-width: 475px;
+    width: 90%;
+    max-width: 575px;
   }
   .info-additionnel {
     gap: 3em;
-    padding-left: 7rem;
+    padding-left: 10rem;
     padding-bottom: 6rem;
+    padding-top: 5em;
+  }
+}
+/****************** POUR LES GROS ORDIS  ******************/
+@media screen and (min-width: 1740px) {
+  .image-apropos {
+    min-width: 33%;
+    padding-left: 4rem;
+  }
+  .image-apropos img {
+    width: 90%;
+    max-width: 547px;
+  }
+  .about-contenu {
+    padding-right: 4rem;
+  }
+}
+/****************** POUR LES MEGA ORDIS  ******************/
+@media screen and (min-width: 2140px) {
+  .image-apropos {
+    min-width: 28%;
   }
 }
 /* Section du cours de jeu exemple */
@@ -1571,7 +1633,6 @@ h1 {
   color: black;
   font-family: "garamond-premier-pro-display", serif;
   font-weight: 500;
-  font-style: italic;
   font-size: 85px;
 }
 
@@ -1629,6 +1690,260 @@ h1 {
   font-style: italic;
 }
 
+.section-projet {
+  min-height: 100vh;
+}
+
+.h1-projet {
+  text-align: left;
+  width: 100%;
+  display: block;
+  color: white;
+  padding: 1rem 1rem;
+  font-family: "garamond-premier-pro-subhead", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: clamp(3.125rem, 2.031rem + 5vw, 4.063rem);
+}
+
+.projet-mot {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "FontGreycliffBold";
+  color: white;
+}
+
+.projet-mot a {
+  text-decoration: none;
+  color: white;
+}
+
+.projet-container:hover {
+  flex: 2;
+}
+
+.projet-container::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  animation: fade-in 0.6s ease-out forwards;
+  z-index: 1;
+  top: 0;
+}
+
+.projet-titre {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #333;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  transform: translateY(10px);
+}
+
+.projet-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+  flex: 1;
+  width: 100%;
+  height: 100%;
+  animation: slide-down-container 0.6s ease-out forwards;
+  opacity: 0;
+}
+
+/* Pour défilement mobile */
+@media screen and (max-width: 650px) {
+  /* Effet de défilement */
+  .projet-container:nth-child(1) {
+    animation-delay: 0s;
+  }
+  .projet-container:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+  .projet-container:nth-child(3) {
+    animation-delay: 0.4s;
+  }
+  .projet-container:nth-child(4) {
+    animation-delay: 0.6s;
+  }
+  .projet-container:nth-child(5) {
+    animation-delay: 0.8s;
+  }
+  .projet-container:nth-child(6) {
+    animation-delay: 1s;
+  }
+  .projet-container:nth-child(7) {
+    animation-delay: 1.2s;
+  }
+  /* Lettre à l'intérieur du conteneur */
+  .lettre {
+    font-size: clamp(5.313rem, 3.854rem + 6.667vw, 6.563rem);
+    font-weight: bold;
+    display: inline-block;
+    cursor: pointer;
+    background-color: transparent;
+    z-index: 2;
+    padding-left: 1rem;
+  }
+  /* Images pour chaque conteneur */
+  .projet-container:nth-child(1)::before {
+    background-image: url("http://localhost:8081/5w5-gdv/wp-content/uploads/2024/11/lettreProjetV2_2.png");
+    animation-delay: 0s;
+  }
+  .projet-container:nth-child(2)::before {
+    background-image: url("http://localhost:8081/5w5-gdv/wp-content/uploads/2024/11/lettreProjetV2_4.png");
+    animation-delay: 0.2s;
+  }
+  .projet-container:nth-child(3)::before {
+    background-image: url("http://localhost:8081/5w5-gdv/wp-content/uploads/2024/11/lettreProjetV2_5.png");
+    animation-delay: 0.4s;
+  }
+  .projet-container:nth-child(4)::before {
+    background-image: url("http://localhost:8081/5w5-gdv/wp-content/uploads/2024/11/lettreProjetV2_8.png");
+    animation-delay: 0.6s;
+  }
+  .projet-container:nth-child(5)::before {
+    background-image: url("http://localhost:8081/5w5-gdv/wp-content/uploads/2024/11/lettreProjetV2_1.png");
+    animation-delay: 0.8s;
+  }
+  .projet-container:nth-child(6)::before {
+    background-image: url("https://next-images.123rf.com/index/_next/image/?url=https://assets-cdn.123rf.com/index/static/assets/top-section-bg.jpeg&w=3840&q=75");
+    animation-delay: 1s;
+  }
+  .projet-container:nth-child(7)::before {
+    background-image: url("https://next-images.123rf.com/index/_next/image/?url=https://assets-cdn.123rf.com/index/static/assets/top-section-bg.jpeg&w=3840&q=75");
+    animation-delay: 1.2s;
+  }
+}
+/* l'animatoin de défilement pour mobile */
+@keyframes slide-down-container {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+/* Animation de fade-in pour les images */
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@media screen and (min-width: 650px) {
+  .h1-projet {
+    font-size: clamp(4.063rem, 2.855rem + 2.973vw, 7.5rem);
+    text-align: center;
+    padding: 3rem 0rem;
+  }
+  .projet-mot {
+    flex-direction: row;
+    justify-content: space-between;
+    width: 90vw;
+    position: relative;
+    height: 20rem;
+    width: 100%;
+  }
+  .projet-container {
+    position: relative;
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    transition: flex 0.3s ease;
+    overflow: hidden;
+    height: 100%;
+    z-index: 1;
+    width: 100%;
+    animation: none;
+    opacity: 1;
+  }
+  .projet-container:nth-child(1) {
+    background-image: none;
+  }
+  .lettre {
+    font-size: clamp(4.688rem, 1.394rem + 8.108vw, 14.063rem);
+    font-weight: bold;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    display: inline-block;
+    cursor: pointer;
+    background-color: transparent;
+    padding: 0;
+    border-radius: 5px;
+    text-align: center;
+    z-index: 2;
+    margin: -0.5rem;
+  }
+  .projet-container:nth-child(1),
+  .projet-container:nth-child(2),
+  .projet-container:nth-child(3),
+  .projet-container:nth-child(4),
+  .projet-container:nth-child(5),
+  .projet-container:nth-child(6),
+  .projet-container:nth-child(7) {
+    background-image: none;
+  }
+  .projet-container:nth-child(1):hover::before {
+    background-image: url("http://localhost:8081/5w5-gdv/wp-content/uploads/2024/11/ProjetLettre2.png");
+  }
+  .projet-container:nth-child(2):hover::before {
+    background-image: url("http://localhost:8081/5w5-gdv/wp-content/uploads/2024/11/ProjetLettre3.png");
+  }
+  .projet-container:nth-child(3):hover::before {
+    background-image: url("http://localhost:8081/5w5-gdv/wp-content/uploads/2024/11/ProjetLettre4.png");
+  }
+  .projet-container:nth-child(4):hover::before {
+    background-image: url("http://localhost:8081/5w5-gdv/wp-content/uploads/2024/11/ProjetLettre5.png");
+  }
+  .projet-container:nth-child(5):hover::before {
+    background-image: url("http://localhost:8081/5w5-gdv/wp-content/uploads/2024/11/ProjetLettre6.png");
+  }
+  .projet-container:nth-child(6):hover::before {
+    background-image: url("http://localhost:8081/5w5-gdv/wp-content/uploads/2024/11/ProjetLettre7.png");
+  }
+  .projet-container:nth-child(7):hover::before {
+    background-image: url("http://localhost:8081/5w5-gdv/wp-content/uploads/2024/11/ProjetLettre1.png");
+  }
+  .projet-container:hover .lettre {
+    transform: scaleX(2);
+    color: white; /* La couleur de la lettre devient blanche */
+  }
+  .projet-titre:hover .lettreO {
+    transform: scaleX(1.5);
+    color: white;
+    z-index: 10;
+  }
+  .projet-container:hover .projet-titre {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@media screen and (min-width: 650px) {
+  .projet-mot {
+    height: 40rem;
+  }
+}
 .separation-contact {
   display: flex;
   flex-direction: column;
@@ -2329,6 +2644,7 @@ body.no-scroll {
   position: relative;
   padding: 12px 20px;
   z-index: 100;
+  position: relative;
 }
 
 .menu {
@@ -2375,10 +2691,11 @@ body.no-scroll {
   transition: 0.15s ease-in-out;
   position: relative;
   color: rgb(255, 255, 255);
-  font-family: "garamond-premier-pro-subhead", serif;
+  font-family: "greycliff-cf", sans-serif;
   font-weight: 400;
   font-style: normal;
   font-size: clamp(1rem, 0.743rem + 0.632vw, 1.75rem);
+  letter-spacing: 1px;
 }
 
 .nav-links li a::after {
@@ -2394,6 +2711,13 @@ body.no-scroll {
 
 .nav-links li a:hover:after {
   width: 100%;
+}
+
+.fa-bars {
+  background: rgb(52, 126, 179);
+  padding: 0.8rem;
+  border-radius: 60%;
+  height: 48px;
 }
 
 .ouvre-menu, .ferme-menu {
@@ -2420,6 +2744,9 @@ body.no-scroll {
 }
 
 @media (max-width: 650px) {
+  .nav-bar {
+    position: fixed;
+  }
   .menu {
     gap: 1.2rem;
     flex-direction: column;
@@ -2484,6 +2811,7 @@ footer {
   flex-direction: column;
   align-items: center;
   z-index: 100;
+  padding-top: 2rem;
 }
 
 /* Chacune des partis individuelles du footer */
@@ -2528,6 +2856,16 @@ footer {
   color: white;
 }
 
+.credit {
+  position: relative;
+  font-size: clamp(0.75rem, 0.609rem + 0.683vw, 0.938rem);
+  text-align: center;
+  line-height: 10px;
+  padding-bottom: 1rem;
+  font-family: "greycliff-cf", sans-serif;
+  font-style: normal;
+}
+
 /********* Media Query *********/
 /* Responsivité pour Tablette */
 @media screen and (min-width: 768px) {
@@ -2543,6 +2881,7 @@ footer {
     align-items: flex-start;
     justify-content: space-between;
     margin-top: 7vh;
+    padding-top: 0;
   }
   /* Élargie le section */
   .footer-section {
@@ -2563,6 +2902,10 @@ footer {
     display: flex;
     flex-direction: row;
   }
+  .credit {
+    margin-bottom: -1rem;
+    padding-top: 2rem;
+  }
 }
 /* Pour Desktop */
 @media screen and (min-width: 1448px) {
@@ -2574,5 +2917,13 @@ footer {
   .contenu-footer-section {
     width: 45%;
     text-align: left;
+  }
+  .credit {
+    position: absolute;
+    bottom: 0;
+    padding-left: 1rem;
+    font-size: clamp(0.813rem, -0.146rem + 1.059vw, 1.125rem);
+    text-align: justify;
+    padding-bottom: 1.5rem;
   }
 }
