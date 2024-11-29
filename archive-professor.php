@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
 <main>
-    <h1><?php post_type_archive_title(); ?></h1>
+    <h1>Professeurs</h1>
     <div class="professor-container">
         <?php if (have_posts()) : ?>
             <?php while (have_posts()) : the_post(); ?>
@@ -18,7 +18,7 @@
                             <img src="<?php echo get_template_directory_uri(); ?>/images/default-image.png" alt="Default Image">
                         <?php endif; ?>
                     <?php endif; ?>
-                    <button><a href="<?php the_permalink(); ?>">En savoir plus</a></button>
+                    <a href="<?php the_permalink(); ?>" class="button-link">En savoir plus</a>
                 </div>
             <?php endwhile; ?>
         <?php else : ?>

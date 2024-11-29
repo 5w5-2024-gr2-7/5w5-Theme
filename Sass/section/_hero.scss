@@ -1,6 +1,6 @@
 .header {
   position: relative;
-  z-index: 3;
+  z-index: 4;
 }
 
 .OuLa {
@@ -11,11 +11,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  min-height: 100vh;
 }
 
 .content-wrapper {
   text-align: left;
   z-index: 2;
+  margin-top: -11rem;
 }
 
 .Swirl {
@@ -35,18 +37,26 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  font-family: "garamond-premier-pro", serif;
+font-weight: 600;
+font-style: normal;
 }
 
 .OuLa h1 {
   position: relative;
-  font-size: 36px;
+  font-size: 70px;
   margin: 0;
-  line-height: 1.2;
+  line-height: 0.8;
+  text-align: left;
+  width: 85%;
 }
 
 .OuLa h1 span {
   font-style: italic;
   color: black;
+  font-family: "garamond-premier-pro-display", serif;
+font-weight: 500;
+font-size: 85px;
 }
 
 /* Tablet Styles */
@@ -94,3 +104,323 @@
   z-index: -1;
   pointer-events: none;
 }
+
+
+.titre-principale{
+  font-family: "garamond-premier-pro-subhead", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.titre-principale-italique{
+  font-family: "garamond-premier-pro", serif;
+font-weight: 400;
+font-style: italic;
+}
+
+
+///////////////////// SECTION À PROPOS ///////////////////////////
+
+
+///////////////////// SECTION PROJET ///////////////////////////
+
+
+.section-projet{
+  min-height: 100vh;
+}
+
+// Caractéristiqus de base
+.h1-projet{
+  text-align: left;
+    width: 100%;
+    display: block;
+    color: white;
+    padding: 1rem 1rem;
+    font-family: "garamond-premier-pro-subhead", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: clamp(3.125rem, 2.031rem + 5vw, 4.063rem);
+}
+
+.projet-mot{
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  font-family: 'FontGreycliffBold';
+  color: white;
+}
+
+.projet-mot a{
+  text-decoration: none;
+  color: white;
+}
+
+.projet-container:hover {
+  flex: 2;
+}
+
+// Lettre avant de hover
+.projet-container::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  animation: fade-in 0.6s ease-out forwards;
+  z-index: 1; 
+  top: 0;
+}
+
+// Les images
+.projet-titre {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #333;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  transform: translateY(10px);
+}
+
+// Contenue de chaque lettre
+.projet-container {
+  display: flex;
+  align-items: center;
+  justify-content:flex-start;
+  position: relative;
+  flex: 1; 
+  width: 100%;
+  height: 100%;
+  animation: slide-down-container 0.6s ease-out forwards;
+  opacity: 0; 
+}
+
+/* Pour défilement mobile */
+@media screen and (max-width: 650px) {
+
+  /* Effet de défilement */
+  .projet-container:nth-child(1) {
+    animation-delay: 0s;
+  }
+  .projet-container:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+  .projet-container:nth-child(3) {
+    animation-delay: 0.4s;
+  }
+  .projet-container:nth-child(4) {
+    animation-delay: 0.6s;
+  }
+  .projet-container:nth-child(5) {
+    animation-delay: 0.8s;
+  }
+  .projet-container:nth-child(6) {
+    animation-delay: 1s;
+  }
+  .projet-container:nth-child(7) {
+    animation-delay: 1.2s;
+  }
+
+  /* Lettre à l'intérieur du conteneur */
+  .lettre {
+    font-size: clamp(5.313rem, 3.854rem + 6.667vw, 6.563rem);
+    font-weight: bold;
+    display: inline-block;
+    cursor: pointer;
+    background-color: transparent;
+    z-index: 2;
+    padding-left: 1rem;
+  }
+
+  /* Images pour chaque conteneur */
+  .projet-container:nth-child(1)::before {
+    background-image: url('http://localhost:8081/5w5-gdv/wp-content/uploads/2024/11/lettreProjetV2_2.png');
+    animation-delay: 0s;
+  }
+  .projet-container:nth-child(2)::before {
+    background-image: url('http://localhost:8081/5w5-gdv/wp-content/uploads/2024/11/lettreProjetV2_4.png');
+    animation-delay: 0.2s;
+  }
+  .projet-container:nth-child(3)::before {
+    background-image: url('http://localhost:8081/5w5-gdv/wp-content/uploads/2024/11/lettreProjetV2_5.png');
+    animation-delay: 0.4s;
+  }
+  .projet-container:nth-child(4)::before {
+    background-image: url('http://localhost:8081/5w5-gdv/wp-content/uploads/2024/11/lettreProjetV2_8.png');
+    animation-delay: 0.6s;
+  }
+  .projet-container:nth-child(5)::before {
+    background-image: url('http://localhost:8081/5w5-gdv/wp-content/uploads/2024/11/lettreProjetV2_1.png');
+    animation-delay: 0.8s;
+  }
+  .projet-container:nth-child(6)::before {
+    background-image: url('https://next-images.123rf.com/index/_next/image/?url=https://assets-cdn.123rf.com/index/static/assets/top-section-bg.jpeg&w=3840&q=75');
+    animation-delay: 1s;
+  }
+  .projet-container:nth-child(7)::before {
+    background-image: url('https://next-images.123rf.com/index/_next/image/?url=https://assets-cdn.123rf.com/index/static/assets/top-section-bg.jpeg&w=3840&q=75');
+    animation-delay: 1.2s;
+  }
+}
+
+/* l'animatoin de défilement pour mobile */
+@keyframes slide-down-container {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Animation de fade-in pour les images */
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+
+
+
+//////// Version Desktop
+
+@media screen and (min-width: 650px){
+  
+  .h1-projet{
+    font-size: clamp(4.063rem, 2.855rem + 2.973vw, 7.5rem);
+    text-align: center;
+    padding: 3rem 0rem;
+  }
+
+// Contenu de tout
+.projet-mot {
+  flex-direction: row;
+  justify-content: space-between;
+  width: 90vw; 
+  position: relative;
+  height: 20rem;
+  width: 100%;
+}
+
+
+
+// Contenue de chaque lettre
+.projet-container {
+  position: relative;
+  display: flex;
+  flex: 1; 
+  justify-content: center;
+  align-items: center; 
+  transition: flex 0.3s ease;
+  overflow: hidden;
+  height: 100%; 
+  z-index: 1; 
+  width: 100%;
+  animation: none;
+  opacity: 1;
+}
+
+.projet-container:nth-child(1){ 
+  background-image: none
+}
+
+.lettre {
+  font-size: clamp(4.688rem, 1.394rem + 8.108vw, 14.063rem);
+  font-weight: bold;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  display: inline-block;
+  cursor: pointer;
+  background-color: transparent;
+  padding: 0;
+  border-radius: 5px;
+  text-align: center;
+  z-index: 2; 
+  margin: -.5rem;
+}
+
+
+// Ce dont cela doit ressembler avant hover
+.projet-container:nth-child(1),
+.projet-container:nth-child(2),
+.projet-container:nth-child(3),
+.projet-container:nth-child(4),
+.projet-container:nth-child(5),
+.projet-container:nth-child(6),
+.projet-container:nth-child(7){ 
+  background-image: none;
+}
+
+// Images derrière chaque lettres
+.projet-container:nth-child(1):hover::before { 
+  background-image: url('http://localhost:8081/5w5-gdv/wp-content/uploads/2024/11/ProjetLettre2.png');
+}
+
+.projet-container:nth-child(2):hover::before { 
+  background-image: url('http://localhost:8081/5w5-gdv/wp-content/uploads/2024/11/ProjetLettre3.png');
+}
+
+.projet-container:nth-child(3):hover::before { 
+  background-image: url('http://localhost:8081/5w5-gdv/wp-content/uploads/2024/11/ProjetLettre4.png');
+}
+
+.projet-container:nth-child(4):hover::before { 
+  background-image: url('http://localhost:8081/5w5-gdv/wp-content/uploads/2024/11/ProjetLettre5.png');
+}
+
+.projet-container:nth-child(5):hover::before { 
+  background-image: url('http://localhost:8081/5w5-gdv/wp-content/uploads/2024/11/ProjetLettre6.png');
+}
+
+.projet-container:nth-child(6):hover::before { 
+  background-image: url('http://localhost:8081/5w5-gdv/wp-content/uploads/2024/11/ProjetLettre7.png');
+}
+
+.projet-container:nth-child(7):hover::before { 
+  background-image: url('http://localhost:8081/5w5-gdv/wp-content/uploads/2024/11/ProjetLettre1.png');
+}
+
+// Agrandissement quand hover
+.projet-container:hover .lettre {
+  transform: scaleX(2);
+  color: white; /* La couleur de la lettre devient blanche */
+}
+
+// Ajustement lettre O
+.projet-titre:hover .lettreO {
+  transform: scaleX(1.5); 
+  color: white;
+  z-index: 10;
+}
+
+
+.projet-container:hover .projet-titre {
+  opacity: 1;
+  transform: translateY(0);
+}
+}
+
+@media screen and (min-width: 650px){
+  .projet-mot{
+    height: 40rem;
+  }
+}
+
+/////////////////// SECTION PROFESSEUR ////////////////////////
+

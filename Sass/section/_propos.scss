@@ -1,32 +1,65 @@
-/* Style général pour le contenu de la section "À propos" */
+// /* Style général pour le contenu de la section "À propos" */
 
+// Section à propos
 .APropos{
   background-color: #0C293A;
   z-index: 0;
+  min-height: 110vh;
 }
+
+// Les lignes animés
 .line {
   stroke: #43C4EB;
   stroke-width: 5;
   fill: none;
 }
-.titre-principal h2 {
-  font-family: "AppleGaramond";
+
+// Le titre principale du conteneur
+.h2-info{
+  font-style: italic;
+  color: white;
+  font-family: 'AppleGaramond';
+  font-weight: 500;
+  font-size: 85px;
+  font-size: clamp(3.75rem, 3.553rem + 0.926vw, 5rem);
 }
 
+// Le titre principale du conteneur pour partie desktop
+.h2-info2{
+  display: none;
+}
+
+// La section qui comprend image, texte et descripotion
 .contenu-about {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: center;
   padding: 2em;
   padding-bottom: 5em;
 }
 
-.image-apropos {
-  flex: 1;
-  margin-right: 1em;
-  max-width: 100%;
+// Titre : multimédia
+.h3-info{
+  font-family: "greycliff-cf", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 22px;
+  margin-top: -2rem;
+  padding-bottom: 2rem;
+  font-size: clamp(1.438rem, 1.27rem + 0.787vw, 2.5rem);
 }
+
+.h3-info2{
+  display: none;
+}
+
+// L'image
+.image-info{
+  display: flex;
+  flex-direction: column;
+}
+
 
 .image-apropos img {
   width: 80%;
@@ -35,11 +68,39 @@
   border-radius: 8px;
 }
 
-/* Style pour le contenu à droite */
-.about-contenu {
-  flex: 2;
+// Sectoin texte d'information
+.image-apropos {
+  flex: 1;
+  margin-right: 1em;
+  max-width: 100%;
 }
 
+.about-contenu{
+  padding-top: 1rem;
+  width: 100%;
+}
+
+.about-contenu p,
+.info-additionnel h3{
+  font-family: "greycliff-cf", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: clamp(1.063rem, 0.885rem + 0.833vw, 2.188rem);
+  hyphens: manual; 
+  word-break: break-word; 
+  width: fit-content;
+}
+
+.about-contenu p{
+  line-height: 1.2;
+  text-align: justify;
+}
+
+.mot-couleur{
+  color: aqua;
+}
+
+// Section description des cours avec les svg
 .info-additionnel {
   margin-top: 1em;
   display: flex;
@@ -48,111 +109,245 @@
   justify-content: center;
 }
 
-.info-additionnel p {
-  margin: 0.5em 0;
+.info-additionnel-section{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
 }
 
-.arriere-plan-bleu {
-  background-color: #102229;
-  padding: 2em;
-  border-radius: 8px;
+.info-additionnel h3{
+  text-align: left;
 }
 
-/* Style pour les petits écrans */
+.info-additionnel{
+  padding-top: 2.5rem;
+}
+
+// Les svg qui tournent
+.info-additionnel-section-svg{
+  width: 6%;
+  fill: aqua;
+  animation: spin 12s linear infinite;
+}
+
+.tenor-gif-embed {
+  background: none !important; 
+  box-shadow: none !important; 
+}
+
+@keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+
+
+/************** TABLETTE  ******************/
 @media screen and (max-width: 768px) {
-  .contenu-about {
-      flex-direction: column;
-      text-align: center;
-  }
 
+  // Titre de la section
   .titre-principal {
-      text-align: center;
+    text-align: center;
+}
+
+// La section informative 
+.contenu-about {
+    flex-direction: column;
+    text-align: center;
   }
 
-  h2 {
-      order: 1;
-      width: 100%;
-      text-align: center;
-      padding-left: 0;
-  }
+  // Titre : multimédia
+.titre-principal h2 {
+  width: 100%;
+  order: 1;
+  text-align: center;
+  padding-left: 0;
+}
 
-  .image-apropos {
-      order: 2;
-      margin-right: 0;
-      margin-bottom: 1em;
-      display: flex;
-      justify-content: center;
-      width: 100%;
-  }
+// Image
+.image-apropos {
+  order: 2;
+  margin-right: 0;
+  margin-bottom: 1em;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
 
-  .image-apropos img {
-      width: 80%;
-      max-width: 300px;
-      margin: 0 auto;
-  }
+.image-apropos img {
+  width: 80%;
+  max-width: 300px;
+  margin: 0 auto;
+}
 
-  .about-contenu {
-      order: 3;
-      width: 100%;
-  }
+.about-contenu {
+  order: 3;
+  width: 100%;
+}
 
-  .about-contenu p,
-  .info-additionnel {
-      order: 4;
-      width: 100%;
+.about-contenu p,
+.info-additionnel {
+  order: 4;
+  width: 100%;
   }
 }
 
-/* Style pour les écrans de tablette */
+/****************** UN PEU PLUS GROS QUE TABLETTE ******************/
 @media screen and (min-width: 769px) and (max-width: 1024px) {
-  .contenu-about {
-      flex-direction: column;
-      text-align: center;
-  }
 
-  .titre-principal {
-      text-align: center;
-  }
-
-  h2 {
-      order: 1;
-      width: 100%;
-      text-align: center;
-      padding-left: 0;
-  }
-
-  .image-apropos {
-      order: 2;
-      margin-right: 0;
-      margin-bottom: 1em;
-      display: flex;
-      justify-content: center;
-      width: 100%;
-  }
-
-  .image-apropos img {
-      width: 80%;
-      max-width: 500px;
-      margin: 0 auto;
-  }
-
-  .about-contenu {
-      order: 3;
-      width: 100%;
-  }
-
-  .about-contenu p,
-  .info-additionnel {
-      order: 4;
-      gap: 1em;
-      width: 100%;
-  }
-}
+// Ligne animation
 .line.inactive {
   opacity: 0;
   transition: opacity 0.5s ease;
 }
-
 .line.active {
   opacity: 1;
+}
+}
+
+/****************** DESKTOP LAPTOP  ******************/
+@media screen and (min-width: 768px) {
+
+// La section à propos 
+.APropos{
+  padding: 20px 40px;
+}
+
+// Le titre principale
+.titre-principal {
+  margin-bottom: .7em;
+  margin-top: .5em;
+}
+
+.contenu-about{
+  padding: 0;
+}
+
+// Enlève ancien h3 pour mettre nouveau dans un autre conteneur
+.h3-info{
+  display: none;
+}
+      
+.h3-info2{
+  font-family: "greycliff-cf", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  padding-bottom: 2rem;
+  font-size: clamp(1.438rem, 1.27rem + 0.787vw, 2.5rem);
+  display: block;
+  padding-bottom: 2rem;
+}
+
+// L'image
+.image-info{
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+.image-apropos {
+  flex: 1;
+  min-width: 38%;
+}
+
+.image-apropos img {
+  width: 100%;
+}
+
+// Contenue information
+.about-contenu{
+  max-width: 70%;
+  padding-top: 0;
+}
+
+.about-contenu p{
+  font-size: clamp(1.063rem, 0.443rem + 1.291vw, 2.5rem);
+}
+
+.info-additionnel {
+  flex-direction: row;
+  gap: 2.5em;
+  justify-content: space-evenly;
+  width: 100%;
+  flex-wrap: wrap;
+  padding-bottom: 2rem;
+}
+
+.info-additionnel-section {
+  width: 47%;
+}
+
+}
+
+/****************** DESKTOP  ******************/
+@media screen and (min-width: 1448px){
+
+// Enlève vieux titre multimédia pour mettre nouveau
+.h2-info{
+  display: none;
+}
+  
+.h2-info2{
+  display: block;
+  font-style: italic;
+  color: white;
+  font-family: 'AppleGaramond';
+  font-weight: 500;
+  font-size: clamp(3.75rem, 3.553rem + 2vw, 5rem);
+  padding-bottom: 3rem;
+}
+
+// Image
+.image-info {
+  justify-content: flex-start;
+}
+
+.image-apropos {
+  flex: 1;
+  min-width: 33%;
+  max-width: 400px;
+}
+
+.image-apropos img {
+  width: 90%;
+  max-width: 575px;
+}
+
+// Plus d'information, section avec svg
+.info-additionnel {
+  gap: 3em;
+  padding-left: 10rem;
+  padding-bottom: 6rem;
+  padding-top: 5em;
+}
+}
+
+/****************** POUR LES GROS ORDIS  ******************/
+@media screen and (min-width: 1740px){
+
+// Image
+.image-apropos {
+  min-width: 33%;
+  padding-left: 4rem;
+}
+
+.image-apropos img {
+  width: 90%;
+  max-width: 547px;
+}
+
+.about-contenu{
+  padding-right: 4rem;
+}
+}
+
+/****************** POUR LES MEGA ORDIS  ******************/
+@media screen and (min-width: 2140px){
+// Image
+.image-apropos {
+  min-width: 28%;
+}
 }

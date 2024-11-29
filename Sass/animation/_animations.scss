@@ -19,7 +19,6 @@
     animation-duration:5s;
 }
 
-/* Naming animations in hover */
 .card__article:hover .card__data {
     animation: show-data 1s forwards;
     opacity: 1;
@@ -38,7 +37,6 @@
     animation: remove-data 1s forwards;
   }
   
-  /* Card animation */
   @keyframes show-data {
     50% {
       transform: translateY(-10rem);
