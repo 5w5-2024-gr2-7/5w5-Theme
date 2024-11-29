@@ -361,3 +361,28 @@ h1 {
     
   }
   
+
+@media screen and (min-width: 1240px) {
+.card__article{
+  width: 48%;
+
+}
+  
+}
+
+@media screen and (min-width: 1639px) {
+  .teacher-photo img{
+    width: 70%;
+}
+
+.card__article{
+  display: flex;
+  justify-content: center;
+}
+
+.card__article {
+  width: 48%;
+}
+    
+  }
+  

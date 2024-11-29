@@ -1,0 +1,51 @@
+.page-404 {
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.page-404 .container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.error-title {
+  font-size: 3em;
+  color: #ff5a5f;
+  margin-bottom: 20px;
+}
+
+.error-message {
+  font-size: 1.2em;
+  color: #666;
+  margin-bottom: 30px;
+}
+
+.error-image {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 40px;
+}
+
+.error-links p {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+.error-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.error-links ul li {
+  margin: 10px 0;
+}
+
+.error-links ul li a {
+  text-decoration: none;
+  color: #0073e6;
+  font-weight: bold;
+}
+
+.error-links ul li a:hover {
+  text-decoration: underline;
+}

@@ -68,7 +68,6 @@
     };
 
     jQuery(document).ready(function($) {
-        // Listen for changes in the filters and trigger an Ajax request
         $('#session-filter, #volet-filter').on('change', function() {
             var session = $('#session-filter').val();
             var volet = $('#volet-filter').val();

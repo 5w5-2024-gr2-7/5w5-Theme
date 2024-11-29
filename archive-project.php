@@ -20,7 +20,7 @@
     <div class="projets" id="projectsContainer">
         <?php if (have_posts()) : ?>
             <?php while (have_posts()) : the_post(); ?>
-                <div class="projet" data-category="<?php echo get_field('category_slug'); ?>">
+                <div class="projet" data-category="<?php echo get_field('category'); ?>"> <!-- Adjusted to the actual ACF field name -->
                     <h2><?php the_title(); ?></h2>
                     <?php if (has_post_thumbnail()) : ?>
                         <img src="<?php the_post_thumbnail_url('medium'); ?>" alt="<?php the_title(); ?>">
