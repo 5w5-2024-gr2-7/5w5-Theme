@@ -8,7 +8,7 @@ get_header();
 <div class="OuLa">
     <div class="content-wrapper">
         <h1 class="titre-principale">
-            Où la <span class="titre-principale-italique">création</span><br>commencee
+            Où la <span class="titre-principale-italique">création</span><br>commence
         </h1>
         <div>
             <!-- <img src="<?php echo site_url('/wp-content/uploads/2024/11/BouleRougegif.gif'); ?>" alt="Animation abstraite"> -->
@@ -39,7 +39,7 @@ get_header();
     <h3 class="h3-info">Technique d'intégration multimédia ?</h3>
     <div class="image-info">
       <div class="image-apropos">
-        <img src="<?php echo get_site_url(); ?>/wp-content/uploads/2024/11/file.jpg" alt="À propos">
+        <img src="<?php echo get_site_url(); ?>/wp-content/uploads/2024/11/laFilleFuckalEllePart.jpg" alt="À propos">
       </div>
       <div class="about-contenu">
       <h class="h2-info2">À propos</h>
@@ -364,7 +364,7 @@ background-image: url('<?php echo get_site_url(); ?>/wp-content/uploads/2024/11/
         </article>
 
         <article class="card__article">
-            <img src="<?php echo get_site_url(); ?>/wp-content/uploads/2024/11/lesSectionDeTipeDeCourDESIGN-2.png')">
+            <img src="<?php echo get_site_url(); ?>/wp-content/uploads/2024/11/lesSectionDeTipeDeCourDESIGN-3.png')">
 
             <div class="card__data">
                 <h2 class="card__title">Conception Graphique</h2>

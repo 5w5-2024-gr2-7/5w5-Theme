@@ -6,7 +6,7 @@
 
 .stages-section h1 {
     font-size: 2rem;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
 }
 
 .stage-type, .stage-company {
@@ -69,7 +69,6 @@
         margin-bottom: 40px;
     }
 
-    /* Nouvelle règle pour aligner les deux sections */
     .stage-wrapper {
         display: flex;
         justify-content: center;
@@ -81,7 +80,7 @@
         font-size: 1.2rem;
     }
 
-    .description-stage{
+    .description-stage {
         display: flex;
         gap: 40px;
         margin-bottom: 40px;
@@ -100,10 +99,60 @@
         max-width: 300px;
     }
 
-    .filtration-stage{
+    .filtration-stage {
         display: flex;
         justify-content: center;
         gap: 20px;
         margin-bottom: 40px;
+    }
+}
+
+/* Modifications pour mobile : Placer l'image en haut et le lien en dessous avec une ligne de séparation */
+@media (max-width: 768px) {
+    .stage-wrapper{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .stage-company {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content:center ;
+        margin-bottom: 60px;
+        border-bottom: 2px solid white;
+        padding-bottom: 55px;
+        max-width: 400px;
+    }
+
+    /* Nom de l'entreprise en haut */
+    .stage-company h2 {
+        margin-bottom: 10px; /* Espacement entre le titre et l'image */
+    }
+
+    /* L'image en dessous du nom de l'entreprise */
+    .stage-company img {
+        margin-bottom: 10px; /* Espacement entre l'image et le bouton */
+    }
+
+    /* Ajouter un bouton sous l'image */
+    .stage-company .button-link {
+        margin-top: 10px; /* Espacement entre l'image et le bouton */
+        text-align: center;
+        display: inline-block;
+        padding: 10px 20px;
+        text-decoration: none;
+        background-color: #5578B4;
+        background-image: linear-gradient(145deg, #5a84c5, #466899);
+        color: white;
+        border: none;
+        border-radius: 25px;
+        padding: 10px 20px;
+        cursor: pointer;
+        font-size: 1em;
+        font-weight: 600;
+        text-align: center;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        transition: background 0.3s ease, box-shadow 0.3s ease;
     }
 }

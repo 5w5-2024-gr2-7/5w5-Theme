@@ -52,8 +52,12 @@
 
 .projet {
     flex: 0 1 calc(100% - 40px);
-    max-width: 300px;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center; 
+    margin-bottom: 30px;
 }
 .projet h2{
     margin-bottom: 1em;
@@ -222,5 +226,9 @@
 
     .project-gallery {
         margin-bottom: 20px;
+    }
+    .projet {
+        border-bottom: 2px solid white;
+        padding-bottom: 55px;
     }
 }
