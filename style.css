@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*
-Theme Name: 5w5-gdv
+Theme Name: Refonte-TIM
 Theme URI: https://referenced.ca
 Author: Alexander Rankov, Mathieu Croteau-Dufour, Guillaume Ducharme-Vanier et Dominic Gibeau
 Author URI: https://wordpress.org/
@@ -9,7 +9,7 @@ Version: 1.0
 Requires PHP: 7.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Text Domain: 5w5-gdv
+Text Domain: theme-gr2
 Ce thème a été développé dans le cadre du cours 4W4
 */
 /*https://developer.wordpress.org/themes/basics/main-stylesheet-style-css/*/
@@ -36,7 +36,7 @@ html {
 body {
   background: linear-gradient(-45deg, #e73c7e, #3a66b8, #2383af, #ac5bcc);
   background-size: 200% 200%;
-  animation: gradient 70s ease infinite; /* Increased duration from 15s to 30s */
+  animation: gradient 70s ease infinite;
   height: 100%;
 }
 @keyframes gradient {
@@ -196,6 +196,27 @@ p {
 /* ///////////////////////////////////////////////////////////////// */
 /* Règles d'animations                                               */
 /* ///////////////////////////////////////////////////////////////// */
+.bg {
+  animation: slide 3s ease-in-out infinite alternate;
+  background-image: linear-gradient(-60deg, #6c3 50%, #09f 50%);
+  bottom: 0;
+  left: -50%;
+  opacity: 0.5;
+  position: fixed;
+  right: -50%;
+  top: 0;
+  z-index: -1;
+}
+
+.bg2 {
+  animation-direction: alternate-reverse;
+  animation-duration: 4s;
+}
+
+.bg3 {
+  animation-duration: 5s;
+}
+
 .card__article:hover .card__data {
   animation: show-data 1s forwards;
   opacity: 1;
@@ -855,23 +876,6 @@ h1 {
     width: 48%;
   }
 }
-@media screen and (min-width: 1240px) {
-  .card__article {
-    width: 48%;
-  }
-}
-@media screen and (min-width: 1639px) {
-  .teacher-photo img {
-    width: 70%;
-  }
-  .card__article {
-    display: flex;
-    justify-content: center;
-  }
-  .card__article {
-    width: 48%;
-  }
-}
 .APropos {
   background-color: #0C293A;
   z-index: 0;
@@ -882,6 +886,17 @@ h1 {
   stroke: #43C4EB;
   stroke-width: 5;
   fill: none;
+}
+
+.line.inactive {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.line.active {
+  opacity: 1;
+  visibility: visible;
 }
 
 .h2-info {
@@ -1318,7 +1333,6 @@ h1 {
   flex: 0 1 calc(100% - 40px);
   max-width: 300px;
   text-align: center;
-  opacity: 1;
 }
 
 .projet h2 {
@@ -1533,16 +1547,18 @@ h1 {
     text-align: center;
     margin-bottom: 40px;
   }
+  /* Conteneur pour centrer et aligner les sections stage-type et stage-company côte à côte */
   .stage-type, .stage-company {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-bottom: 40px;
   }
+  /* Nouvelle règle pour aligner les deux sections */
   .stage-wrapper {
     display: flex;
     justify-content: center;
-    gap: 40px;
+    gap: 40px; /* Espace entre les deux éléments */
   }
   .scroll-button {
     padding: 15px;
@@ -1673,6 +1689,272 @@ h1 {
   pointer-events: none;
 }
 
+.titre-principale {
+  font-family: "garamond-premier-pro-subhead", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.titre-principale-italique {
+  font-family: "garamond-premier-pro", serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.section-projet {
+  min-height: 100vh;
+}
+
+.h1-projet {
+  text-align: left;
+  width: 100%;
+  display: block;
+  color: white;
+  padding: 1rem 1rem;
+  font-family: "garamond-premier-pro-subhead", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: clamp(3.125rem, 2.031rem + 5vw, 4.063rem);
+}
+
+.projet-mot {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "FontGreycliffBold";
+  color: white;
+}
+
+.projet-mot a {
+  text-decoration: none;
+  color: white;
+}
+
+.projet-container:hover {
+  flex: 2;
+}
+
+.projet-container::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  animation: fade-in 0.6s ease-out forwards;
+  z-index: 1;
+  top: 0;
+}
+
+.projet-titre {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #333;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  transform: translateY(10px);
+}
+
+.projet-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+  flex: 1;
+  width: 100%;
+  height: 100%;
+  animation: slide-down-container 0.6s ease-out forwards;
+  opacity: 0;
+}
+
+/* Pour défilement mobile */
+@media screen and (max-width: 650px) {
+  /* Effet de défilement */
+  .projet-container:nth-child(1) {
+    animation-delay: 0s;
+  }
+  .projet-container:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+  .projet-container:nth-child(3) {
+    animation-delay: 0.4s;
+  }
+  .projet-container:nth-child(4) {
+    animation-delay: 0.6s;
+  }
+  .projet-container:nth-child(5) {
+    animation-delay: 0.8s;
+  }
+  .projet-container:nth-child(6) {
+    animation-delay: 1s;
+  }
+  .projet-container:nth-child(7) {
+    animation-delay: 1.2s;
+  }
+  /* Lettre à l'intérieur du conteneur */
+  .lettre {
+    font-size: clamp(5.313rem, 3.854rem + 6.667vw, 6.563rem);
+    font-weight: bold;
+    display: inline-block;
+    cursor: pointer;
+    background-color: transparent;
+    z-index: 2;
+    padding-left: 1rem;
+  }
+  /* Images pour chaque conteneur */
+  .projet-container:nth-child(1)::before {
+    background-image: url("http://localhost:8081/5w5-gdv/wp-content/uploads/2024/11/lettreProjetV2_2.png");
+    animation-delay: 0s;
+  }
+  .projet-container:nth-child(2)::before {
+    background-image: url("http://localhost:8081/5w5-gdv/wp-content/uploads/2024/11/lettreProjetV2_4.png");
+    animation-delay: 0.2s;
+  }
+  .projet-container:nth-child(3)::before {
+    background-image: url("http://localhost:8081/5w5-gdv/wp-content/uploads/2024/11/lettreProjetV2_5.png");
+    animation-delay: 0.4s;
+  }
+  .projet-container:nth-child(4)::before {
+    background-image: url("http://localhost:8081/5w5-gdv/wp-content/uploads/2024/11/lettreProjetV2_8.png");
+    animation-delay: 0.6s;
+  }
+  .projet-container:nth-child(5)::before {
+    background-image: url("http://localhost:8081/5w5-gdv/wp-content/uploads/2024/11/lettreProjetV2_1.png");
+    animation-delay: 0.8s;
+  }
+  .projet-container:nth-child(6)::before {
+    background-image: url("https://next-images.123rf.com/index/_next/image/?url=https://assets-cdn.123rf.com/index/static/assets/top-section-bg.jpeg&w=3840&q=75");
+    animation-delay: 1s;
+  }
+  .projet-container:nth-child(7)::before {
+    background-image: url("https://next-images.123rf.com/index/_next/image/?url=https://assets-cdn.123rf.com/index/static/assets/top-section-bg.jpeg&w=3840&q=75");
+    animation-delay: 1.2s;
+  }
+}
+/* l'animatoin de défilement pour mobile */
+@keyframes slide-down-container {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+/* Animation de fade-in pour les images */
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@media screen and (min-width: 650px) {
+  .h1-projet {
+    font-size: clamp(4.063rem, 2.855rem + 2.973vw, 7.5rem);
+    text-align: center;
+    padding: 3rem 0rem;
+  }
+  .projet-mot {
+    flex-direction: row;
+    justify-content: space-between;
+    width: 90vw;
+    position: relative;
+    height: 20rem;
+    width: 100%;
+  }
+  .projet-container {
+    position: relative;
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    transition: flex 0.3s ease;
+    overflow: hidden;
+    height: 100%;
+    z-index: 1;
+    width: 100%;
+    animation: none;
+    opacity: 1;
+  }
+  .projet-container:nth-child(1) {
+    background-image: none;
+  }
+  .lettre {
+    font-size: clamp(4.688rem, 1.394rem + 8.108vw, 14.063rem);
+    font-weight: bold;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    display: inline-block;
+    cursor: pointer;
+    background-color: transparent;
+    padding: 0;
+    border-radius: 5px;
+    text-align: center;
+    z-index: 2;
+    margin: -0.5rem;
+  }
+  .projet-container:nth-child(1),
+  .projet-container:nth-child(2),
+  .projet-container:nth-child(3),
+  .projet-container:nth-child(4),
+  .projet-container:nth-child(5),
+  .projet-container:nth-child(6),
+  .projet-container:nth-child(7) {
+    background-image: none;
+  }
+  .projet-container:nth-child(1):hover::before {
+    background-image: url("http://localhost:8081/5w5-gdv/wp-content/uploads/2024/11/ProjetLettre2.png");
+  }
+  .projet-container:nth-child(2):hover::before {
+    background-image: url("http://localhost:8081/5w5-gdv/wp-content/uploads/2024/11/ProjetLettre3.png");
+  }
+  .projet-container:nth-child(3):hover::before {
+    background-image: url("http://localhost:8081/5w5-gdv/wp-content/uploads/2024/11/ProjetLettre4.png");
+  }
+  .projet-container:nth-child(4):hover::before {
+    background-image: url("http://localhost:8081/5w5-gdv/wp-content/uploads/2024/11/ProjetLettre5.png");
+  }
+  .projet-container:nth-child(5):hover::before {
+    background-image: url("http://localhost:8081/5w5-gdv/wp-content/uploads/2024/11/ProjetLettre6.png");
+  }
+  .projet-container:nth-child(6):hover::before {
+    background-image: url("http://localhost:8081/5w5-gdv/wp-content/uploads/2024/11/ProjetLettre7.png");
+  }
+  .projet-container:nth-child(7):hover::before {
+    background-image: url("http://localhost:8081/5w5-gdv/wp-content/uploads/2024/11/ProjetLettre1.png");
+  }
+  .projet-container:hover .lettre {
+    transform: scaleX(2);
+    color: white; /* La couleur de la lettre devient blanche */
+  }
+  .projet-titre:hover .lettreO {
+    transform: scaleX(1.5);
+    color: white;
+    z-index: 10;
+  }
+  .projet-container:hover .projet-titre {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@media screen and (min-width: 650px) {
+  .projet-mot {
+    height: 40rem;
+  }
+}
 .separation-contact {
   display: flex;
   flex-direction: column;
@@ -2177,11 +2459,9 @@ h1 {
 
 .carrousel__item {
   min-width: 100%;
-  flex-shrink: 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
 }
 
 .carrousel__image {
@@ -2217,7 +2497,7 @@ h1 {
   right: 10px;
 }
 
-@media screen and (min-width: 1448px) {
+@media screen and (min-width: 1280px) {
   .projet-titres {
     display: flex;
     flex-direction: column;
@@ -2247,9 +2527,150 @@ h1 {
     font-size: 1.5rem;
   }
   .carrousel-container {
-    max-width: 55rem;
-    margin: 0;
     max-width: 77rem;
+    margin: 0;
+  }
+}
+.page-404 {
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.page-404 .container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.error-title {
+  font-size: 3em;
+  color: #ff5a5f;
+  margin-bottom: 20px;
+}
+
+.error-message {
+  font-size: 1.2em;
+  color: #666;
+  margin-bottom: 30px;
+}
+
+.error-image {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 40px;
+}
+
+.error-links p {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+.error-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.error-links ul li {
+  margin: 10px 0;
+}
+
+.error-links ul li a {
+  text-decoration: none;
+  color: #0073e6;
+  font-weight: bold;
+}
+
+.error-links ul li a:hover {
+  text-decoration: underline;
+}
+
+.search-input::-webkit-search-cancel-button {
+  display: none; /* Cache le bouton "X" dans Chrome/Safari */
+}
+
+.search-input:focus {
+  background-color: transparent !important; /* Fond transparent lors du focus */
+  outline: none; /* Supprimer le contour par défaut */
+  color: white; /* Garder le texte en blanc */
+}
+
+.search-input:-webkit-autofill {
+  background-color: transparent !important; /* Lorsque les suggestions de remplissage automatique apparaissent */
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  margin-left: 20px;
+  z-index: 101;
+  border: 1px solid white;
+  border-radius: 100px;
+}
+
+.search-input::placeholder {
+  color: #ffffff; /* Remplacez cette couleur par celle que vous préférez */
+  opacity: 1; /* Assurez-vous que l'opacité du placeholder est à 100% */
+}
+
+.search-form {
+  display: flex;
+  align-items: center;
+  width: 0%;
+}
+
+.search-label {
+  width: clamp(5rem, 8vw, 21rem);
+}
+
+.search-input {
+  flex: 1;
+  padding: 8px 10px;
+  font-size: 14px;
+  border: none;
+  border-radius: 20px;
+  outline: none;
+  background-color: transparent;
+  color: white;
+}
+
+.search-button svg {
+  width: 20px; /* ajustez la taille du SVG */
+  height: 20px; /* ajustez la taille du SVG */
+  fill: currentColor; /* Utilise la couleur du texte du bouton pour le SVG */
+}
+
+.search-button {
+  color: white;
+  padding: 6px 8px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 12px;
+  transition: background-color 0.3s;
+  background-color: transparent;
+  padding-top: 0.5rem;
+}
+
+.search-button:hover {
+  background-color: #005885;
+}
+
+.search-icon {
+  font-size: 20px;
+}
+
+@media (max-width: 650px) {
+  .search-container {
+    margin-left: 15px;
+  }
+  .search-form {
+    max-width: 70%;
+  }
+  .search-input {
+    font-size: 14px;
+  }
+  .search-button {
+    padding: 8px 10px;
+    font-size: 14px;
   }
 }
 /* ///////////////////////////////////////////////////////////////// */

@@ -1,5 +1,5 @@
 /*
-Theme Name: 5w5-gdv
+Theme Name: Refonte-TIM
 Theme URI: https://referenced.ca
 Author: Alexander Rankov, Mathieu Croteau-Dufour, Guillaume Ducharme-Vanier et Dominic Gibeau
 Author URI: https://wordpress.org/
@@ -8,7 +8,7 @@ Version: 1.0
 Requires PHP: 7.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Text Domain: 5w5-gdv
+Text Domain: theme-gr2
 Ce thème a été développé dans le cadre du cours 4W4
 */
 
@@ -43,6 +43,8 @@ Ce thème a été développé dans le cadre du cours 4W4
 @import "section/contact";
 @import "section/cours-single.scss";
 @import "section/projet-single.scss";
+@import "section/404.scss";
+@import "section/searchform.scss";
 
 /* ///////////////////////////////////////////////////////////////// */
 /* Règles de layout                                                  */

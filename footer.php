@@ -35,7 +35,8 @@
       </div>
     </div>
   </div>
-  <img src="<?php echo get_site_url(); ?>/wp-content/uploads/2024/11/tim2.png" alt="image">
+  <div class="credit"><p>© Alexander Rankov • Dominic Gibeau <br><br> Guillaume Ducharme-Vanier • Mathieu Croteau-Dufour </p></div>
+  <img src="<?php echo get_site_url(); ?>/wp-content/uploads/2024/11/tim-2-1.png" alt="image">
 </footer>
 
 <?php wp_footer(); ?>

@@ -97,12 +97,10 @@
 
 // section individuel
 .carrousel__item {
-    min-width: 100%;            
-    flex-shrink: 0;             
+    min-width: 100%;                        
     display: flex;
     justify-content: center;    
-    align-items: center;        
-    width: 100%;                
+    align-items: center;                      
 }
 
 .carrousel__image {
@@ -144,7 +142,7 @@
 
 /////////////////// DESKTOP ////////////////////////
 
-@media screen and (min-width: 1448px){
+@media screen and (min-width: 1280px){
     .projet-titres{
         display: flex;
         flex-direction: column;
@@ -180,10 +178,8 @@
     }
 
     .carrousel-container{
-        max-width: 55rem;  
+        max-width: 77rem;  
         margin: 0;
-        max-width: 77rem; 
     }
 }
-
 
