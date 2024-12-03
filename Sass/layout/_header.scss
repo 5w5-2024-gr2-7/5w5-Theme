@@ -17,6 +17,11 @@ body.no-scroll {
   position: relative;
 }
 
+.nav-droite{
+  display: flex;
+  align-items: center;
+}
+
 .menu {
   display: flex;
   justify-content: flex-end;
@@ -120,10 +125,16 @@ body.no-scroll {
 
 // ////////////////// VERSION MOBILE - MENU BURGER ////////////////////
 
-@media(max-width: 650px) {
+@media(max-width: 875px) {
 
 .nav-bar{
   position: fixed;
+}
+
+.nav-droite{
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column-reverse;
 }
 
   // La page menu  
@@ -155,14 +166,16 @@ body.no-scroll {
     font-size: clamp(3.438rem, 2.057rem + 8.242vw, 4.375rem);
   }
 
+
   .nav-links{
     flex-direction: column;
   }
 
   // La barre de pages
   .nav-links li {
-    margin-top: 40px;
+    margin-top: 0;
     padding-left: 0;
+    margin-bottom: 40px;
   }
 
   .nav-links li a {

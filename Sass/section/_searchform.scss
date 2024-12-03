@@ -1,30 +1,28 @@
+// CSS POUR LA BARRE RECHERCHE
+
 .search-input::-webkit-search-cancel-button {
   display: none; /* Cache le bouton "X" dans Chrome/Safari */
 }
 
-.search-input:focus {
-  background-color: transparent !important; /* Fond transparent lors du focus */
-  outline: none; /* Supprimer le contour par défaut */
-  color: white; /* Garder le texte en blanc */
-}
-
-
+// Lorsque focus, prend l'espace du conteneur
 .search-input:-webkit-autofill {
-  background-color: transparent !important; /* Lorsque les suggestions de remplissage automatique apparaissent */
+  background-color: transparent !important; 
+  width: inherit;
 }
 
+// Toute le contenue de la barre de navigation
 .search-container {
   display: flex;
   align-items: center;
-  margin-left: 20px;
+  margin-left: 0;
   z-index: 101;
   border: 1px solid white;
   border-radius: 100px;
 }
 
 .search-input::placeholder {
-  color: #ffffff; /* Remplacez cette couleur par celle que vous préférez */
-  opacity: 1; /* Assurez-vous que l'opacité du placeholder est à 100% */
+  color: #ffffff; 
+  opacity: 1; 
 }
 
 .search-form {
@@ -33,65 +31,53 @@
   width: 0%;
 }
 
-.search-label{
-  width: clamp(5rem, 8vw, 21rem);
-}
-
+// La section où l'on écrit le texte
 .search-input {
   flex: 1;
   padding: 8px 10px;
-  font-size: 14px;
+  font-size: 20px;
   border: none;
   border-radius: 20px;
   outline: none;
   background-color: transparent;
   color: white;
+  width: clamp(12rem, 35vw, 36rem);
 
 }
 
-.search-button svg {
-  width: 20px; /* ajustez la taille du SVG */
-  height: 20px; /* ajustez la taille du SVG */
-  fill: currentColor; /* Utilise la couleur du texte du bouton pour le SVG */
-}
-
-
-
+// Le bouton loupe
 .search-button {
   color: white;
-  padding: 6px 8px;
+  padding: 0px 8px;
+  padding-left: 19px;
   border: none;
   border-radius: 50%;
   cursor: pointer;
   font-size: 12px;
   transition: background-color 0.3s;
   background-color: transparent;
-  padding-top: .5rem;
+  padding-top: .2rem;
 }
 
-.search-button:hover {
-  background-color: #005885;
+.search-button svg {
+  width: 18px; 
+  height: 18px; 
+  fill: currentColor; 
 }
 
-.search-icon {
-  font-size: 20px;
+
+//////////// Pour plus gros que mobile //////////////////
+@media only screen and (min-width: 875px) {
+
+.search-container{
+  margin-left: 20px;
 }
 
-@media (max-width: 650px) {
-  .search-container {
-    margin-left: 15px;
-  }
+.search-label{
+  width: clamp(5rem, 8vw, 21rem);
+}
 
-  .search-form {
-    max-width: 70%;
-  }
-
-  .search-input {
-    font-size: 14px;
-  }
-
-  .search-button {
-    padding: 8px 10px;
-    font-size: 14px;
-  }
+.search-input{
+  font-size: 14px;
+}
 }
