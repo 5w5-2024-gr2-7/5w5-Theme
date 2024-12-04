@@ -32,32 +32,34 @@
     </div>
 
     <div class="course-container" id="coursesContainer">
-        <?php 
-            $args = array(
-                'post_type' => 'course',
-                'posts_per_page' => -1,
-            );
-            $query = new WP_Query($args);
+    <?php 
+        $args = array(
+            'post_type' => 'course',
+            'posts_per_page' => -1,
+            'orderby' => 'date',
+            'order' => 'ASC',
+        );
+        $query = new WP_Query($args);
 
-            if ($query->have_posts()) : 
-                while ($query->have_posts()) : $query->the_post();
-        ?>
-            <div class="course-box">
-                <h3><?php the_title(); ?></h3>
-                <div class="course-info">
-                    <?php if (has_post_thumbnail()) : ?>
-                        <img src="<?php the_post_thumbnail_url('medium'); ?>" alt="<?php the_title(); ?>">
-                    <?php endif; ?>
-                    <div class="course-oval"><?php the_field('session'); ?></div>
-                    <div class="course-oval"><?php the_field('category'); ?></div>
-                    <a href="<?php the_permalink(); ?>" class="course-button">➔</a>
-                </div>
+        if ($query->have_posts()) : 
+            while ($query->have_posts()) : $query->the_post();
+    ?>
+        <div class="course-box">
+            <h3><?php the_title(); ?></h3>
+            <div class="course-info">
+                <?php if (has_post_thumbnail()) : ?>
+                    <img src="<?php the_post_thumbnail_url('medium'); ?>" alt="<?php the_title(); ?>">
+                <?php endif; ?>
+                <div class="course-oval"><?php the_field('session'); ?></div>
+                <div class="course-oval"><?php the_field('category'); ?></div>
+                <a href="<?php the_permalink(); ?>" class="course-button">➔</a>
             </div>
-        <?php endwhile; ?>
-        <?php else : ?>
-            <p>Aucun cours trouvé</p>
-        <?php endif; ?>
-    </div>
+        </div>
+    <?php endwhile; ?>
+    <?php else : ?>
+        <p>Aucun cours trouvé</p>
+    <?php endif; ?>
+</div>
 </section>
 
 <?php get_footer(); ?>

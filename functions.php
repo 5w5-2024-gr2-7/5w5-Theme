@@ -187,6 +187,13 @@ function filter_professors_by_category($query) {
         }
     }
 }
+function redirect_single_stage_to_archive() {
+    if (is_singular('stage')) {
+        wp_redirect(get_post_type_archive_link('stage'), 301);
+        exit;
+    }
+}
+add_action('template_redirect', 'redirect_single_stage_to_archive');
 add_action('pre_get_posts', 'filter_professors_by_category');
 
 function filter_courses_ajax() {
@@ -197,6 +204,8 @@ function filter_courses_ajax() {
         'post_type' => 'course',
         'posts_per_page' => -1,
         'meta_query' => array(),
+        'orderby' => 'date',
+        'order' => 'ASC'
     );
 
     if (!empty($session)) {

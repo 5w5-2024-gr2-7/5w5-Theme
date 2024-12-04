@@ -10,15 +10,12 @@ get_header();
         <h1 class="titre-principale">
             Où la <span class="titre-principale-italique">création</span><br>commence
         </h1>
-        <div>
-            <!-- <img src="<?php echo site_url('/wp-content/uploads/2024/11/BouleRougegif.gif'); ?>" alt="Animation abstraite"> -->
-        </div>
     </div>
-    <!-- <div class="Swirl">
+    <div class="Swirl">
         <picture>
-            <img src="<?php echo get_site_url(); ?>/wp-content/uploads/2024/11/Swirl.png" alt="">
+            <img src="<?php echo get_site_url(); ?>/wp-content/uploads/2024/12/gifPlusGros.gif" alt="">
         </picture>
-    </div> -->
+    </div>
 </div>
 
 <div class="APropos">
@@ -28,7 +25,6 @@ get_header();
     <path class="line inactive" d="M-10 40 Q 20 50 50 110" />
     <path class="line inactive" d="M50 -10 Q 50 40 -10 40" />
 </svg>
-
     <header>
       <div class="titre-principal">
       <h2 class="h2-info">À propos</h2>
@@ -223,8 +219,9 @@ background-image: url('<?php echo get_site_url(); ?>/wp-content/uploads/2024/11/
   transition: flex 0.3s ease;
   overflow: hidden;
   height: 100%; 
-  z-index: 1; 
+  z-index: 1;
   width: 100%;
+  cursor: pointer;
 }
 .projet-container:nth-child(1){ 
   background-image: none
@@ -293,32 +290,32 @@ background-image: url('<?php echo get_site_url(); ?>/wp-content/uploads/2024/11/
     <div class="section-projet">
         <h class="h1-projet">Pour voir nos</h>
         <div class="projet-mot">
-        <div class="projet-container">
-        <span class="lettre" onclick="window.location.href='<?php echo 'https://gftnth00.mywhc.ca/tim51/projects/achernar/'; ?>'">P</span>
+        <div class="projet-container" onclick="window.location.href='<?php echo 'https://gftnth00.mywhc.ca/tim51/projects/achernar/'; ?>'">
+        <span class="lettre">P</span>
         <div class="projet-titre">Projet 1</div>
                 </div>
-            <div class="projet-container">
-            <span class="lettre" onclick="window.location.href='<?php echo 'https://gftnth00.mywhc.ca/tim51/projects/checo/'; ?>'">R</span>
+            <div class="projet-container"  onclick="window.location.href='<?php echo 'https://gftnth00.mywhc.ca/tim51/projects/checo/'; ?>'">
+            <span class="lettre">R</span>
                 <div class="projet-titre">Projet 2</div>
             </div>
-            <div class="projet-container">
-            <span class="lettre" onclick="window.location.href='<?php echo 'https://gftnth00.mywhc.ca/tim51/projects/spaceship/'; ?>'">O</span>
+            <div class="projet-container" onclick="window.location.href='<?php echo 'https://gftnth00.mywhc.ca/tim51/projects/spaceship/'; ?>'">
+            <span class="lettre">O</span>
                 <div class="projet-titre">Projet 3</div>
             </div>
-            <div class="projet-container">
-            <span class="lettre" onclick="window.location.href='<?php echo 'https://gftnth00.mywhc.ca/tim51/projects/jai-envie-de-chier/'; ?>'">J</span>
+            <div class="projet-container"  onclick="window.location.href='<?php echo 'https://gftnth00.mywhc.ca/tim51/projects/jai-envie-de-chier/'; ?>'">
+            <span class="lettre">J</span>
                 <div class="projet-titre">Projet 4</div>
             </div>
-            <div class="projet-container">
-            <span class="lettre" onclick="window.location.href='<?php echo 'https://gftnth00.mywhc.ca/tim51/projects/vengeance-et-vertu/'; ?>'">E</span>
+            <div class="projet-container"  onclick="window.location.href='<?php echo 'https://gftnth00.mywhc.ca/tim51/projects/vengeance-et-vertu/'; ?>'">
+            <span class="lettre">E</span>
                 <div class="projet-titre">Projet 5</div>
             </div>
-            <div class="projet-container">
-            <span class="lettre" onclick="window.location.href='<?php echo 'https://gftnth00.mywhc.ca/tim51/projects/triptique/'; ?>'">T</span>
+            <div class="projet-container"  onclick="window.location.href='<?php echo 'https://gftnth00.mywhc.ca/tim51/projects/triptique/'; ?>'">
+            <span class="lettre">T</span>
                 <div class="projet-titre">Projet 6</div>
             </div>
-            <div class="projet-container">
-            <span class="lettre" onclick="window.location.href='<?php echo 'https://gftnth00.mywhc.ca/tim51/projects/matinou-bg/'; ?>'">S</span>
+            <div class="projet-container"  onclick="window.location.href='<?php echo 'https://gftnth00.mywhc.ca/tim51/projects/matinou-bg/'; ?>'">
+            <span class="lettre">S</span>
                 <div class="projet-titre">Projet 7</div>
             </div>
         </div>
