@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
 <section class="cours-section">
-    <div class="header">
+    <div class="header-cours">
         <div class="header-item">
             <div class="volet-dropdown">
                 <span>Session</span>
@@ -18,7 +18,7 @@
         </div>
         <div class="header-item">
             <div class="volet-dropdown">
-                <span>Volet</span>
+                <span>Catégorie</span>
                 <select id="volet-filter">
                     <option value="">Tous</option>
                     <option value="Web">Web</option>

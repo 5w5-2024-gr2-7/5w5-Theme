@@ -14,22 +14,7 @@
     margin-bottom: 10px;
 }
 
-.volet-dropdown {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 20px;
-}
 
-.volet-dropdown span {
-    margin-right: 10px;
-    font-size: 1.2rem;
-}
-
-.volet-dropdown select {
-    padding: 5px;
-    font-size: 1rem;
-}
 
 .projets {
     display: flex;
@@ -42,13 +27,7 @@
 
 
 
-.galerie-projets>h1 {
-    color: white;
-}
 
-.volet-dropdown>span {
-    color: white;
-}
 
 .projet {
     flex: 0 1 calc(100% - 40px);
