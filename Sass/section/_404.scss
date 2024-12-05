@@ -1,51 +1,120 @@
+// CSS POUR LA PAGE 404
+
+// L'ensemble de la page
 .page-404 {
   text-align: center;
   padding: 50px 20px;
 }
 
+// Le conteneur des éléments
 .page-404 .container {
   max-width: 800px;
   margin: 0 auto;
+  margin-top: -3rem;
+}
+
+// Le titre
+.titre-404{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
 
 .error-title {
-  font-size: 3em;
-  color: #ff5a5f;
+  color: #ffffff;
   margin-bottom: 20px;
+  font-family: "garamond-premier-pro-subhead", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: clamp(2.375rem, 1.818rem + 2.545vw, 5rem);
+  line-height: 2.5rem;
+  width: 80%;
 }
 
+.fa-face-frown{
+  padding-left: 10px;
+  font-size: clamp(1.25rem, 0.985rem + 1.212vw, 2.5rem);
+}
+
+// Le message d'erreur
 .error-message {
   font-size: 1.2em;
-  color: #666;
+  color: #ffffff;
   margin-bottom: 30px;
+  font-family: "greycliff-cf", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: clamp(1.125rem, 1.019rem + 0.485vw, 1.625rem);
+  line-height: 1.5rem;
 }
 
-.error-image {
+// Le bouton
+.error-boutton {
+  background: transparent;
+  border: 1px solid white;
+  border-radius: 9px;
+  color: white;
+  font-size: clamp(0.875rem, 0.809rem + 0.303vw, 1.188rem);
+  overflow: hidden;
+  padding: 1rem;
+  position: relative;
+  text-decoration: none;
+  transition: 0.2s transform ease-in-out;
+  will-change: transform;
+  z-index: 0;
+}
+
+.error-boutton::after {
+  background-color: rgb(42, 170, 209);
+  border-radius: 9px;
+  content: '';
+  display: block;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform: translate(-100%, 0) rotate(10deg);
+  transform-origin: top left;
+  transition: 0.2s transform ease-out;
+  will-change: transform;
+  z-index: -1;
+}
+
+.error-boutton:hover::after {
+  transform: translate(0, 0);
+}
+
+.error-boutton a{
+  text-decoration: none;
+  color: white;
+  font-size: clamp(0.875rem, 0.809rem + 0.303vw, 1.188rem);
+  font-family: "greycliff-cf", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+// L'image
+.error-img {
   max-width: 100%;
   height: auto;
-  margin-bottom: 40px;
+  margin-bottom: -10rem;
+  margin-top: -2rem;
 }
 
-.error-links p {
-  font-size: 1.2em;
-  margin-bottom: 10px;
-}
+///////////////////////////// POUR LES DESKTOP //////////////////
 
-.error-links ul {
-  list-style: none;
-  padding: 0;
-}
+@media screen and (min-width: 768px){
 
-.error-links ul li {
-  margin: 10px 0;
-}
+  // Le titre
+  .error-title {
+    line-height: 5rem;
+  }
 
-.error-links ul li a {
-  text-decoration: none;
-  color: #0073e6;
-  font-weight: bold;
-}
-
-.error-links ul li a:hover {
-  text-decoration: underline;
+  //Le message
+  .error-message{
+    line-height: 2rem;
+    padding-top: .5rem;
+  }
 }

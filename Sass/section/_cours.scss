@@ -2,6 +2,9 @@
 
 .cours-section {
   padding: 20px;
+  min-height: 90vh;
+  overflow: inherit; /* Pour éviter que le SVG ne déborde */
+
 }
 
 .course-box>h3 {
@@ -81,6 +84,19 @@ font-style: normal;
 .course-button:hover {
   background-color: #466899;
 }
+
+#sw-js-blob-svg {
+  position: fixed; /* Le SVG reste fixe, même en défilement */
+  top: 50%; /* Centrage vertical */
+  left: 50%; /* Centrage horizontal */
+  transform: translate(-50%, -50%); /* Correction pour bien centrer */
+  z-index: -1; /* S'assure qu'il est derrière tous les éléments */
+  width: 100%; /* Occupe toute la largeur de la page */
+  height: auto; /* Respecte les proportions */
+  opacity: 0.5; /* Donne un effet visuel discret */
+  pointer-events: none; /* Empêche toute interaction */
+}
+
 
 /* Mode desktop */
 @media screen and (min-width: 768px) {
