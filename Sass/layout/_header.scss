@@ -17,18 +17,37 @@ body.no-scroll {
   position: relative;
 }
 
+.nav-droite{
+  display: flex;
+  align-items: center;
+}
+
 .menu {
   display: flex;
   justify-content: flex-end;
   align-items: center;
   position: relative;
-  border: 1px solid rgb(255, 255, 255);
   border-radius: 9rem;
   width: 100%;
   padding: 1rem;
   padding-right: 2rem;
+  border: 1px white solid;
+  // background: linear-gradient(116deg, rgba(177, 55, 255, 0.1), rgba(87, 197, 224, 0.19));
+  // box-shadow: -65px 4px 35px rgba(177, 55, 255, 0.2), 0 2px 63px rgba(87, 197, 224, .3);
 }
 
+.menu::before {
+  content: ""; /* Nécessaire pour que le pseudo-élément soit visible */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(116deg, rgba(177, 55, 255, 0.1), rgba(87, 197, 224, 0.19));
+  z-index: -1; 
+  border-radius: inherit; 
+  filter: blur(13px);
+}
 // Le texte TIM(Logo)
 .logo-tim{
   position: absolute;
@@ -120,10 +139,16 @@ body.no-scroll {
 
 // ////////////////// VERSION MOBILE - MENU BURGER ////////////////////
 
-@media(max-width: 650px) {
+@media(max-width: 875px) {
 
 .nav-bar{
   position: fixed;
+}
+
+.nav-droite{
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column-reverse;
 }
 
   // La page menu  
@@ -155,14 +180,16 @@ body.no-scroll {
     font-size: clamp(3.438rem, 2.057rem + 8.242vw, 4.375rem);
   }
 
+
   .nav-links{
     flex-direction: column;
   }
 
   // La barre de pages
   .nav-links li {
-    margin-top: 40px;
+    margin-top: 0;
     padding-left: 0;
+    margin-bottom: 40px;
   }
 
   .nav-links li a {

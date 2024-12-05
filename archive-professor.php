@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
 <main>
-    <h1>Professeurs</h1>
+    <h1 class="h1_prof">Professeurs</h1>
     <div class="professor-container">
         <?php if (have_posts()) : ?>
             <?php while (have_posts()) : the_post(); ?>
