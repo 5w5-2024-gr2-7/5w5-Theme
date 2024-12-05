@@ -1,0 +1,82 @@
+// CSS POUR DROP DOWN MENU
+
+// Les deux menus ensemble
+.header-cours{
+    display: flex;
+    justify-content: center;
+    gap: 0rem;
+    flex-direction: column;
+}
+
+// Le menu complèt
+.volet-dropdown {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+// Le titre des menus
+.volet-dropdown span {
+    margin-right: 10px;
+    font-size: clamp(2.188rem, 1.857rem + 0.611vw, 2.813rem);
+    font-family: "garamond-premier-pro-subhead", serif;
+    font-weight: 400;
+    font-style: normal;
+    color: white;
+}
+
+// La section de sélection
+.volet-dropdown select,
+#volet-filter {
+    padding: 5px;
+    text-decoration: none;
+    background: transparent;
+    border: none;
+    font-size: 20px;
+    color: white;
+    border-bottom: 1px solid;
+    text-align: center;
+    width: 9rem;
+}
+
+// Le premier mot, là ou l'on sélecte le choix
+.volet-dropdown select{
+    text-decoration: none;
+    background: transparent;
+    border: none;
+    font-size: 20px;
+    color: white;
+    border-bottom: 1px solid; 
+}
+
+// Les options du menu déroulant
+.volet-dropdown select option {
+    background: rgb(255, 255, 255); 
+    color: rgb(0, 0, 0); 
+    font-size: 16px;
+    border: none;
+    outline: none;
+    text-align: center;
+    appearance: none;
+    font-family: "greycliff-cf", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+// Pour ne pas mettre de décoration quand on clique
+.volet-dropdown select:focus {
+    background: transparent; 
+    outline: none;
+}
+
+/////////////////////////// POUR PLUS GROS QUE MOBILE ///////////////
+@media(min-width: 645px) {
+
+    .header-cours{
+        justify-content: center;
+        gap: 5rem;
+        flex-direction: row;
+    }
+    
+}

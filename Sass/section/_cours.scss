@@ -196,6 +196,42 @@ font-style: normal;
   position: absolute;
   bottom: 0;
 }
+.course-oval {
+  padding: 5px 10px;
+  border-radius: 20px;
+  margin-right: 10px;
+}
+
+/* Specific session colors */
+.session-jaune {
+  background-color: #ffde6f;
+  color: #000000;
+}
+
+.session-bleu {
+  background-color: #6fcaff;
+  color: #ffffff;
+}
+
+.session-vert {
+  background-color: #87ce98;
+  color: #000000;
+}
+
+.session-rose {
+  background-color: #d16fff;
+  color: #000000;
+}
+
+.session-marine {
+  background-color: #a999ff;
+  color: white;
+}
+
+.session-rouge {
+  background-color: #ff986f;
+  color: #000000;
+}
 
 
 @media screen and (max-width: 768px) {

@@ -14,6 +14,51 @@
   min-height: 100vh;
   overflow: hidden;
 }
+.citation {
+  position: relative;
+  z-index: 2;
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin: 20px;
+}
+
+.citation blockquote {
+  font-style: italic;
+  border-left: 4px solid #ccc;
+  padding: 13px 24px;
+  color: #555;
+}
+
+.citation h3 {
+  margin-bottom: 0.5em;
+  font-size: 1.5em;
+  color: white;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .citation blockquote {
+    padding: 0;
+    border-left: none;
+  }
+}
+
+@media (min-width: 1920px) {
+  .citation {
+    max-width: 75%;
+    margin: 20px auto;
+  }
+
+  .citation blockquote {
+    font-size: 1.25em;
+  }
+
+  .citation h3 {
+    font-size: 2em; 
+  }
+}
 
 .content-wrapper {
   text-align: left;
@@ -39,21 +84,15 @@
     left: 20%;
   }
 }
-@media screen and (min-width: 1680px) { /* bigger desktop */
-  .Swirl {
-    width: 85%;
-  }
-  
-}
-@media screen and (min-width: 1900px) { /* Mobile */
+@media screen and (min-width: 1900px) {
   .Swirl {
     width: 90%;
   }
   
 }
-@media screen and (min-width: 2100px) { /* Mobile */
+@media screen and (min-width: 2100px) {
   .Swirl {
-    width: 100%;
+    width: 95%;
     left: 20%;
   }
   

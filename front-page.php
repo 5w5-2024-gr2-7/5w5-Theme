@@ -89,9 +89,11 @@ get_header();
                 </svg>
                 <h3>Intégration et optimisation de solutions interactives</h3>
             </div>         
-        </div>
-      </div>
+        </div> 
+      </div>    
+
     </div>
+
   </div>
 
 <style>     
@@ -372,7 +374,12 @@ background-image: url('<?php echo get_site_url(); ?>/wp-content/uploads/2024/11/
     </div>
 </div>
 </section>
-
+<div class="citation">
+    <h3>Citation de la journée</h3>
+    <blockquote>
+        <?php echo do_shortcode('[citation_multimedia]'); ?>
+    </blockquote>
+</div>
 
 <?php
 get_footer();

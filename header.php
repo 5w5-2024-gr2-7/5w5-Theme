@@ -18,11 +18,14 @@
                     <a href="<?php echo esc_url(home_url('/')); ?>">TIM</a>
                 </div>
                 
+                
+
+                <div class="nav-droite">
+
                 <div class="search-container">
                     <?php get_search_form(); ?>
                 </div>
 
-                <div class="nav-droite">
                     <?php
                     // Génère le menu principal dans la div "nav-droite"
                     wp_nav_menu(array(
