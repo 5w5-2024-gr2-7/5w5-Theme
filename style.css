@@ -193,6 +193,53 @@ p {
   color: white;
 }
 
+.button-link {
+  background: transparent;
+  border: 1px solid white;
+  border-radius: 9px;
+  color: white;
+  font-size: clamp(0.875rem, 0.809rem + 0.303vw, 1.188rem);
+  overflow: hidden;
+  padding: 0.7rem 1rem;
+  position: relative;
+  text-decoration: none;
+  transition: 0.2s transform ease-in-out;
+  will-change: transform;
+  z-index: 0;
+  margin-top: 1.5rem;
+  width: fit-content;
+}
+
+.button-link::after {
+  background-color: rgb(42, 170, 209);
+  border-radius: 9px;
+  content: "";
+  display: block;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform: translate(-100%, 0) rotate(10deg);
+  transform-origin: top left;
+  transition: 0.2s transform ease-out;
+  will-change: transform;
+  z-index: -1;
+}
+
+.button-link:hover::after {
+  transform: translate(0, 0);
+}
+
+.button-link a {
+  text-decoration: none;
+  color: white;
+  font-size: clamp(0.875rem, 0.809rem + 0.303vw, 1.188rem);
+  font-family: "greycliff-cf", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
 /* ///////////////////////////////////////////////////////////////// */
 /* Règles d'animations                                               */
 /* ///////////////////////////////////////////////////////////////// */
@@ -602,39 +649,6 @@ h1 {
 
 .professor-card img {
   max-width: 100%;
-}
-
-.button-link {
-  display: inline-block;
-  background-color: #5578B4;
-  background-image: linear-gradient(145deg, #5a84c5, #466899);
-  color: white;
-  border: none;
-  border-radius: 25px;
-  padding: 10px 20px;
-  cursor: pointer;
-  font-size: 1em;
-  font-weight: 600;
-  text-decoration: none;
-  text-align: center;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-  transition: background 0.3s ease, box-shadow 0.3s ease;
-}
-
-.button-link:hover {
-  background-color: #466899;
-  background-image: linear-gradient(145deg, #486d99, #3c5a80);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-}
-
-.button-link:active {
-  background-color: #3c5a80;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-}
-
-.button-link:focus {
-  outline: 2px solid #91a8d0;
-  outline-offset: 2px;
 }
 
 .professor-card > h2 {
@@ -1302,11 +1316,21 @@ h1 {
   padding: 20px;
   text-align: center;
   flex-direction: column;
+  min-height: 90vh;
 }
 
 .galerie-projets h1 {
-  font-size: 2rem;
   margin-bottom: 10px;
+  font-family: "garamond-premier-pro-subhead", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: clamp(2.5rem, 2.102rem + 1.818vw, 5rem);
+}
+
+.header-item {
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 2rem 3rem 1rem;
 }
 
 .projets {
@@ -1314,18 +1338,22 @@ h1 {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  gap: 20px;
-  size: 100%;
 }
 
-.projet {
-  flex: 0 1 calc(100% - 40px);
-  max-width: 300px;
-  text-align: center;
+.projets-container {
+  display: flex;
+  width: 100%;
+  gap: 6rem;
+  flex-direction: column;
+  align-items: center;
 }
 
 .projet h2 {
-  margin-bottom: 1em;
+  margin-bottom: 0.7rem;
+  font-family: "greycliff-cf", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: clamp(1.563rem, 1.463rem + 0.455vw, 2.188rem);
 }
 
 .projet img {
@@ -1337,14 +1365,28 @@ h1 {
 }
 
 .projet p {
-  margin-top: 10px;
-  font-weight: bold;
+  font-family: "greycliff-cf", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: clamp(1.125rem, 1.026rem + 0.455vw, 1.75rem);
 }
 
 /* Styles pour le mode desktop */
-@media (min-width: 768px) {
+@media (min-width: 880px) {
   .projet {
-    flex: 0 1 calc(33.33% - 40px);
+    display: flex;
+    width: 40%;
+    flex-direction: column;
+    align-items: center;
+  }
+  .projet img {
+    width: 105%;
+  }
+  .projets-container {
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 }
 /* Section d'un exemple de projet d'un seul étudiant */
@@ -2667,6 +2709,10 @@ h1 {
   width: clamp(12rem, 35vw, 36rem);
 }
 
+#search-input {
+  width: inherit;
+}
+
 .search-button {
   color: white;
   padding: 0px 8px;
@@ -2798,19 +2844,6 @@ body.no-scroll {
   padding: 1rem;
   padding-right: 2rem;
   border: 1px white solid;
-}
-
-.menu::before {
-  content: ""; /* Nécessaire pour que le pseudo-élément soit visible */
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(116deg, rgba(177, 55, 255, 0.1), rgba(87, 197, 224, 0.19));
-  z-index: -1;
-  border-radius: inherit;
-  filter: blur(13px);
 }
 
 .logo-tim {

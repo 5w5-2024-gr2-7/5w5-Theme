@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
 <main class="galerie-projets">
-    <h1>Projets</h1>
+    <h1>Galerie de projets</h1>
 
     <div class="header-item">
         <div class="volet-dropdown">
@@ -18,6 +18,7 @@
     </div>
 
     <div class="projets" id="projectsContainer">
+        <div class="projets-container">
         <?php if (have_posts()) : ?>
             <?php while (have_posts()) : the_post(); ?>
                 <div class="projet" data-category="<?php echo get_field('category'); ?>"> <!-- Adjusted to the actual ACF field name -->
@@ -28,12 +29,14 @@
                         <img src="<?php echo get_template_directory_uri(); ?>/images/default-image.png" alt="Default Image">
                     <?php endif; ?>
                     <p><?php the_excerpt(); ?></p>
-                    <a href="<?php the_permalink(); ?>" class="button-link">En savoir plus...</a>
-                </div>
+                    <button class="button-link"><a href="<?php the_permalink(); ?>">En savoir plus...</a></button>
+                    </div>
+                
             <?php endwhile; ?>
         <?php else : ?>
             <p>Aucun projets trouvés</p>
         <?php endif; ?>
+        </div>
     </div>
 </main>
 
