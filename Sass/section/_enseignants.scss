@@ -14,9 +14,12 @@
   padding: 2.5rem 2rem;
 }
 
-h1 {
+.h1_prof {
   text-align: center;
-  margin: 20px 0;
+  font-family: "garamond-premier-pro-subhead", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: clamp(2.5rem, 2.102rem + 1.818vw, 5rem);
   color: white;
 }
 
@@ -24,33 +27,52 @@ h1 {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 20px;
+  gap: 4rem;
   padding: 20px;
 }
 
 .professor-card {
-  background-color: #f9f9f9;
-  border-radius: 10px;
+  border-radius: 25px;
   padding: 10px;
-  width: calc(100% / 3 - 40px);
+ max-width: 25rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
 .professor-card img {
   max-width: 100%;
+  transition: transform 0.3s ease-in-out;
 }
 
-
+.professor-card img:hover {
+  transform: scale(1.03);
+}
 
 .professor-card > h2 {
-  color: black;
+  color: rgb(255, 255, 255);
+  font-family: "greycliff-cf", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: clamp(1.625rem, 1.571rem + 0.19vw, 1.875rem);
+
+  padding-top: 1rem;
 }
 
 
-@media (max-width: 768px) {
+
+@media (max-width: 450px) {
   .professor-card {
-      width: calc(100% - 40px);
+      width: calc(90% - 40px);
+
+      .button-link {
+        display: none;
+          }
+  .professor-card > h2{
+    font-size: clamp(1.125rem, -0.938rem + 10vw, 1.875rem);
+  }
   }
 }
 
@@ -133,7 +155,7 @@ h1 {
 }
 
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 450px) {
 
 .card__contenu {
   flex-direction: row;
@@ -193,8 +215,11 @@ h1 {
 }
 
 .teacher-info h2 {
-  font-size: 24px;
-  margin: 10px 0;
+  color: rgb(255, 255, 255);
+  font-family: "greycliff-cf", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: clamp(1.75rem, 0.833rem + 4.444vw, 2.5rem);
 }
 
 /* Button Styles */
@@ -206,12 +231,13 @@ h1 {
 }
 
 .teacher-buttons button {
-  background-color: #6d50e6;
+  background-color: transparent;
   color: white;
   border: none;
   border-radius: 20px;
   padding: 10px 15px;
   cursor: pointer;
+  border: 1px solid;
 }
 
 .teacher-buttons button:hover {
@@ -231,13 +257,12 @@ h1 {
       max-width: 100%;
   }
 
-  .teacher-info h2 {
-      font-size: 20px;
-  }
+
 
   .teacher-info p {
       font-size: 14px;
       margin-bottom: 3em;
+      text-align: left;
   }
   .teacher-buttons {
     display: flex;
@@ -265,10 +290,7 @@ h1 {
       text-align: left;
   }
 
-  .teacher-info h2 {
-      font-size: 32px;
-      margin-bottom: 10px;
-  }
+
 
   .teacher-info p {
       font-size: 18px;
@@ -296,10 +318,7 @@ h1 {
       text-align: left;
   }
 
-  .teacher-info h2 {
-      font-size: 40px;
-      margin-bottom: 10px;
-  }
+
 
   .teacher-info p {
       font-size: 20px;
@@ -314,10 +333,6 @@ h1 {
   
 }
 
-@media screen and (min-width: 1639px) {
-  .teacher-photo img{
-    width: 70%;
-}
 
 .card__article{
   display: flex;
@@ -328,5 +343,53 @@ h1 {
   width: 48%;
 }
     
+
+/* Styles par défaut pour l'accordéon */
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.accordion-content.open {
+  max-height: 100vh; /* Ouvre complètement l'accordéon */
+}
+
+/* Styles pour le bouton */
+.accordion-toggle {
+  display: block;
+  margin: 10px auto;
+  cursor: pointer;
+  text-align: center;
+  padding: 8px 12px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.accordion-toggle:hover {
+  background-color: #0056b3;
+}
+
+/* Supprime l'accordéon et affiche tout le contenu sous 600px */
+@media (min-width: 877px) {
+  .accordion {
+    border: none;
+    padding: 0;
   }
-  
+
+  .accordion-intro {
+    display: none;
+  }
+
+  .accordion-content {
+    max-height: none;
+    overflow: visible;
+  }
+
+  .accordion-toggle {
+    display: none;
+  }
+}

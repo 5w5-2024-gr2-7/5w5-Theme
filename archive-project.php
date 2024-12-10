@@ -42,28 +42,24 @@
 
 <?php get_footer(); ?>
 
-<script type="text/javascript">
-    var projectFilterData = {
-        ajax_url: '<?php echo admin_url( 'admin-ajax.php' ); ?>'
-    };
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const accordions = document.querySelectorAll('.accordion');
 
-    jQuery(document).ready(function($) {
-        $('#categoryFilter').on('change', function() {
-            let category = $(this).val();
-            $.ajax({
-                url: projectFilterData.ajax_url,
-                type: 'POST',
-                data: {
-                    action: 'filter_projects',
-                    category: category
-                },
-                success: function(response) {
-                    $('#projectsContainer').html(response);
-                },
-                error: function(error) {
-                    console.log('Error:', error);
-                }
-            });
+    accordions.forEach((accordion) => {
+        const header = accordion.querySelector('.accordion-header');
+        const content = accordion.querySelector('.accordion-content');
+
+        header.addEventListener('click', () => {
+            const isOpen = content.style.maxHeight;
+            if (isOpen) {
+                content.style.maxHeight = null; // Fermer
+                header.textContent = 'Voir plus';
+            } else {
+                content.style.maxHeight = content.scrollHeight + "px"; // Ouvrir
+                header.textContent = 'Voir moins';
+            }
         });
     });
+});
 </script>
