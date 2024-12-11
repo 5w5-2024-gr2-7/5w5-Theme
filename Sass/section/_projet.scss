@@ -6,12 +6,22 @@
     padding: 20px;
     text-align: center;
     flex-direction: column;
+    min-height: 90vh;
 }
 
 
 .galerie-projets h1 {
-    font-size: 2rem;
     margin-bottom: 10px;
+    font-family: "garamond-premier-pro-subhead", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: clamp(2.5rem, 2.102rem + 1.818vw, 5rem);
+}
+
+.header-item {
+align-items: center;
+justify-content: center;
+padding: 1rem 2rem 3rem 1rem;
 }
 
 
@@ -21,21 +31,24 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    gap: 20px;
-    size: 100%;
+    
 }
 
-
-
-
-
-.projet {
-    flex: 0 1 calc(100% - 40px);
-    max-width: 300px;
-    text-align: center; 
+.projets-container{
+    display: flex;
+    width: 100%;
+    gap: 6rem;
+    flex-direction: column;
+    align-items: center;
 }
+
 .projet h2{
-    margin-bottom: 1em;
+    margin-bottom: .7rem;
+    color: #fff;
+    font-family: "greycliff-cf", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: clamp(1.563rem, 1.463rem + 0.455vw, 2.188rem);
 }
 
 .projet img {
@@ -47,15 +60,30 @@
 }
 
 .projet p {
-    margin-top: 10px;
-    font-weight: bold;
+    font-family: "greycliff-cf", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: clamp(1.125rem, 1.026rem + 0.455vw, 1.75rem);
 }
 
 /* Styles pour le mode desktop */
-@media (min-width: 768px) {
+@media (min-width: 880px) {
     .projet {
-        flex: 0 1 calc(33.33% - 40px);
-       
+        display: flex;
+        width: 40%;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .projet img{
+        width: 105%;
+    }
+
+    .projets-container {
+        flex-direction: row;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: center;
     }
 
    

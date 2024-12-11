@@ -1,11 +1,11 @@
 /* SECTION DES PROFS */
-
+ 
 .professeur-front-page{
   background-color: #0C293A;
   z-index: 0;
   min-height: 110vh;
 }
-
+ 
 .titre-professeur{
   font-family: "garamond-premier-pro-subhead", serif;
   font-weight: 400;
@@ -13,83 +13,75 @@
   font-size: clamp(3.125rem, 2.031rem + 5vw, 4.063rem);
   padding: 2.5rem 2rem;
 }
-
+ 
 .h1_prof {
   text-align: center;
-  margin: 20px 0;
+  font-family: "garamond-premier-pro-subhead", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: clamp(2.5rem, 2.102rem + 1.818vw, 5rem);
   color: white;
 }
-
+ 
 .professor-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 20px;
+  gap: 4rem;
   padding: 20px;
 }
-
+ 
 .professor-card {
   border-radius: 25px;
   padding: 10px;
-  width: calc(100% / 3 - 40px);
+ max-width: 25rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
-
+ 
 .professor-card img {
   max-width: 100%;
+  transition: transform 0.3s ease-in-out;
 }
-
-.button-link {
-  display: inline-block;
-  background-color: #5578B4;
-  background-image: linear-gradient(145deg, #5a84c5, #466899);
-  color: white;
-  border: none;
-  border-radius: 25px;
-  padding: 10px 20px;
-  cursor: pointer;
-  font-size: 1em;
-  font-weight: 600;
-  text-decoration: none;
-  text-align: center;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-  transition: background 0.3s ease, box-shadow 0.3s ease;
+ 
+.professor-card img:hover {
+  transform: scale(1.03);
 }
-
-.button-link:hover {
-  background-color: #466899;
-  background-image: linear-gradient(145deg, #486d99, #3c5a80);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-}
-
-.button-link:active {
-  background-color: #3c5a80;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-}
-
-.button-link:focus {
-  outline: 2px solid #91a8d0;
-  outline-offset: 2px;
-}
-
+ 
 .professor-card > h2 {
-  color: black;
+  color: rgb(255, 255, 255);
+  font-family: "greycliff-cf", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: clamp(1.625rem, 1.571rem + 0.19vw, 1.875rem);
+ 
+  padding-top: 1rem;
 }
-
-
-@media (max-width: 768px) {
+ 
+ 
+ 
+@media (max-width: 600px) {
   .professor-card {
-      width: calc(100% - 40px);
+      width: calc(90% - 40px);
+ 
+      .button-link {
+        display: none;
+          }
+  .professor-card > h2{
+    font-size: clamp(1.125rem, -0.938rem + 10vw, 1.875rem);
+  }
   }
 }
-
+ 
 /*=============== CARD ===============*/
 .contenu {
   margin-inline: 1.5rem;
   padding-bottom: 5rem;
 }
-
+ 
 .card__contenu {
   display: flex;
   flex-direction: column;
@@ -97,12 +89,12 @@
     flex-wrap: wrap;
     justify-content: center;
 }
-
+ 
 .card__article {
   position: relative;
   overflow: hidden;
 }
-
+ 
 .card__img {
   width: 100%;
   height: 220px;
@@ -110,7 +102,7 @@
   background-position: center;
   border-radius: 1.5rem;
 }
-
+ 
 .card__data {
   width: 280px;
   background-color: var(--contenu-color);
@@ -125,33 +117,33 @@
   opacity: 0;
   transition: opacity 1s 1s;
 }
-
+ 
 .card__description {
   display: block;
   font-size: var(--small-font-size);
   margin-bottom: 0.25rem;
 }
-
+ 
 .card__title {
   font-size: var(--h2-font-size);
   font-weight: 500;
   color: var(--title-color);
   margin-bottom: 0.75rem;
 }
-
+ 
 .card__bouton {
   text-decoration: none;
   font-size: var(--small-font-size);
   font-weight: 500;
   color: var(--first-color);
 }
-
+ 
 .card__bouton:hover {
   text-decoration: underline;
 }
-
+ 
 /*=============== BREAKPOINTS ===============*/
-
+ 
 @media screen and (max-width: 340px) {
   .contenu {
       margin-inline: 1rem;
@@ -161,22 +153,22 @@
       padding: 1rem;
   }
 }
-
-
-@media screen and (min-width: 768px) {
-
+ 
+ 
+@media screen and (min-width: 450px) {
+ 
 .card__contenu {
   flex-direction: row;
 }
-
-
+ 
+ 
 .titre-professeur {
   font-size: clamp(4.063rem, 2.855rem + 2.973vw, 6.5rem);
   text-align: center;
 }
 }
-
-
+ 
+ 
 @media screen and (min-width: 1120px) {
   .card__contenu {
       grid-template-columns: repeat(2, 1fr);
@@ -189,9 +181,9 @@
       padding-inline: 2.5rem;
   }
 }
-
-
-
+ 
+ 
+ 
 .profile-container {
   display: flex;
   flex-direction: column;
@@ -199,7 +191,7 @@
   justify-content: center;
   text-align: center;
 }
-
+ 
 .teacher-photo {
   position: relative;
   width: 300px;
@@ -207,26 +199,26 @@
   margin-bottom: 20px;
   overflow: hidden;
 }
-
+ 
 .teacher-photo picture,
 .teacher-photo img {
   width: 100%;
   height: auto;
   object-fit: cover;
 }
-
+ 
 .teacher-info {
   text-align: center;
   margin-top: 10px;
   max-width: 600px;
   padding: 0 20px;
 }
-
+ 
 .teacher-info h2 {
   font-size: 24px;
   margin: 10px 0;
 }
-
+ 
 /* Button Styles */
 .teacher-buttons {
   display: flex;
@@ -234,7 +226,7 @@
   gap: 15px;
   margin: 20px 0;
 }
-
+ 
 .teacher-buttons button {
   background-color: #6d50e6;
   color: white;
@@ -243,28 +235,28 @@
   padding: 10px 15px;
   cursor: pointer;
 }
-
+ 
 .teacher-buttons button:hover {
   background-color: #5c3fbe;
 }
-
+ 
 .teacher-info p {
   font-size: 16px;
   line-height: 1.5;
 }
-
+ 
 /* Mobile Styles */
 @media (max-width: 600px) {
-
+ 
   .teacher-photo {
       width: 100%;
       max-width: 100%;
   }
-
+ 
   .teacher-info h2 {
       font-size: 20px;
   }
-
+ 
   .teacher-info p {
       font-size: 14px;
       margin-bottom: 3em;
@@ -275,7 +267,7 @@
     justify-content: center;
   }
 }
-
+ 
 /* Tablet Styles */
 @media (min-width: 601px) and (max-width: 1024px) {
   .profile-container {
@@ -283,29 +275,29 @@
       align-items: flex-start;
       justify-content: center;
   }
-
+ 
   .teacher-photo {
       margin-right: 20px;
       width: 300px;
       height: auto;
   }
-
+ 
   .teacher-info {
       flex: 1;
       margin-top: 0;
       text-align: left;
   }
-
+ 
   .teacher-info h2 {
       font-size: 32px;
       margin-bottom: 10px;
   }
-
+ 
   .teacher-info p {
       font-size: 18px;
   }
 }
-
+ 
 /* Desktop Styles */
 @media (min-width: 1025px) {
   .profile-container {
@@ -314,50 +306,50 @@
       justify-content: center;
       padding: 40px;
   }
-
+ 
   .teacher-photo {
       margin-right: 40px;
       width: 300px;
       height: auto;
   }
-
+ 
   .teacher-info {
       flex: 1;
       margin-top: 0;
       text-align: left;
   }
-
+ 
   .teacher-info h2 {
       font-size: 40px;
       margin-bottom: 10px;
   }
-
+ 
   .teacher-info p {
       font-size: 20px;
   }
 }
-
+ 
 @media screen and (min-width: 1240px) {
 .card__article{
   width: 48%;
-
+ 
 }
-  
+ 
 }
-
+ 
 @media screen and (min-width: 1639px) {
   .teacher-photo img{
     width: 70%;
 }
-
+ 
 .card__article{
   display: flex;
   justify-content: center;
 }
-
+ 
 .card__article {
   width: 48%;
 }
-    
   }
-  
+ 
+ 
