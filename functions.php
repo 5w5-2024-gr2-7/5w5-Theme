@@ -1,5 +1,7 @@
 <?php
 
+add_filter('show_admin_bar', '__return_false');
+
 if (!defined('ABSPATH')) {
     exit;
 }
@@ -156,7 +158,7 @@ function filter_projects_by_category() {
             <div class="projet" data-category="<?php echo get_field('category'); ?>">
                 <h2><?php the_title(); ?></h2>
                 <?php if (has_post_thumbnail()) : ?>
-                    <img src="<?php the_post_thumbnail_url('medium'); ?>" alt="<?php the_title(); ?>">
+                    <img src="<?php the_post_thumbnail_url('Large'); ?>" alt="<?php the_title(); ?>">
                 <?php else : ?>
                     <img src="<?php echo get_template_directory_uri(); ?>/images/default-image.png" alt="Default Image">
                 <?php endif; ?>
@@ -227,14 +229,32 @@ function filter_courses_ajax() {
     $query = new WP_Query($args);
 
     if ($query->have_posts()) {
-        while ($query->have_posts()) : $query->the_post(); ?>
+        while ($query->have_posts()) : $query->the_post();
+            $session = get_field('session');
+            $session_class = '';
+            if ($session == 'Session 1') {
+                $session_class = 'session-jaune';
+            } elseif ($session == 'Session 2') {
+                $session_class = 'session-bleu';
+            } elseif ($session == 'Session 3') {
+                $session_class = 'session-vert';
+            } elseif ($session == 'Session 4') {
+                $session_class = 'session-rose';
+            } elseif ($session == 'Session 5') {
+                $session_class = 'session-marine';
+            } elseif ($session == 'Session 6') {
+                $session_class = 'session-rouge';
+            }
+            ?>
             <div class="course-box">
                 <h3><?php the_title(); ?></h3>
                 <div class="course-info">
                     <?php if (has_post_thumbnail()) : ?>
                         <img src="<?php the_post_thumbnail_url('medium'); ?>" alt="<?php the_title(); ?>">
                     <?php endif; ?>
-                    <div class="course-oval"><?php the_field('session'); ?></div>
+                    <div class="course-oval <?php echo esc_attr($session_class); ?>">
+                        <?php echo esc_html($session); ?>
+                    </div>
                     <div class="course-oval"><?php the_field('category'); ?></div>
                     <a href="<?php the_permalink(); ?>" class="course-button">➔</a>
                 </div>

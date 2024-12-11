@@ -174,7 +174,6 @@ h1 {
   color: white;
 }
 
-h2,
 h3 {
   color: white;
   font-family: "greycliff-cf", sans-serif;
@@ -196,6 +195,80 @@ p {
   color: white;
 }
 
+.button-link {
+  background: transparent;
+  border: 1px solid white;
+  border-radius: 9px;
+  color: white;
+  font-size: clamp(0.875rem, 0.809rem + 0.303vw, 1.188rem);
+  overflow: hidden;
+  padding: 0.7rem 1rem;
+  position: relative;
+  text-decoration: none;
+  transition: 0.2s transform ease-in-out;
+  will-change: transform;
+  z-index: 0;
+  margin-top: 1.5rem;
+  width: fit-content;
+}
+
+.button-link::after {
+  background-color: rgb(42, 170, 209);
+  border-radius: 9px;
+  content: "";
+  display: block;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform: translate(-100%, 0) rotate(10deg);
+  transform-origin: top left;
+  transition: 0.2s transform ease-out;
+  will-change: transform;
+  z-index: -1;
+}
+
+.button-link:hover::after {
+  transform: translate(0, 0);
+}
+
+.button-link a {
+  text-decoration: none;
+  color: white;
+  font-size: clamp(0.875rem, 0.809rem + 0.303vw, 1.188rem);
+  font-family: "greycliff-cf", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.bouton-retour {
+  display: none;
+}
+
+@media (max-width: 1200px) {
+  .bouton-retour {
+    background: transparent;
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    border: none;
+    padding: 0;
+    margin: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 101;
+  }
+  .svg-bouton-retour {
+    height: 30px;
+    width: auto;
+    display: block;
+    margin: 0;
+    fill: white;
+  }
+}
 /* ///////////////////////////////////////////////////////////////// */
 /* Règles d'animations                                               */
 /* ///////////////////////////////////////////////////////////////// */
@@ -609,7 +682,10 @@ img {
 
 .h1_prof {
   text-align: center;
-  margin: 20px 0;
+  font-family: "garamond-premier-pro-subhead", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: clamp(2.5rem, 2.102rem + 1.818vw, 5rem);
   color: white;
 }
 
@@ -617,62 +693,48 @@ img {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 20px;
+  gap: 4rem;
   padding: 20px;
 }
 
 .professor-card {
   border-radius: 25px;
   padding: 10px;
-  width: calc(33.3333333333% - 40px);
+  max-width: 25rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
 .professor-card img {
   max-width: 100%;
+  transition: transform 0.3s ease-in-out;
 }
 
-.button-link {
-  display: inline-block;
-  background-color: #5578B4;
-  background-image: linear-gradient(145deg, #5a84c5, #466899);
-  color: white;
-  border: none;
-  border-radius: 25px;
-  padding: 10px 20px;
-  cursor: pointer;
-  font-size: 1em;
-  font-weight: 600;
-  text-decoration: none;
-  text-align: center;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-  transition: background 0.3s ease, box-shadow 0.3s ease;
-}
-
-.button-link:hover {
-  background-color: #466899;
-  background-image: linear-gradient(145deg, #486d99, #3c5a80);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-}
-
-.button-link:active {
-  background-color: #3c5a80;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-}
-
-.button-link:focus {
-  outline: 2px solid #91a8d0;
-  outline-offset: 2px;
+.professor-card img:hover {
+  transform: scale(1.03);
 }
 
 .professor-card > h2 {
-  color: black;
+  color: rgb(255, 255, 255);
+  font-family: "greycliff-cf", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: clamp(1.625rem, 1.571rem + 0.19vw, 1.875rem);
+  padding-top: 1rem;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 600px) {
   .professor-card {
-    width: calc(100% - 40px);
+    width: calc(90% - 40px);
+  }
+  .professor-card .button-link {
+    display: none;
+  }
+  .professor-card .professor-card > h2 {
+    font-size: clamp(1.125rem, -0.938rem + 10vw, 1.875rem);
   }
 }
 /*=============== CARD ===============*/
@@ -751,7 +813,7 @@ img {
     padding: 1rem;
   }
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 450px) {
   .card__contenu {
     flex-direction: row;
   }
@@ -1332,11 +1394,21 @@ img {
   padding: 20px;
   text-align: center;
   flex-direction: column;
+  min-height: 90vh;
 }
 
 .galerie-projets h1 {
-  font-size: 2rem;
   margin-bottom: 10px;
+  font-family: "garamond-premier-pro-subhead", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: clamp(2.5rem, 2.102rem + 1.818vw, 5rem);
+}
+
+.header-item {
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 2rem 3rem 1rem;
 }
 
 .projets {
@@ -1344,18 +1416,23 @@ img {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  gap: 20px;
-  size: 100%;
 }
 
-.projet {
-  flex: 0 1 calc(100% - 40px);
-  max-width: 300px;
-  text-align: center;
+.projets-container {
+  display: flex;
+  width: 100%;
+  gap: 6rem;
+  flex-direction: column;
+  align-items: center;
 }
 
 .projet h2 {
-  margin-bottom: 1em;
+  margin-bottom: 0.7rem;
+  color: #fff;
+  font-family: "greycliff-cf", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: clamp(1.563rem, 1.463rem + 0.455vw, 2.188rem);
 }
 
 .projet img {
@@ -1367,14 +1444,28 @@ img {
 }
 
 .projet p {
-  margin-top: 10px;
-  font-weight: bold;
+  font-family: "greycliff-cf", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: clamp(1.125rem, 1.026rem + 0.455vw, 1.75rem);
 }
 
 /* Styles pour le mode desktop */
-@media (min-width: 768px) {
+@media (min-width: 880px) {
   .projet {
-    flex: 0 1 calc(33.33% - 40px);
+    display: flex;
+    width: 40%;
+    flex-direction: column;
+    align-items: center;
+  }
+  .projet img {
+    width: 105%;
+  }
+  .projets-container {
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 }
 /* Section d'un exemple de projet d'un seul étudiant */
@@ -1670,48 +1761,6 @@ img {
   overflow: hidden;
 }
 
-.citation {
-  position: relative;
-  z-index: 2;
-  padding: 20px;
-  border-radius: 10px;
-  border: 1px solid white;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  margin: 20px;
-}
-
-.citation blockquote {
-  font-style: italic;
-  border-left: 4px solid #ccc;
-  padding: 13px 24px;
-  color: #555;
-}
-
-.citation h3 {
-  margin-bottom: 0.5em;
-  font-size: 1.5em;
-  color: white;
-}
-
-/* Mobile adjustments */
-@media (max-width: 768px) {
-  .citation blockquote {
-    padding: 0;
-    border-left: none;
-  }
-}
-@media (min-width: 1920px) {
-  .citation {
-    max-width: 75%;
-    margin: 20px auto;
-  }
-  .citation blockquote {
-    font-size: 1.25em;
-  }
-  .citation h3 {
-    font-size: 2em;
-  }
-}
 .content-wrapper {
   text-align: left;
   z-index: 2;
@@ -2023,24 +2072,7 @@ img {
 .main-cours-individuel {
   margin-left: 2rem;
   margin-right: 2rem;
-  margin-top: -2.4rem;
-}
-
-/* Bouton de retour */
-.bouton-retour {
-  background: transparent;
-  border: 2px solid rgb(255, 255, 255);
-  border-radius: 50%;
-}
-
-.svg-bouton-retour {
-  height: 21px;
-  width: auto;
-  transform: scaleX(-1);
-  margin: -1px;
-  top: 2px;
-  position: relative;
-  fill: white;
+  margin-top: 2rem;
 }
 
 /* Partie titre et informations du cours */
@@ -2409,50 +2441,153 @@ img {
 .page-404 .container {
   max-width: 800px;
   margin: 0 auto;
+  margin-top: -3rem;
+}
+
+.titre-404 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
 
 .error-title {
-  font-size: 3em;
-  color: #ff5a5f;
+  color: #ffffff;
   margin-bottom: 20px;
+  font-family: "garamond-premier-pro-subhead", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: clamp(2.375rem, 1.818rem + 2.545vw, 5rem);
+  line-height: 2.5rem;
+  width: 80%;
+}
+
+.fa-face-frown {
+  padding-left: 10px;
+  font-size: clamp(1.25rem, 0.985rem + 1.212vw, 2.5rem);
 }
 
 .error-message {
   font-size: 1.2em;
-  color: #666;
+  color: #ffffff;
   margin-bottom: 30px;
+  font-family: "greycliff-cf", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: clamp(1.125rem, 1.019rem + 0.485vw, 1.625rem);
+  line-height: 1.5rem;
 }
 
-.error-image {
+.error-boutton {
+  background: transparent;
+  border: 1px solid white;
+  border-radius: 9px;
+  color: white;
+  font-size: clamp(0.875rem, 0.809rem + 0.303vw, 1.188rem);
+  overflow: hidden;
+  padding: 1rem;
+  position: relative;
+  text-decoration: none;
+  transition: 0.2s transform ease-in-out;
+  will-change: transform;
+  z-index: 0;
+}
+
+.error-boutton::after {
+  background-color: rgb(42, 170, 209);
+  border-radius: 9px;
+  content: "";
+  display: block;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform: translate(-100%, 0) rotate(10deg);
+  transform-origin: top left;
+  transition: 0.2s transform ease-out;
+  will-change: transform;
+  z-index: -1;
+}
+
+.error-boutton:hover::after {
+  transform: translate(0, 0);
+}
+
+.error-boutton a {
+  text-decoration: none;
+  color: white;
+  font-size: clamp(0.875rem, 0.809rem + 0.303vw, 1.188rem);
+  font-family: "greycliff-cf", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.error-img {
   max-width: 100%;
   height: auto;
-  margin-bottom: 40px;
+  margin-bottom: -10rem;
+  margin-top: -8rem;
 }
 
-.error-links p {
-  font-size: 1.2em;
-  margin-bottom: 10px;
+@media screen and (min-width: 768px) {
+  .error-title {
+    line-height: 5rem;
+  }
+  .error-message {
+    line-height: 2rem;
+    padding-top: 0.5rem;
+  }
 }
-
-.error-links ul {
-  list-style: none;
-  padding: 0;
+/* Pour les petits écrans (mobile) */
+@media screen and (max-width: 767px) {
+  /* L'ensemble de la page */
+  .page-404 {
+    padding: 20px 10px; /* Moins de padding pour éviter l'accumulation */
+  }
+  /* Le conteneur des éléments */
+  .page-404 .container {
+    max-width: 100%; /* S'assurer que le conteneur occupe toute la largeur */
+    margin: 0 auto;
+    margin-top: 0; /* Enlever la marge top pour plus de flexibilité */
+    padding: 0 10px; /* Ajouter un padding horizontal */
+  }
+  /* Le titre */
+  .error-title {
+    font-size: 2.5rem; /* Taille réduite pour mobile */
+    line-height: 1.3; /* Meilleure lisibilité */
+    margin-bottom: 15px; /* Espacement sous le titre */
+    width: 90%; /* Limite la largeur du titre */
+  }
+  /* Icône de titre */
+  .fa-face-frown {
+    font-size: 2rem; /* Taille réduite de l'icône */
+    padding-left: 10px;
+  }
+  /* Message d'erreur */
+  .error-message {
+    font-size: 1rem; /* Taille plus petite pour le texte d'erreur */
+    margin-bottom: 20px; /* Espacement sous le message */
+    padding: 0 10px; /* Ajoute un peu de padding pour le confort de lecture */
+  }
+  /* Le bouton */
+  .error-boutton {
+    padding: 1rem 2rem; /* Plus grand pour le rendre plus visible */
+    font-size: 1rem;
+    margin-top: 20px; /* Espacement au-dessus du bouton */
+  }
+  .error-boutton::after {
+    width: 100%;
+    height: 100%;
+  }
+  /* L'image */
+  .error-img {
+    max-width: 100%; /* L'image prend toute la largeur possible */
+    height: auto;
+    margin-top: 20px; /* Marges plus petites pour ne pas tasser les éléments */
+    margin-bottom: 20px;
+  }
 }
-
-.error-links ul li {
-  margin: 10px 0;
-}
-
-.error-links ul li a {
-  text-decoration: none;
-  color: #0073e6;
-  font-weight: bold;
-}
-
-.error-links ul li a:hover {
-  text-decoration: underline;
-}
-
 .search-input::-webkit-search-cancel-button {
   display: none; /* Cache le bouton "X" dans Chrome/Safari */
 }
@@ -2491,6 +2626,11 @@ img {
   outline: none;
   background-color: transparent;
   color: white;
+  width: clamp(12rem, 35vw, 36rem);
+}
+
+#search-input {
+  width: inherit;
 }
 
 .search-button {
@@ -2624,19 +2764,6 @@ body.no-scroll {
   padding: 1rem;
   padding-right: 2rem;
   border: 1px white solid;
-}
-
-.menu::before {
-  content: ""; /* Nécessaire pour que le pseudo-élément soit visible */
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(116deg, rgba(177, 55, 255, 0.1), rgba(87, 197, 224, 0.19));
-  z-index: -1;
-  border-radius: inherit;
-  filter: blur(13px);
 }
 
 .logo-tim {
@@ -2852,6 +2979,52 @@ footer {
   font-style: normal;
 }
 
+.citation {
+  font-family: "greycliff-cf", sans-serif;
+  text-align: left;
+  position: relative;
+  z-index: 2;
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin: 20px;
+}
+
+.citation blockquote {
+  font-family: "greycliff-cf", sans-serif;
+  font-style: italic;
+  border-left: 4px solid #ccc;
+  padding: 13px 24px;
+  color: #555;
+}
+
+.citation h4 {
+  margin-bottom: 0.5em;
+  font-size: 1.5em;
+  color: white;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .citation blockquote {
+    padding: 0;
+    border-left: none;
+  }
+}
+@media (min-width: 1920px) {
+  .citation {
+    max-width: 75%;
+    margin: 20px auto;
+    text-align: left;
+  }
+  .citation blockquote {
+    font-size: 1.25em;
+  }
+  .citation h4 {
+    font-size: 2em;
+  }
+}
 /********* Media Query *********/
 /* Responsivité pour Tablette */
 @media screen and (min-width: 768px) {

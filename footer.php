@@ -1,4 +1,10 @@
 <footer>
+<div class="citation">
+    <h4>Citation de la journée</h4>
+    <blockquote>
+        <?php echo do_shortcode('[citation_multimedia]'); ?>
+    </blockquote>
+</div>
   <div class="footer-sections">
     <div class="footer-section">
       <div class="contenu-footer-section">
@@ -29,8 +35,8 @@
         <h3>À propos</h3>
         <ul>
           <li>Collège de Maisonneuve</li>
-          <li>3800 Sherbrooke St E, Montreal, Quebec H1X 2A2</li>
-          <li>514 254 7131</li>
+          <li>3800 Sherbrooke St E, Montréal, Quebec H1X 2A2</li>
+          <li>514-254-7131</li>
         </ul>
       </div>
     </div>
@@ -40,5 +46,8 @@
 </footer>
 
 <?php wp_footer(); ?>
+<script>
+
+</script>
 </body>
 </html>

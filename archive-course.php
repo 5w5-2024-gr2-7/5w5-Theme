@@ -18,7 +18,7 @@
         </div>
         <div class="header-item">
             <div class="volet-dropdown">
-                <span>Volet</span>
+                <span>Catégories</span>
                 <select id="volet-filter">
                     <option value="">Tous</option>
                     <option value="Web">Web</option>

@@ -41,6 +41,11 @@
   outline: none;
   background-color: transparent;
   color: white;
+  width: clamp(12rem, 35vw, 36rem);
+}
+
+#search-input{
+  width: inherit;
 }
 
 // Le bouton loupe

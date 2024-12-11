@@ -50,7 +50,7 @@
 
   <div class="conctact-telephone">
     <h class="h2-Contact">Par téléphone</h>
-    <h3 class="h3-Contact">Appelex nous pour avoir une réponse direct lors des heures d'ouverture</h3>
+    <h3 class="h3-Contact">Appelez-nous pour obtenir une réponse directe lors des heures d'ouverture</h3>
       <div class="contact-information-icon">
         <span class="material-symbols-outlined" style="font-size: clamp(1.25rem, 1.184rem + 0.316vw, 1.563rem);">call</span> 
         <span class="span-texte">514-254-7131</span>

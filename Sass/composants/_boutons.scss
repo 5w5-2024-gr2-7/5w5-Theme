@@ -1,0 +1,77 @@
+
+.button-link{
+  background: transparent;
+  border: 1px solid white;
+  border-radius: 9px;
+  color: white;
+  font-size: clamp(0.875rem, 0.809rem + 0.303vw, 1.188rem);
+  overflow: hidden;
+  padding:  .7rem 1rem;
+  position: relative;
+  text-decoration: none;
+  transition: 0.2s transform ease-in-out;
+  will-change: transform;
+  z-index: 0;
+  margin-top: 1.5rem;
+  width: fit-content;
+}
+
+.button-link::after{
+  background-color: rgb(42, 170, 209);
+  border-radius: 9px;
+  content: '';
+  display: block;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform: translate(-100%, 0) rotate(10deg);
+  transform-origin: top left;
+  transition: 0.2s transform ease-out;
+  will-change: transform;
+  z-index: -1;
+}
+
+.button-link:hover::after{
+  transform: translate(0, 0);
+}
+
+.button-link a{
+  text-decoration: none;
+  color: white;
+  font-size: clamp(0.875rem, 0.809rem + 0.303vw, 1.188rem);
+  font-family: "greycliff-cf", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.bouton-retour {
+  display: none;
+}
+
+@media (max-width: 1200px) {
+  .bouton-retour {
+    background: transparent;
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    border: none;
+    padding: 0; 
+    margin: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 101;
+  }
+
+  .svg-bouton-retour {
+    height: 30px;
+    width: auto;
+    display: block;
+    margin: 0;
+    fill: white;
+  }
+}
+

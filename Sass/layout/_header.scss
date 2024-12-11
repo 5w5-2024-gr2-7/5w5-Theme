@@ -36,18 +36,7 @@ body.no-scroll {
   // box-shadow: -65px 4px 35px rgba(177, 55, 255, 0.2), 0 2px 63px rgba(87, 197, 224, .3);
 }
 
-.menu::before {
-  content: ""; /* Nécessaire pour que le pseudo-élément soit visible */
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(116deg, rgba(177, 55, 255, 0.1), rgba(87, 197, 224, 0.19));
-  z-index: -1; 
-  border-radius: inherit; 
-  filter: blur(13px);
-}
+
 // Le texte TIM(Logo)
 .logo-tim{
   position: absolute;
