@@ -1,5 +1,7 @@
 <?php get_header(); ?>
-
+<div class="logo-tim-h">
+        <a href="<?php echo esc_url(home_url('/')); ?>">TIM</a>
+    </div>
 <main class="galerie-projets">
     <h1>Galerie de projets</h1>
 

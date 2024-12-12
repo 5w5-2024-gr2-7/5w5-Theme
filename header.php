@@ -18,8 +18,6 @@
                     <a href="<?php echo esc_url(home_url('/')); ?>">TIM</a>
                 </div>
                 
-                
-
                 <div class="nav-droite">
 
                 <div class="search-container">

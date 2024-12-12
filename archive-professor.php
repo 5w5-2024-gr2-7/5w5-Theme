@@ -1,6 +1,9 @@
 <?php get_header(); ?>
  
 <main>
+    <div class="logo-tim-h">
+        <a href="<?php echo esc_url(home_url('/')); ?>">TIM</a>
+    </div>
     <h1 class="h1_prof">Nos professeurs</h1>
     <div class="professor-container">
         <?php if (have_posts()) : ?>

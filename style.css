@@ -246,7 +246,7 @@ p {
   display: none;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 875px) {
   .bouton-retour {
     background: transparent;
     position: absolute;
@@ -840,6 +840,7 @@ img {
   align-items: center;
   justify-content: center;
   text-align: center;
+  margin-top: 30px;
 }
 
 .teacher-photo {
@@ -2215,10 +2216,6 @@ img {
 
 /*********************** POUR TABLETTE  *********************/
 @media screen and (min-width: 650px) {
-  .bouton-retour,
-  .svg-bouton-retour {
-    display: none;
-  }
   .partie1-cours-individuel {
     align-items: center;
   }
@@ -2733,6 +2730,81 @@ img {
     flex-direction: row;
   }
 }
+/* Styles pour les résultats de recherche */
+.resultats-recherche {
+  padding: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.resultats-recherche h1 {
+  margin-bottom: 30px;
+  font-size: 24px;
+  text-align: center;
+  font-family: "garamond-premier-pro-subhead", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: clamp(2.5rem, 2.102rem + 1.818vw, 5rem);
+  color: white;
+}
+
+.resultats-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.resultat-item {
+  background-color: #f9f9f9;
+  border: 1px solid #e1e1e1;
+  padding: 20px;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.resultat-item:hover {
+  transform: translateY(-5px);
+}
+
+.resultat-item h2 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.resultat-item h2 a {
+  color: #0073aa;
+  text-decoration: none;
+}
+
+.resultat-item h2 a:hover {
+  text-decoration: underline;
+}
+
+.resultat-thumbnail {
+  margin-bottom: 15px;
+}
+
+.resultat-thumbnail img {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.resultat-extrait {
+  font-size: 14px;
+  color: #666;
+}
+
+.resultat-extrait p {
+  color: black;
+}
+
+.small-thumbnail img {
+  max-width: 150px;
+  height: auto;
+  float: left;
+  margin-right: 20px;
+}
+
 /* ///////////////////////////////////////////////////////////////// */
 /* Règles de layout                                                  */
 /* ///////////////////////////////////////////////////////////////// */
@@ -2778,6 +2850,10 @@ body.no-scroll {
   text-decoration: none;
   color: rgb(255, 255, 255);
   font-size: clamp(1.563rem, 1.349rem + 0.526vw, 2.188rem);
+}
+
+.logo-tim-h {
+  display: none;
 }
 
 .nav-links {
@@ -2851,6 +2927,21 @@ body.no-scroll {
 }
 
 @media (max-width: 875px) {
+  .logo-tim-h {
+    display: block;
+    position: absolute;
+    left: 1rem;
+    top: 15px;
+    left: 15px;
+  }
+  .logo-tim-h a {
+    font-family: "termina", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-size: clamp(1.563rem, 1.349rem + 0.526vw, 2.188rem);
+  }
   .nav-bar {
     position: fixed;
   }
@@ -2988,7 +3079,7 @@ footer {
   border-radius: 10px;
   border: 1px solid white;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  margin: 20px;
+  margin: 40px;
 }
 
 .citation blockquote {

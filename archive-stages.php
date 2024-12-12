@@ -1,7 +1,9 @@
 <?php
 get_header();
 ?>
-
+    <div class="logo-tim-h">
+        <a href="<?php echo esc_url(home_url('/')); ?>">TIM</a>
+    </div>
 <main>
     <section class="stages-section">
         <h1>Les Stages</h1>

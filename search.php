@@ -1,37 +1,37 @@
 <?php get_header(); ?>
 
-<main class="search-results">
-    <h1>Search Results for: <?php echo get_search_query(); ?></h1>
+<main class="resultats-recherche">
+    <h1>Résultats de recherche pour : <?php echo get_search_query(); ?></h1>
 
-    <div class="search-results-list">
-        <?php if (have_posts()) : ?>
+    <?php if (have_posts()) : ?>
+        <div class="resultats-container">
             <?php while (have_posts()) : the_post(); ?>
-                <div class="search-result">
+                <div class="resultat-item">
                     <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
                     <?php if (has_post_thumbnail()) : ?>
-                        <div class="result-thumbnail">
-                            <a href="<?php the_permalink(); ?>">
-                                <img src="<?php the_post_thumbnail_url('thumbnail'); ?>" alt="<?php the_title(); ?>">
-                            </a>
+                        <div class="resultat-thumbnail small-thumbnail">
+                            <?php the_post_thumbnail('thumbnail'); ?>
                         </div>
                     <?php endif; ?>
-                    <p><?php the_excerpt(); ?></p>
+                    <div class="resultat-extrait">
+                        <?php the_excerpt(); ?>
+                    </div>
+                    <div class="description-recherche">
+                        <?php 
+                            $course_description = get_field('course_description');
+                            if ($course_description) {
+                                echo wp_trim_words($course_description, 20, '...');
+                            } else {
+                                echo wp_trim_words(get_field('description'), 20, '...');
+                            }
+                        ?>
+                    </div>
                 </div>
             <?php endwhile; ?>
-
-            <div class="pagination">
-                <?php 
-                    echo paginate_links( array(
-                        'prev_text' => 'Previous',
-                        'next_text' => 'Next',
-                    ) );
-                ?>
-            </div>
-
-        <?php else : ?>
-            <p>Aucuns résultats trouvés pour : <?php echo get_search_query(); ?></p>
-        <?php endif; ?>
-    </div>
+        </div>
+    <?php else : ?>
+        <p>Aucun résultat trouvé pour "<?php echo get_search_query(); ?>".</p>
+    <?php endif; ?>
 </main>
 
 <?php get_footer(); ?>

@@ -35,7 +35,7 @@
         <h3>À propos</h3>
         <ul>
           <li>Collège de Maisonneuve</li>
-          <li>3800 Sherbrooke St E, Montréal, Quebec H1X 2A2</li>
+          <li>3800 Sherbrooke St E, Montréal, Québec H1X 2A2</li>
           <li>514-254-7131</li>
         </ul>
       </div>
