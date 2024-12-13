@@ -142,6 +142,8 @@
   text-decoration: underline;
 }
 
+
+
 /*=============== BREAKPOINTS ===============*/
 
 @media screen and (max-width: 340px) {
@@ -190,6 +192,7 @@
   align-items: center;
   justify-content: center;
   text-align: center;
+ margin-top: 2rem;
 }
 
 .teacher-photo {
@@ -210,7 +213,6 @@
 .teacher-info {
   text-align: center;
   margin-top: 10px;
-  max-width: 600px;
   padding: 0 20px;
 }
 
@@ -240,13 +242,10 @@
   border: 1px solid;
 }
 
-.teacher-buttons button:hover {
-  background-color: #5c3fbe;
-}
-
 .teacher-info p {
   font-size: 16px;
   line-height: 1.5;
+  padding: 1rem 0rem;
 }
 
 /* Mobile Styles */
@@ -285,9 +284,9 @@
   }
 
   .teacher-info {
-      flex: 1;
       margin-top: 0;
       text-align: left;
+      width: 60%;
   }
 
 
@@ -313,9 +312,9 @@
   }
 
   .teacher-info {
-      flex: 1;
       margin-top: 0;
       text-align: left;
+      width: 60%;
   }
 
 
@@ -357,24 +356,27 @@
 
 /* Styles pour le bouton */
 .accordion-toggle {
+  background: transparent;
+  border: 1px solid white;
+  border-radius: 9px;
+  color: white;
+  font-size: clamp(0.875rem, 0.809rem + 0.303vw, 1.188rem);
   display: block;
-  margin: 10px auto;
+  margin: 13px 0;
   cursor: pointer;
   text-align: center;
   padding: 8px 12px;
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
   transition: background-color 0.3s ease;
 }
 
 .accordion-toggle:hover {
-  background-color: #0056b3;
+  background-color: rgb(42, 170, 209);
 }
 
+
+
 /* Supprime l'accordéon et affiche tout le contenu sous 600px */
-@media (min-width: 877px) {
+@media (min-width: 1400px) {
   .accordion {
     border: none;
     padding: 0;
