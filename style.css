@@ -37,7 +37,6 @@ body {
   background: linear-gradient(-45deg, #e73c7e, #3a66b8, #2383af, #ac5bcc);
   background-size: 200% 200%;
   animation: gradient 70s ease infinite;
-  height: 100%;
 }
 @keyframes gradient {
   0% {
@@ -174,6 +173,10 @@ h1 {
   color: white;
 }
 
+h2 {
+  color: white;
+}
+
 h3 {
   color: white;
   font-family: "greycliff-cf", sans-serif;
@@ -210,6 +213,10 @@ p {
   z-index: 0;
   margin-top: 1.5rem;
   width: fit-content;
+}
+
+.logo-tim-h {
+  display: none;
 }
 
 .button-link::after {
@@ -267,6 +274,22 @@ p {
     display: block;
     margin: 0;
     fill: white;
+  }
+  .logo-tim-h {
+    position: absolute;
+    left: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .logo-tim-h a {
+    z-index: 6;
+    font-family: "termina", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-size: clamp(1.563rem, 1.349rem + 0.526vw, 2.188rem);
   }
 }
 /* ///////////////////////////////////////////////////////////////// */
@@ -354,6 +377,8 @@ p {
 
 .cours-section {
   padding: 20px;
+  min-height: 30vh;
+  overflow: inherit; /* Pour éviter que le SVG ne déborde */
 }
 
 .course-box > h3 {
@@ -726,7 +751,7 @@ img {
   padding-top: 1rem;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 450px) {
   .professor-card {
     width: calc(90% - 40px);
   }
@@ -840,7 +865,7 @@ img {
   align-items: center;
   justify-content: center;
   text-align: center;
-  margin-top: 30px;
+  margin-top: 2rem;
 }
 
 .teacher-photo {
@@ -861,13 +886,15 @@ img {
 .teacher-info {
   text-align: center;
   margin-top: 10px;
-  max-width: 600px;
   padding: 0 20px;
 }
 
 .teacher-info h2 {
-  font-size: 24px;
-  margin: 10px 0;
+  color: rgb(255, 255, 255);
+  font-family: "greycliff-cf", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: clamp(1.75rem, 0.833rem + 4.444vw, 2.5rem);
 }
 
 /* Button Styles */
@@ -879,21 +906,19 @@ img {
 }
 
 .teacher-buttons button {
-  background-color: #6d50e6;
+  background-color: transparent;
   color: white;
   border: none;
   border-radius: 20px;
   padding: 10px 15px;
   cursor: pointer;
-}
-
-.teacher-buttons button:hover {
-  background-color: #5c3fbe;
+  border: 1px solid;
 }
 
 .teacher-info p {
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.5;
+  padding: 1rem 0rem;
 }
 
 /* Mobile Styles */
@@ -902,12 +927,10 @@ img {
     width: 100%;
     max-width: 100%;
   }
-  .teacher-info h2 {
-    font-size: 20px;
-  }
   .teacher-info p {
-    font-size: 14px;
+    font-size: 18px;
     margin-bottom: 3em;
+    padding: 0;
     text-align: left;
   }
   .teacher-buttons {
@@ -928,13 +951,9 @@ img {
     height: auto;
   }
   .teacher-info {
-    flex: 1;
     margin-top: 0;
     text-align: left;
-  }
-  .teacher-info h2 {
-    font-size: 32px;
-    margin-bottom: 10px;
+    width: 60%;
   }
   .teacher-info p {
     font-size: 18px;
@@ -954,13 +973,9 @@ img {
     height: auto;
   }
   .teacher-info {
-    flex: 1;
     margin-top: 0;
     text-align: left;
-  }
-  .teacher-info h2 {
-    font-size: 40px;
-    margin-bottom: 10px;
+    width: 60%;
   }
   .teacher-info p {
     font-size: 20px;
@@ -971,16 +986,60 @@ img {
     width: 48%;
   }
 }
-@media screen and (min-width: 1639px) {
-  .teacher-photo img {
-    width: 70%;
+.card__article {
+  display: flex;
+  justify-content: center;
+}
+
+.card__article {
+  width: 48%;
+}
+
+/* Styles par défaut pour l'accordéon */
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.accordion-content.open {
+  max-height: 100vh; /* Ouvre complètement l'accordéon */
+}
+
+/* Styles pour le bouton */
+.accordion-toggle {
+  background: transparent;
+  border: 1px solid white;
+  border-radius: 9px;
+  color: white;
+  font-size: clamp(0.875rem, 0.809rem + 0.303vw, 1.188rem);
+  display: block;
+  margin: 13px 0;
+  cursor: pointer;
+  text-align: center;
+  padding: 8px 12px;
+  transition: background-color 0.3s ease;
+}
+
+.accordion-toggle:hover {
+  background-color: rgb(42, 170, 209);
+}
+
+/* Supprime l'accordéon et affiche tout le contenu sous 600px */
+@media (min-width: 1400px) {
+  .accordion {
+    border: none;
+    padding: 0;
   }
-  .card__article {
-    display: flex;
-    justify-content: center;
+  .accordion-intro {
+    display: none;
   }
-  .card__article {
-    width: 48%;
+  .accordion-content {
+    max-height: none;
+    overflow: visible;
+  }
+  .accordion-toggle {
+    display: none;
   }
 }
 .APropos {
@@ -1398,6 +1457,10 @@ img {
   min-height: 90vh;
 }
 
+.projet a {
+  text-decoration: none;
+}
+
 .galerie-projets h1 {
   margin-bottom: 10px;
   font-family: "garamond-premier-pro-subhead", serif;
@@ -1604,8 +1667,11 @@ img {
 }
 
 .stages-section h1 {
-  font-size: 2rem;
+  font-size: clamp(4.063rem, 2.855rem + 2.973vw, 7.5rem);
   margin-bottom: 40px;
+  font-family: "garamond-premier-pro-subhead", serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
 .stage-type, .stage-company {
@@ -1747,7 +1813,7 @@ img {
 }
 .header {
   position: relative;
-  z-index: 4;
+  z-index: 1;
 }
 
 .OuLa {
@@ -1806,7 +1872,7 @@ img {
 }
 .OuLa h1 {
   position: relative;
-  font-size: 70px;
+  font-size: clamp(4.375rem, 2.741rem + 6.123vw, 12.5rem);
   margin: 0;
   line-height: 0.8;
   text-align: left;
@@ -1818,7 +1884,8 @@ img {
   color: black;
   font-family: "garamond-premier-pro-display", serif;
   font-weight: 500;
-  font-size: 85px;
+  font-size: clamp(5.313rem, 4.433rem + 3.297vw, 9.688rem);
+  color: hsl(207, 77%, 72%);
 }
 
 /* Tablet Styles */
@@ -1829,7 +1896,6 @@ img {
     padding: 20px 40px;
   }
   .OuLa h1 {
-    font-size: 48px;
     margin-top: 20px;
   }
 }
@@ -1841,7 +1907,6 @@ img {
     padding: 40px 80px;
   }
   .OuLa h1 {
-    font-size: 100px;
     margin-top: 20px;
   }
   .OuLa h1 span {
@@ -1882,7 +1947,9 @@ img {
 }
 
 .h1-Contact {
-  font-family: AppleGaramond2;
+  font-family: "garamond-premier-pro-subhead", serif;
+  font-weight: 400;
+  font-style: normal;
   color: rgb(255, 255, 255);
   font-size: clamp(2.5rem, 1.928rem + 2.347vw, 5.625rem);
   margin-left: 2rem;
@@ -2073,7 +2140,8 @@ img {
 .main-cours-individuel {
   margin-left: 2rem;
   margin-right: 2rem;
-  margin-top: 2rem;
+  margin-top: 1rem;
+  min-height: 55vh;
 }
 
 /* Partie titre et informations du cours */
@@ -2090,6 +2158,7 @@ img {
   font-style: normal;
   font-size: clamp(2.5rem, 1.928rem + 2.347vw, 5.625rem);
   margin: 0.5rem 0;
+  color: white;
 }
 
 .span-cours-individuel {
@@ -2174,12 +2243,14 @@ img {
   font-size: clamp(1.25rem, 0.967rem + 1.163vw, 1.9rem);
   text-align: justify;
   color: white;
+  width: 100%;
+  line-height: 2rem;
 }
 
 /* Bloc pour les logiciels */
 .logiciel-info {
   width: 100%;
-  height: 100%;
+  height: 12rem;
   background: linear-gradient(135deg, rgba(223, 213, 188, 0.48), rgba(255, 255, 255, 0.65));
   clip-path: polygon(0 0, 73% 0, 100% 100%, 0% 100%);
   margin-bottom: 2rem;
@@ -2204,11 +2275,12 @@ img {
 .div-image-logiciel {
   display: flex;
   align-items: flex-start;
-  flex-direction: column;
+  flex-direction: row;
+  padding-top: 1rem;
 }
 
 .image-logiciel-info {
-  width: 31%;
+  width: 5rem;
   margin-left: 11px;
   margin-top: 11px;
   padding-bottom: 1rem;
@@ -2239,9 +2311,6 @@ img {
     flex-direction: row;
     gap: 1rem;
   }
-  .image-logiciel-info {
-    width: 16%;
-  }
 }
 @media screen and (min-width: 1448px) {
   .h1-cours-individuel {
@@ -2250,6 +2319,9 @@ img {
   .ligne-cours {
     padding-top: 2rem;
   }
+  .texte-cours-information {
+    line-height: 2.4rem;
+  }
   .information-cours {
     flex-direction: row-reverse;
     justify-content: space-between;
@@ -2257,7 +2329,6 @@ img {
     padding-top: 3rem;
   }
   .logiciel-info {
-    width: 100%;
     height: auto;
     background: linear-gradient(135deg, rgba(223, 213, 188, 0.48), rgba(255, 255, 255, 0.65));
     clip-path: polygon(0 0, 69% 0, 100% 166%, -3% 107%);
@@ -2265,16 +2336,20 @@ img {
   }
   .div-image-logiciel {
     align-items: flex-start;
-    flex-direction: column;
   }
   .image-logiciel-info {
-    width: 45%;
+    width: 7rem;
+    padding-top: 3rem;
+  }
+  .logiciel-info {
+    width: 65%;
+    height: 18rem;
   }
 }
 .projet-single {
   margin-left: 2rem;
   margin-right: 2rem;
-  margin-top: -2.4rem;
+  margin-top: 2.4rem;
 }
 
 .projet-single-information {
@@ -2295,12 +2370,16 @@ img {
   text-align: left;
 }
 
+.projet-titres h1 {
+  margin: 0;
+}
+
 .par-projet {
   text-align: left;
   font-family: "greycliff-cf", sans-serif;
   font-weight: 300;
   font-style: normal;
-  font-size: clamp(1.7rem, 0.928rem + 2.347vw, 2.625rem);
+  font-size: clamp(1.7rem, 0.928rem + 2.347vw, 1rem);
 }
 
 .description-projet,
@@ -2817,7 +2896,7 @@ body.no-scroll {
   list-style: none;
   position: relative;
   padding: 12px 20px;
-  z-index: 100;
+  z-index: 4;
   position: relative;
 }
 
@@ -2836,6 +2915,7 @@ body.no-scroll {
   padding: 1rem;
   padding-right: 2rem;
   border: 1px white solid;
+  z-index: 1000;
 }
 
 .logo-tim {
@@ -2850,10 +2930,6 @@ body.no-scroll {
   text-decoration: none;
   color: rgb(255, 255, 255);
   font-size: clamp(1.563rem, 1.349rem + 0.526vw, 2.188rem);
-}
-
-.logo-tim-h {
-  display: none;
 }
 
 .nav-links {
@@ -2927,20 +3003,11 @@ body.no-scroll {
 }
 
 @media (max-width: 875px) {
-  .logo-tim-h {
-    display: block;
-    position: absolute;
-    left: 1rem;
-    top: 15px;
-    left: 15px;
-  }
-  .logo-tim-h a {
-    font-family: "termina", sans-serif;
-    font-weight: 900;
-    font-style: normal;
-    text-decoration: none;
-    color: rgb(255, 255, 255);
-    font-size: clamp(1.563rem, 1.349rem + 0.526vw, 2.188rem);
+  .logo-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   .nav-bar {
     position: fixed;
@@ -2960,7 +3027,7 @@ body.no-scroll {
     position: fixed;
     right: -100%;
     top: 0;
-    z-index: 100;
+    z-index: 10000;
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
     backdrop-filter: blur(15px);
     transition: all 0.2s ease-in-out;
@@ -2972,7 +3039,7 @@ body.no-scroll {
     position: static;
   }
   .logo-tim a {
-    font-size: clamp(3.438rem, 2.057rem + 8.242vw, 4.375rem);
+    font-size: clamp(3.438rem, 2.057rem + 8.242vw, 3.375rem);
   }
   .nav-links {
     flex-direction: column;
@@ -2980,18 +3047,19 @@ body.no-scroll {
   .nav-links li {
     margin-top: 0;
     padding-left: 0;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
   }
   .nav-links li a {
     padding: 10px;
     margin-left: 0;
-    font-size: clamp(2.5rem, 1.58rem + 5.495vw, 3.125rem);
+    font-size: clamp(2.3rem, 1.58rem + 5.495vw, 2.4rem);
   }
   .ouvre-menu, .ferme-menu {
     display: block;
   }
   #check:checked ~ .menu {
     right: 0;
+    z-index: 1000;
   }
 }
 /* Composition de base */
@@ -3014,7 +3082,7 @@ footer {
   display: flex;
   flex-direction: column;
   align-items: center;
-  z-index: 100;
+  z-index: 5;
   padding-top: 2rem;
 }
 
@@ -3074,7 +3142,7 @@ footer {
   font-family: "greycliff-cf", sans-serif;
   text-align: left;
   position: relative;
-  z-index: 2;
+  z-index: 1;
   padding: 20px;
   border-radius: 10px;
   border: 1px solid white;

@@ -63,7 +63,7 @@
  
  
  
-@media (max-width: 600px) {
+@media (max-width: 450px) {
   .professor-card {
       width: calc(90% - 40px);
  
@@ -142,6 +142,8 @@
   text-decoration: underline;
 }
  
+ 
+ 
 /*=============== BREAKPOINTS ===============*/
  
 @media screen and (max-width: 340px) {
@@ -190,7 +192,7 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  margin-top: 30px;
+ margin-top: 2rem;
 }
  
 .teacher-photo {
@@ -211,13 +213,15 @@
 .teacher-info {
   text-align: center;
   margin-top: 10px;
-  max-width: 600px;
   padding: 0 20px;
 }
  
 .teacher-info h2 {
-  font-size: 24px;
-  margin: 10px 0;
+  color: rgb(255, 255, 255);
+  font-family: "greycliff-cf", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: clamp(1.75rem, 0.833rem + 4.444vw, 2.5rem);
 }
  
 /* Button Styles */
@@ -229,21 +233,19 @@
 }
  
 .teacher-buttons button {
-  background-color: #6d50e6;
+  background-color: transparent;
   color: white;
   border: none;
   border-radius: 20px;
   padding: 10px 15px;
   cursor: pointer;
-}
- 
-.teacher-buttons button:hover {
-  background-color: #5c3fbe;
+  border: 1px solid;
 }
  
 .teacher-info p {
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.5;
+  padding: 1rem 0rem;
 }
  
 /* Mobile Styles */
@@ -254,13 +256,10 @@
       max-width: 100%;
   }
  
-  .teacher-info h2 {
-      font-size: 20px;
-  }
- 
   .teacher-info p {
-      font-size: 14px;
+      font-size: 18px;
       margin-bottom: 3em;
+      padding: 0;
       text-align: left;
   }
   .teacher-buttons {
@@ -284,15 +283,12 @@
   }
  
   .teacher-info {
-      flex: 1;
       margin-top: 0;
       text-align: left;
+      width: 60%;
   }
  
-  .teacher-info h2 {
-      font-size: 32px;
-      margin-bottom: 10px;
-  }
+ 
  
   .teacher-info p {
       font-size: 18px;
@@ -315,15 +311,12 @@
   }
  
   .teacher-info {
-      flex: 1;
       margin-top: 0;
       text-align: left;
+      width: 60%;
   }
  
-  .teacher-info h2 {
-      font-size: 40px;
-      margin-bottom: 10px;
-  }
+ 
  
   .teacher-info p {
       font-size: 20px;
@@ -338,10 +331,6 @@
  
 }
  
-@media screen and (min-width: 1639px) {
-  .teacher-photo img{
-    width: 70%;
-}
  
 .card__article{
   display: flex;
@@ -351,6 +340,59 @@
 .card__article {
   width: 48%;
 }
+   
+ 
+/* Styles par défaut pour l'accordéon */
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+ 
+.accordion-content.open {
+  max-height: 100vh; /* Ouvre complètement l'accordéon */
+}
+ 
+/* Styles pour le bouton */
+.accordion-toggle {
+  background: transparent;
+  border: 1px solid white;
+  border-radius: 9px;
+  color: white;
+  font-size: clamp(0.875rem, 0.809rem + 0.303vw, 1.188rem);
+  display: block;
+  margin: 13px 0;
+  cursor: pointer;
+  text-align: center;
+  padding: 8px 12px;
+  transition: background-color 0.3s ease;
+}
+ 
+.accordion-toggle:hover {
+  background-color: rgb(42, 170, 209);
+}
+ 
+ 
+ 
+/* Supprime l'accordéon et affiche tout le contenu sous 600px */
+@media (min-width: 1400px) {
+  .accordion {
+    border: none;
+    padding: 0;
   }
+ 
+  .accordion-intro {
+    display: none;
+  }
+ 
+  .accordion-content {
+    max-height: none;
+    overflow: visible;
+  }
+ 
+  .accordion-toggle {
+    display: none;
+  }
+}
  
  

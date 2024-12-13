@@ -1,7 +1,9 @@
 <?php get_header(); ?>
-<div class="logo-tim-h">
-        <a href="<?php echo esc_url(home_url('/')); ?>">TIM</a>
+<div class="logo-container">
+    <div class="logo-tim-h">
+    <a class="logo-tim-hh" href="<?php echo esc_url(home_url('/')); ?>">TIM</a>
     </div>
+</div>
 <main class="galerie-projets">
     <h1>Galerie de projets</h1>
 
@@ -25,9 +27,11 @@
             <?php while (have_posts()) : the_post(); ?>
                 <div class="projet" data-category="<?php echo get_field('category'); ?>"> <!-- Adjusted to the actual ACF field name -->
                     <h2><?php the_title(); ?></h2>
-                    <?php if (has_post_thumbnail()) : ?>
-                        <img src="<?php the_post_thumbnail_url('Large'); ?>" alt="<?php the_title(); ?>">
-                    <?php else : ?>
+                   <a href="<?php the_permalink(); ?>">
+                        <?php if (has_post_thumbnail()) : ?>
+                            <img src="<?php the_post_thumbnail_url('high'); ?>" alt="<?php the_title(); ?>">
+                        <?php else : ?>    
+                    </a>
                         <img src="<?php echo get_template_directory_uri(); ?>/images/default-image.png" alt="Default Image">
                     <?php endif; ?>
                     <p><?php the_excerpt(); ?></p>

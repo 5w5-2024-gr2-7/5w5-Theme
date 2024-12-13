@@ -1,7 +1,9 @@
 <?php get_header(); ?>
-<div class="logo-tim-h">
-        <a href="<?php echo esc_url(home_url('/')); ?>">TIM</a>
+<div class="logo-container">
+    <div class="logo-tim-h">
+    <a class="logo-tim-hh" href="<?php echo esc_url(home_url('/')); ?>">TIM</a>
     </div>
+</div>
 <section class="cours-section">
     <div class="header-cours">
         <div class="header-item">
