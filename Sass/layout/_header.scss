@@ -166,7 +166,7 @@ body.no-scroll {
   }
 
   .logo-tim a {
-    font-size: clamp(3.438rem, 2.057rem + 8.242vw, 4.375rem);
+    font-size: clamp(3.438rem, 2.057rem + 8.242vw, 3.375rem);
   }
 
 
@@ -178,13 +178,13 @@ body.no-scroll {
   .nav-links li {
     margin-top: 0;
     padding-left: 0;
-    margin-bottom: 40px;
+    margin-bottom: 25px;
   }
 
   .nav-links li a {
     padding: 10px;
     margin-left: 0;
-    font-size: clamp(2.5rem, 1.58rem + 5.495vw, 3.125rem);
+    font-size: clamp(2.3rem, 1.58rem + 5.495vw, 2.4rem);
   }
 
   // Les icones fermer et ouvrir

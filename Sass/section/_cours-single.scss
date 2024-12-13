@@ -4,6 +4,7 @@
     margin-left: 2rem;
     margin-right: 2rem;
     margin-top: -2.4rem;  
+    min-height: 55vh;
 }
 
 /* Bouton de retour */
@@ -37,6 +38,7 @@
     font-style: normal;
     font-size: clamp(2.5rem, 1.928rem + 2.347vw, 5.625rem);
     margin: 0.5rem 0;
+    color: white;
 }
 
 .span-cours-individuel {
@@ -122,12 +124,14 @@
     font-size: clamp(1.25rem, 0.967rem + 1.163vw, 1.9rem);
     text-align: justify;
     color: white;
+    width: 100%;
+    line-height: 2rem;
 }
 
 /* Bloc pour les logiciels */
 .logiciel-info {
     width: 100%;
-    height: 100%;
+    height: 12rem;
     background: linear-gradient(135deg, rgb(223 213 188 / 48%), rgb(255 255 255 / 65%));
     clip-path: polygon(0 0, 73% 0, 100% 100%, 0% 100%);
     margin-bottom: 2rem;
@@ -152,11 +156,12 @@
 .div-image-logiciel{
     display: flex;
     align-items: flex-start;
-    flex-direction: column;
+    flex-direction: row;
+    padding-top: 1rem;
 }
 
 .image-logiciel-info {
-    width: 31%;
+    width: 5rem;
     margin-left: 11px;
     margin-top: 11px;
     padding-bottom: 1rem;
@@ -197,10 +202,10 @@
         flex-direction: row;
         gap: 1rem;
     }
+
+
         
-    .image-logiciel-info {
-        width: 16%;
-    }
+
 }
 
 ////////////////////// POUR DESKTOP ///////////////////////////// 
@@ -216,6 +221,10 @@
         padding-top: 2rem;
     }
 
+    .texte-cours-information {
+        line-height: 2.4rem;
+    }
+
     .information-cours {
         flex-direction: row-reverse;
         justify-content: space-between;
@@ -224,7 +233,6 @@
     }
 
     .logiciel-info {
-        width: 100%;
         height: auto;
         background: linear-gradient(135deg, rgba(223, 213, 188, 0.48), rgba(255, 255, 255, 0.65));
         clip-path: polygon(0 0, 69% 0, 100% 166%, -3% 107%);
@@ -233,10 +241,17 @@
 
     .div-image-logiciel{
         align-items: flex-start;
-        flex-direction: column;
     }
 
     .image-logiciel-info {
-        width: 45%;
+        width: 7rem;
+        padding-top: 3rem;
     }
+
+    .logiciel-info {
+        width: 65%;
+        height: 18rem;
+ 
+    }
+
 }

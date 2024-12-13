@@ -243,7 +243,7 @@
 }
 
 .teacher-info p {
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.5;
   padding: 1rem 0rem;
 }
@@ -259,9 +259,9 @@
 
 
   .teacher-info p {
-      font-size: 14px;
       margin-bottom: 3em;
       text-align: left;
+      padding: 0;
   }
   .teacher-buttons {
     display: flex;
@@ -352,6 +352,7 @@
 
 .accordion-content.open {
   max-height: 100vh; /* Ouvre complètement l'accordéon */
+  overflow: visible;
 }
 
 /* Styles pour le bouton */

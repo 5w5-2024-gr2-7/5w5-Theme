@@ -23,9 +23,11 @@
             <?php while (have_posts()) : the_post(); ?>
                 <div class="projet" data-category="<?php echo get_field('category'); ?>"> <!-- Adjusted to the actual ACF field name -->
                     <h2><?php the_title(); ?></h2>
-                    <?php if (has_post_thumbnail()) : ?>
-                        <img src="<?php the_post_thumbnail_url('medium'); ?>" alt="<?php the_title(); ?>">
-                    <?php else : ?>
+                    <a href="<?php the_permalink(); ?>">
+                        <?php if (has_post_thumbnail()) : ?>
+                            <img src="<?php the_post_thumbnail_url('high'); ?>" alt="<?php the_title(); ?>">
+                        <?php else : ?>    
+                    </a>
                         <img src="<?php echo get_template_directory_uri(); ?>/images/default-image.png" alt="Default Image">
                     <?php endif; ?>
                     <p><?php the_excerpt(); ?></p>

@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const toggleButton = accordion.querySelector('.accordion-toggle');
         const content = accordion.querySelector('.accordion-content');
 
-        toggleButton.addEventListener('click', () => {
+        const toggleAccordion = () => {
             const isOpen = content.classList.contains('open');
 
             if (isOpen) {
@@ -70,7 +70,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 content.classList.add('open');
                 toggleButton.textContent = 'Voir moins'; // Passer à "Voir moins"
             }
-        });
+        };
+
+        // Gestion des clics et des événements tactiles
+        toggleButton.addEventListener('click', toggleAccordion);
+        toggleButton.addEventListener('touchend', toggleAccordion);
     });
 });
 </script>

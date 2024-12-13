@@ -44,7 +44,7 @@ font-style: normal;
 
 .OuLa h1 {
   position: relative;
-  font-size: 70px;
+  font-size: clamp(4.375rem, 2.741rem + 6.123vw, 12.5rem);
   margin: 0;
   line-height: 0.8;
   text-align: left;
@@ -56,7 +56,8 @@ font-style: normal;
   color: black;
   font-family: "garamond-premier-pro-display", serif;
 font-weight: 500;
-font-size: 85px;
+font-size: clamp(5.313rem, 4.433rem + 3.297vw, 9.688rem);
+color: hsl(207 77% 72% / 1);
 }
 
 /* Tablet Styles */
@@ -68,7 +69,6 @@ font-size: 85px;
   }
 
   .OuLa h1 {
-      font-size: 48px;
       margin-top: 20px;
   }
 }
@@ -82,7 +82,6 @@ font-size: 85px;
   }
 
   .OuLa h1 {
-      font-size: 100px;
       margin-top: 20px;
   }
   .OuLa h1 span {
