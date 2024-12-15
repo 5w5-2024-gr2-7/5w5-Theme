@@ -22,8 +22,15 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         };
 
-        // Gestion des clics et des événements tactiles
-        toggleButton.addEventListener('click', toggleAccordion);
-        toggleButton.addEventListener('touchend', toggleAccordion);
+        toggleButton.addEventListener('click', (event) => {
+            event.preventDefault();
+            toggleAccordion();
+        });
+
+        // Optional: Handle touch events
+        toggleButton.addEventListener('touchstart', (event) => {
+            event.preventDefault();
+            toggleAccordion();
+        });
     });
 });

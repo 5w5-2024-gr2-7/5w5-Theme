@@ -84,7 +84,7 @@
 
 .card__contenu {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
     gap: 2.5rem;
     flex-wrap: wrap;
     justify-content: center;
@@ -240,6 +240,7 @@
   padding: 10px 15px;
   cursor: pointer;
   border: 1px solid;
+  font-size: clamp(0.875rem, 0.832rem + 0.192vw, 1.063rem);
 }
 
 .teacher-info p {
