@@ -13,7 +13,7 @@ body.no-scroll {
   list-style: none;
   position: relative;
   padding: 12px 20px;
-  z-index: 100;
+  z-index: 4;
   position: relative;
 }
 
@@ -32,6 +32,7 @@ body.no-scroll {
   padding: 1rem;
   padding-right: 2rem;
   border: 1px white solid;
+  z-index: 1000;
   // background: linear-gradient(116deg, rgba(177, 55, 255, 0.1), rgba(87, 197, 224, 0.19));
   // box-shadow: -65px 4px 35px rgba(177, 55, 255, 0.2), 0 2px 63px rgba(87, 197, 224, .3);
 }
@@ -51,6 +52,8 @@ body.no-scroll {
   color: rgb(255, 255, 255);
   font-size: clamp(1.563rem, 1.349rem + 0.526vw, 2.188rem);
 }
+
+
 
 // La liste des pages
 .nav-links {
@@ -130,6 +133,13 @@ body.no-scroll {
 
 @media(max-width: 875px) {
 
+  .logo-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
 .nav-bar{
   position: fixed;
 }
@@ -142,6 +152,7 @@ body.no-scroll {
 
   // La page menu  
   .menu {
+    -webkit-backdrop-filter: blur(15px);
     gap: 1.2rem;
     flex-direction: column;
     align-items: flex-start;
@@ -151,7 +162,7 @@ body.no-scroll {
     position: fixed;
     right: -100%;
     top: 0;
-    z-index: 100;
+    z-index: 10000;
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
     backdrop-filter: blur(15px);
     transition: all 0.2s ease-in-out;
@@ -166,7 +177,7 @@ body.no-scroll {
   }
 
   .logo-tim a {
-    font-size: clamp(3.438rem, 2.057rem + 8.242vw, 4.375rem);
+    font-size: clamp(3.438rem, 2.057rem + 8.242vw, 3.375rem);
   }
 
 
@@ -178,13 +189,13 @@ body.no-scroll {
   .nav-links li {
     margin-top: 0;
     padding-left: 0;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
   }
 
   .nav-links li a {
     padding: 10px;
     margin-left: 0;
-    font-size: clamp(2.5rem, 1.58rem + 5.495vw, 3.125rem);
+    font-size: clamp(2.3rem, 1.58rem + 5.495vw, 2.4rem);
   }
 
   // Les icones fermer et ouvrir
@@ -194,5 +205,7 @@ body.no-scroll {
 
   #check:checked ~ .menu {
     right: 0;
+    z-index: 1000;
   }
+
 }

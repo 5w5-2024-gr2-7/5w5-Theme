@@ -1,0 +1,72 @@
+/* Styles pour les résultats de recherche */
+.resultats-recherche {
+  padding: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.resultats-recherche h1 {
+  margin-bottom: 30px;
+  font-size: 24px;
+  text-align: center;
+  font-family: "garamond-premier-pro-subhead", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: clamp(2.5rem, 2.102rem + 1.818vw, 5rem);
+  color: white;
+}
+
+.resultats-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.resultat-item {
+  background-color: #f9f9f9;
+  border: 1px solid #e1e1e1;
+  padding: 20px;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.resultat-item:hover {
+  transform: translateY(-5px);
+}
+
+.resultat-item h2 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.resultat-item h2 a {
+  color: #0073aa;
+  text-decoration: none;
+}
+
+.resultat-item h2 a:hover {
+  text-decoration: underline;
+}
+
+.resultat-thumbnail {
+  margin-bottom: 15px;
+}
+
+.resultat-thumbnail img {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.resultat-extrait {
+  font-size: 14px;
+  color: #666;
+}
+.resultat-extrait p{
+  color: black;
+}
+.small-thumbnail img {
+  max-width: 150px; 
+  height: auto;
+  float: left;
+  margin-right: 20px;
+}

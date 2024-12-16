@@ -154,6 +154,7 @@ function filter_projects_by_category() {
 
     $query = new WP_Query($args);
     if ($query->have_posts()) :
+        echo '<div class="projets-container">';
         while ($query->have_posts()) : $query->the_post(); ?>
             <div class="projet" data-category="<?php echo get_field('category'); ?>">
                 <h2><?php the_title(); ?></h2>
@@ -166,6 +167,7 @@ function filter_projects_by_category() {
                 <a href="<?php the_permalink(); ?>" class="button-link">En savoir plus...</a>
             </div>
         <?php endwhile;
+        echo '</div>';
     else :
         echo '<p>No projects found.</p>';
     endif;
@@ -261,7 +263,7 @@ function filter_courses_ajax() {
             </div>
         <?php endwhile;
     } else {
-        echo '<p>No courses found.</p>';
+        echo '<p>Aucun cours trouvés.</p>';
     }
 
     wp_reset_postdata();

@@ -1,5 +1,10 @@
+
 <?php get_header(); ?>
- 
+<div class="logo-container">
+    <div class="logo-tim-h">
+        <a class="logo-tim-hh" href="<?php echo esc_url(home_url('/')); ?>">TIM</a>
+    </div>
+</div>
 <main>
     <h1 class="h1_prof">Nos professeurs</h1>
     <div class="professor-container">

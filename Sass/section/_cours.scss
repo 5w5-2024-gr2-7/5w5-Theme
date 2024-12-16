@@ -5,6 +5,8 @@
 }
 .cours-section {
   padding: 20px;
+  min-height: 30vh;
+  overflow: inherit; /* Pour éviter que le SVG ne déborde */
 }
 
 .course-box>h3 {

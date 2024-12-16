@@ -16,6 +16,10 @@
   width: fit-content;
 }
 
+.logo-tim-h {
+  display: none;
+}
+
 .button-link::after{
   background-color: rgb(42, 170, 209);
   border-radius: 9px;
@@ -50,7 +54,7 @@
   display: none;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 875px) {
   .bouton-retour {
     background: transparent;
     position: absolute;
@@ -72,6 +76,23 @@
     display: block;
     margin: 0;
     fill: white;
+  }
+  .logo-tim-h{
+    position: absolute; 
+    left: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .logo-tim-h a{
+    z-index: 6;
+    font-family: "termina", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-size: clamp(1.563rem, 1.349rem + 0.526vw, 2.188rem);
   }
 }
 

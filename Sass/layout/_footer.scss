@@ -18,7 +18,7 @@ footer {
   display: flex;
   flex-direction: column;
   align-items: center;
-  z-index: 100;
+  z-index: 1;
   padding-top: 2rem;
 }
 
@@ -79,12 +79,12 @@ footer {
   font-family: "greycliff-cf", sans-serif;
   text-align: left;
   position: relative;
-  z-index: 2;
+  z-index: 1;
   padding: 20px;
   border-radius: 10px;
   border: 1px solid white;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  margin: 20px;
+  margin: 40px;
 }
 
 .citation blockquote {

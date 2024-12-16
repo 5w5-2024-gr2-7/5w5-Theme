@@ -31,15 +31,32 @@ document.addEventListener('DOMContentLoaded', () => {
     const checkbox = document.getElementById('check');
     const body = document.body;
     const backButton = document.querySelector('.bouton-retour');
+    const homeButton = document.querySelector('.logo-tim-h');
 
-    // SI le bouton du menu est coché, on arrête le défilement et cache le bouton retour
+    console.log('Back Button:', backButton);
+    console.log('Home Button:', homeButton);
+
     checkbox.addEventListener('change', () => {
         if (checkbox.checked) {
-            body.classList.add('no-scroll');  // Retire le scrolling
-            backButton.style.display = 'none';  // Cache le bouton retour
+            body.classList.add('no-scroll');
+            
+            if (backButton) {
+                backButton.style.display = 'none';
+            }
+
+            if (homeButton) {
+                homeButton.style.display = 'none';
+            }
         } else {
-            body.classList.remove('no-scroll');  // Active le scrolling
-            backButton.style.display = 'inline-flex';  // Affiche le bouton retour
+            body.classList.remove('no-scroll');
+            
+            if (backButton) {
+                backButton.style.display = 'inline-flex';
+            }
+
+            if (homeButton) {
+                homeButton.style.display = 'flex';
+            }
         }
     });
 });
