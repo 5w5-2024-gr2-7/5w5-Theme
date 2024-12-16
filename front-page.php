@@ -336,7 +336,7 @@ background-image: url('<?php echo get_site_url(); ?>/wp-content/uploads/2024/11/
     <div class="card__contenu">
 
         <article class="card__article">
-            <img src="<?php echo get_site_url(); ?>/wp-content/uploads/2024/11/lesSectionDeTipeDeCourWEBEssaie3.png');">
+            <img src="<?php echo get_site_url(); ?>/wp-content/uploads/2024/11/lesSectionDeTipeDeCourWEBEssaie3.png');" <?php echo get_post_type_archive_link('professor'); ?>>
 
             <div class="card__data">
                 <h2 class="card__title">Web</h2>
@@ -345,7 +345,7 @@ background-image: url('<?php echo get_site_url(); ?>/wp-content/uploads/2024/11/
         </article>
 
         <article class="card__article">
-            <img src="<?php echo get_site_url(); ?>/wp-content/uploads/2024/11/lesSectionDeTipeDeCourJEUX2.png');">
+            <img src="<?php echo get_site_url(); ?>/wp-content/uploads/2024/11/lesSectionDeTipeDeCourJEUX2.png');" <?php echo get_post_type_archive_link('professor'); ?>>
 
             <div class="card__data">
                 <h2 class="card__title">Jeu</h2>
@@ -354,7 +354,7 @@ background-image: url('<?php echo get_site_url(); ?>/wp-content/uploads/2024/11/
         </article>
 
         <article class="card__article">
-            <img src="<?php echo get_site_url(); ?>/wp-content/uploads/2024/11/lesSectionDeTipeDeCourVIDEO2.png')">
+            <img src="<?php echo get_site_url(); ?>/wp-content/uploads/2024/11/lesSectionDeTipeDeCourVIDEO2.png')"<?php echo get_post_type_archive_link('professor'); ?>>
 
             <div class="card__data">
                 <h2 class="card__title">Montage et vidéo</h2>
@@ -363,7 +363,7 @@ background-image: url('<?php echo get_site_url(); ?>/wp-content/uploads/2024/11/
         </article>
 
         <article class="card__article">
-            <img src="<?php echo get_site_url(); ?>/wp-content/uploads/2024/11/lesSectionDeTipeDeCourDESIGN-3.png')">
+            <img src="<?php echo get_site_url(); ?>/wp-content/uploads/2024/11/lesSectionDeTipeDeCourDESIGN-3.png')"<?php echo get_post_type_archive_link('professor'); ?>>
 
             <div class="card__data">
                 <h2 class="card__title">Conception graphique</h2>

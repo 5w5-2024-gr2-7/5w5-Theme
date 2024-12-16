@@ -770,7 +770,7 @@ img {
 
 .card__contenu {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   gap: 2.5rem;
   flex-wrap: wrap;
   justify-content: center;
@@ -797,8 +797,6 @@ img {
   border-radius: 1rem;
   position: absolute;
   bottom: -9rem;
-  left: 0;
-  right: 0;
   margin-inline: auto;
   opacity: 0;
   transition: opacity 1s 1s;
@@ -913,6 +911,7 @@ img {
   padding: 10px 15px;
   cursor: pointer;
   border: 1px solid;
+  font-size: clamp(0.875rem, 0.832rem + 0.192vw, 1.063rem);
 }
 
 .teacher-info p {
@@ -981,18 +980,9 @@ img {
     font-size: 20px;
   }
 }
-@media screen and (min-width: 1240px) {
-  .card__article {
-    width: 48%;
-  }
-}
 .card__article {
   display: flex;
   justify-content: center;
-}
-
-.card__article {
-  width: 48%;
 }
 
 /* Styles par défaut pour l'accordéon */
@@ -2142,6 +2132,7 @@ img {
   margin-right: 2rem;
   margin-top: 1rem;
   min-height: 55vh;
+  padding-bottom: 2rem;
 }
 
 /* Partie titre et informations du cours */
@@ -2172,6 +2163,7 @@ img {
 
 /* Styles pour les sessions et catégories */
 .info-session-cours {
+  font-size: clamp(1rem, 0.943rem + 0.256vw, 1.25rem);
   text-align: center;
   border-radius: 1rem;
   width: 45%;
@@ -2219,6 +2211,7 @@ img {
   color: #ffffff;
   padding: 2px 7px;
   height: 50%;
+  font-size: clamp(1rem, 0.943rem + 0.256vw, 1.25rem);
 }
 
 /* Ligne de séparation */
@@ -2241,7 +2234,7 @@ img {
   font-weight: 200;
   font-style: normal;
   font-size: clamp(1.25rem, 0.967rem + 1.163vw, 1.9rem);
-  text-align: justify;
+  text-align: left;
   color: white;
   width: 100%;
   line-height: 2rem;
@@ -2321,6 +2314,7 @@ img {
   }
   .texte-cours-information {
     line-height: 2.4rem;
+    text-align: justify;
   }
   .information-cours {
     flex-direction: row-reverse;
@@ -2464,7 +2458,7 @@ img {
   padding: 15px;
   font-size: 30px;
   cursor: pointer;
-  z-index: 10;
+  z-index: 2;
 }
 
 .carrousel__prev {
@@ -3018,6 +3012,7 @@ body.no-scroll {
     flex-direction: column-reverse;
   }
   .menu {
+    -webkit-backdrop-filter: blur(15px);
     gap: 1.2rem;
     flex-direction: column;
     align-items: flex-start;
@@ -3082,7 +3077,7 @@ footer {
   display: flex;
   flex-direction: column;
   align-items: center;
-  z-index: 5;
+  z-index: 1;
   padding-top: 2rem;
 }
 

@@ -41,21 +41,21 @@ document.addEventListener('DOMContentLoaded', () => {
             body.classList.add('no-scroll');
             
             if (backButton) {
-                backButton.style.setProperty('display', 'none', 'important');
+                backButton.style.display = 'none';
             }
 
             if (homeButton) {
-                homeButton.style.setProperty('display', 'none', 'important');
+                homeButton.style.display = 'none';
             }
         } else {
             body.classList.remove('no-scroll');
             
             if (backButton) {
-                backButton.style.setProperty('display', 'inline-flex', 'important');
+                backButton.style.display = 'inline-flex';
             }
 
             if (homeButton) {
-                homeButton.style.setProperty('display', 'flex', 'important');
+                homeButton.style.display = 'flex';
             }
         }
     });

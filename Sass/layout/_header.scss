@@ -152,6 +152,7 @@ body.no-scroll {
 
   // La page menu  
   .menu {
+    -webkit-backdrop-filter: blur(15px);
     gap: 1.2rem;
     flex-direction: column;
     align-items: flex-start;

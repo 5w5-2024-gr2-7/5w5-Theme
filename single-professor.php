@@ -55,26 +55,33 @@ $full_content = implode('', array_slice($sentences, 5)); // Le reste du contenu
 <script>
 document.addEventListener('DOMContentLoaded', () => {
     const accordions = document.querySelectorAll('.accordion');
- 
+
+    const isMobile = window.innerWidth <= 768;
+
     accordions.forEach((accordion) => {
         const toggleButton = accordion.querySelector('.accordion-toggle');
         const content = accordion.querySelector('.accordion-content');
- 
-        toggleButton.addEventListener('click', () => {
+
+        const toggleAccordion = () => {
             const isOpen = content.classList.contains('open');
- 
+
             if (isOpen) {
-                // Fermer l'accordéon
                 content.style.maxHeight = null;
                 content.classList.remove('open');
-                toggleButton.textContent = 'Voir plus'; // Revenir à "Voir plus"
+                toggleButton.textContent = 'Voir plus';
             } else {
-                // Ouvrir l'accordéon
-                content.style.maxHeight = content.scrollHeight + "px";
+                if (isMobile) {
+                    content.style.maxHeight = '768px';
+                } else {
+                    content.style.maxHeight = content.scrollHeight + 'px';
+                }
                 content.classList.add('open');
-                toggleButton.textContent = 'Voir moins'; // Passer à "Voir moins"
+                toggleButton.textContent = 'Voir moins';
             }
-        });
+        };
+
+        toggleButton.addEventListener('click', toggleAccordion);
+        toggleButton.addEventListener('touchstart', toggleAccordion, { passive: true });
     });
 });
 </script>

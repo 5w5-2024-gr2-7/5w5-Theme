@@ -84,7 +84,7 @@
  
 .card__contenu {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
     gap: 2.5rem;
     flex-wrap: wrap;
     justify-content: center;
@@ -111,8 +111,6 @@
   border-radius: 1rem;
   position: absolute;
   bottom: -9rem;
-  left: 0;
-  right: 0;
   margin-inline: auto;
   opacity: 0;
   transition: opacity 1s 1s;
@@ -240,6 +238,7 @@
   padding: 10px 15px;
   cursor: pointer;
   border: 1px solid;
+  font-size: clamp(0.875rem, 0.832rem + 0.192vw, 1.063rem);
 }
  
 .teacher-info p {
@@ -324,21 +323,12 @@
 }
  
 @media screen and (min-width: 1240px) {
-.card__article{
-  width: 48%;
  
 }
- 
-}
- 
  
 .card__article{
   display: flex;
   justify-content: center;
-}
- 
-.card__article {
-  width: 48%;
 }
    
  
